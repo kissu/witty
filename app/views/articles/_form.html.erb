@@ -1,0 +1,7 @@
+<%= simple_form_for @article do |f| %>
+  <%= f.input :title, label: 'Titre' %>
+  <%= f.input :description %>
+  <%= f.input :url, label: "Lien de l'article" %>
+  <%= f.association :tags,   as: :check_boxes %>
+  <%= f.submit "Enregister", class: "btn btn-primary" %>
+<% end %>
