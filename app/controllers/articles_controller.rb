@@ -11,7 +11,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
+      flash[:notice] = "Votre article a bien été ajouté"
       redirect_to articles_path
     else
       render :new
@@ -41,6 +43,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :url)
+    params.require(:article).permit(:title, :description, :url, tag_ids: [])
   end
 end
