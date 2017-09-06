@@ -24,8 +24,9 @@
           <% end %>
         </li>
         <li>
-          <%= link_to   %>
+          <%= link_to article_path(article), method: :delete do  %>
             <i class="fa fa-trash"></i>
+          <% end %>
         </li>
         <li>
           <%= link_to article.url, target: "_blank" do %>
