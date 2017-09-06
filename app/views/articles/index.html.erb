@@ -1,2 +1,39 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<p><%= link_to "Write your publication", new_article_path(@article), class: "btn btn-primary"  %></p>
+<h1 class= "text-center">Articles</h1>
+
+<div class="product">
+  <% @articles.each do |article| %>
+    <div class="product-arrow">
+      <div class="product-upvote">
+        <div class="product-count"><%= article.upvotes.count %></div>
+      </div>
+    </div>
+    <div class="product-body">
+      <h3><%= article.title %></h3>
+      <%= article.description %>
+
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li>
+          <% article.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to edit_article_path(article) do  %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to article_path(article), method: :delete do  %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to article.url, target: "_blank" do %>
+            <i class="fa fa-external-link"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</div>
