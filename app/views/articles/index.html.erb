@@ -1,23 +1,38 @@
-<h1>Articles#index</h1>
+<h1>Articles</h1>
 
 
 <div class="product">
-  <div class="product-upvote">
+  <% @articles.each do |article| %>
     <div class="product-arrow">
+      <div class="product-upvote">
+        <div class="product-count"><%= article.upvotes.count %></div>
+      </div>
     </div>
-  </div>
-  <div class="product-body">
-    <% @articles.each do |article| %>
-      <div class="product-count">5</div>
+    <div class="product-body">
       <h3><%= article.title %></h3>
       <%= article.description %>
+
       <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li><a href=""><i class="fa fa-heart"></i></a></li>
-        <li><a href=""><i class="fa fa-share"></i></a></li>
-        <li><a href=""><i class="fa fa-star"></i></a></li>
+        <li>
+          <% article.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to edit_article_path(article) do  %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to   %>
+            <i class="fa fa-trash"></i>
+        </li>
+        <li>
+          <%= link_to article.url, target: "_blank" do %>
+            <i class="fa fa-external-link"></i>
+          <% end %>
+        </li>
       </ul>
-    <% end %>
-
-  </div>
+    </div>
+  <% end %>
 </div>
-
