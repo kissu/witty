@@ -1,2 +1,23 @@
 <h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+
+
+<div class="product">
+  <div class="product-upvote">
+    <div class="product-arrow">
+    </div>
+  </div>
+  <div class="product-body">
+    <% @articles.each do |article| %>
+      <div class="product-count">5</div>
+      <h3><%= article.title %></h3>
+      <%= article.description %>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><a href=""><i class="fa fa-heart"></i></a></li>
+        <li><a href=""><i class="fa fa-share"></i></a></li>
+        <li><a href=""><i class="fa fa-star"></i></a></li>
+      </ul>
+    <% end %>
+
+  </div>
+</div>
+
