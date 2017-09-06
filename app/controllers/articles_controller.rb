@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
+      flash[:notice] = "Votre article a bien été ajouté"
       redirect_to articles_path
     else
       render :new
