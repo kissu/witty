@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      flash[:notice] = "Votre article a bien été modifié"
       redirect_to articles_path
     else
       render :edit
@@ -33,6 +34,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    flash[:notice] = "Votre article a bien été supprimé"
     redirect_to articles_path
   end
 
