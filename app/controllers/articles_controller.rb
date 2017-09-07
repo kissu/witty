@@ -2,16 +2,17 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = policy_scope(Article)
   end
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.user = current_user
+    @article = current_user.articles.build(article_params)
+    authorize @article
     if @article.save
       flash[:notice] = "Votre article a bien été ajouté"
       redirect_to articles_path
@@ -42,6 +43,7 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+    authorize @article
   end
 
   def article_params
