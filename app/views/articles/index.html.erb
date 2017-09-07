@@ -6,12 +6,21 @@
       <% @articles.each do |article| %>
 
         <div class="product">
-            <%= link_to article_upvotes_path(article), method: :post, class: 'product-upvote' do %>
+          <% if current_user.voted_for?(article) %>
+            <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'product-upvote' do %>
               <div class="product-arrow"></div>
               <div class="product-count">
                 <%= article.upvotes.count %>
               </div>
             <% end %>
+          <% else %>
+            <%= link_to upvotes_path(upvotable_id: article.id, upvotable_type: article.class), method: :post, class: 'product-upvote' do %>
+              <div class="product-arrow"></div>
+              <div class="product-count">
+                <%= article.upvotes.count %>
+              </div>
+            <% end %>
+          <% end %>
 
           <div class="product-body">
             <h3><%= article.title %></h3>
