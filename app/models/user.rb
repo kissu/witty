@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :article_tags, through: :tags
   has_many :articles
 
-  enum role: { entrepreneur: 0, expert: 10, investisseur: 20 }
+  enum role: { entrepreneur: 0, expert: 10, investisseur: 20, admin: 30 }
 
   include UpvotableConcern
 
