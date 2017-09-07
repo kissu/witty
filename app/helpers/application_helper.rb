@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def button_destroy_article(article)
     if policy(article).destroy?
-      link_to '<i class="fa fa-trash"></i>'.html_safe, article_path(article)
+      link_to '<i class="fa fa-trash"></i>'.html_safe, article_path(article), method: :delete
     end
   end
 
