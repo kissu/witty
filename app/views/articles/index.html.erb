@@ -19,19 +19,13 @@
           <% end %>
         </li>
         <li>
-          <%= link_to edit_article_path(article) do  %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
+         <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_article_path(article) %>
         </li>
         <li>
-          <%= link_to article_path(article), method: :delete do  %>
-            <i class="fa fa-trash"></i>
-          <% end %>
+          <%= link_to '<i class="fa fa-trash"></i>'.html_safe, article_path(article), method: :delete %>
         </li>
         <li>
-          <%= link_to article.url, target: "_blank" do %>
-            <i class="fa fa-external-link"></i>
-          <% end %>
+          <%= link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank" %>
         </li>
       </ul>
     </div>
