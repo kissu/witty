@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def create
