@@ -1,34 +1,6 @@
 <h1 class= "text-center">Articles</h1>
 
-<div class="product">
   <% @articles.each do |article| %>
-    <div class="product-arrow">
-      <div class="product-upvote">
-        <div class="product-count"><%= article.upvotes.count %></div>
-      </div>
-    </div>
-    <div class="product-body">
-      <h3><%= article.title %></h3>
-      <%= article.description %>
-
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li>
-          <% article.tags.each do |tag| %>
-            <%= tag.name %>
-          <% end %>
-        </li>
-        <li>
-          <%= button_edit_article(article) %>
-        </li>
-        <li>
-          <%= button_destroy_article(article) %>
-        </li>
-        <li>
-          <%= link_to article.url, target: "_blank" do %>
-            <i class="fa fa-external-link"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+    <%= render 'card', article: article %>
   <% end %>
 </div>
