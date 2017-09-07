@@ -2,7 +2,9 @@ module ApplicationHelper
 
   def button_new_article
     if policy(Article).new?
-      link_to "Write your publication", new_article_path(@article), class: "btn btn-primary"
+      link_to new_article_path(@article) do
+        '<i class="fa fa-plus green-lg" aria-hidden="true"></i>'.html_safe
+      end
     end
   end
 
