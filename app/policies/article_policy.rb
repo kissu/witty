@@ -6,8 +6,20 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    user.role >= "investisseur" # investissor and superior can create an article
+    is_investor_or_superior?
   end
 
+  def update?
+    is_investor_or_superior?
+  end
 
+  def destroy?
+    is_investor_or_superior?
+  end
+
+  private
+
+  def is_investor_or_superior?
+    user.role >= "investisseur" # investor and superior
+  end
 end
