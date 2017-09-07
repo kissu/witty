@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    is_investor_or_superior?
+    is_entrepreneur?
   end
 
   def update?
@@ -21,5 +21,9 @@ class ArticlePolicy < ApplicationPolicy
 
   def is_investor_or_superior?
     user.role >= "investisseur" # investor and superior
+  end
+
+  def is_entrepreneur?
+    user.role >= "entrepreneur" #
   end
 end
