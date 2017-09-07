@@ -7,10 +7,10 @@ Article.destroy_all
 User.destroy_all
 
 # User Generation
-florent = User.create!(email: "florent@aquiti.fr", password: "aquiti", role: "investisseur")
-fouad = User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "entrepreneur")
-kos = User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "entrepreneur")
-mathieu = User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "entrepreneur")
+florent = User.create!(email: "florent@aquiti.fr", first_name: "florent".capitalize, last_name: "merian".capitalize, password: "aquiti", company: "Aquiti", role: "admin")
+fouad = User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "admin")
+kos = User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "admin")
+mathieu = User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "admin")
 testEntrepreneur = User.create!(email: "en@test", password: "test", role: "entrepreneur")
 testInvestissor = User.create!(email: "in@test", password: "test", role: "investisseur")
 testExpert = User.create!(email: "ex@test", password: "test", role: "expert")
@@ -39,18 +39,15 @@ Article.create!(title: "Du changement chez YouTube : logo, design et application
 puts "Articles created"
 
 # Tags for the articles
-Tag.create!(name: "Communications")
-Tag.create!(name: "Expériences Numériques")
-Tag.create!(name: "Industrie 4.0")
-Tag.create!(name: "Santé du futur")
-Tag.create!(name: "Innovations")
-Tag.create!(name: "Financements")
-Tag.create!(name: "Marketing")
+Tag.create!(name: "Building")
+Tag.create!(name: "Hiring")
+Tag.create!(name: "Funding")
+Tag.create!(name: "Growing")
 
 puts "Tags for articles created"
 
 # Link articles & tags
-ArticleTag.create!(article: Article.first, tag: Tag.limit(5).first)
+ArticleTag.create!(article: Article.first, tag: Tag.first)
 ArticleTag.create!(article: Article.second, tag: Tag.third)
 ArticleTag.create!(article: Article.third, tag: Tag.third)
 
@@ -59,7 +56,7 @@ UserTag.create!(tag: Tag.first, user: florent)
 UserTag.create!(tag: Tag.third, user: florent)
 UserTag.create!(tag: Tag.third, user: kos)
 UserTag.create!(tag: Tag.fourth, user: fouad)
-UserTag.create!(tag: Tag.all[6], user: mathieu)
+UserTag.create!(tag: Tag.fourth, user: mathieu)
 
 puts "Tags linked to articles and users"
 
