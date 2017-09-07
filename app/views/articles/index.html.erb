@@ -1,4 +1,4 @@
-<p><%= link_to "Write your publication", new_article_path(@article), class: "btn btn-primary"  %></p>
+<%= button_new_article %>
 <h1 class= "text-center">Articles</h1>
 
 <div class="product">
@@ -19,14 +19,10 @@
           <% end %>
         </li>
         <li>
-          <%= link_to edit_article_path(article) do  %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
+          <%= button_edit_article(article) %>
         </li>
         <li>
-          <%= link_to article_path(article), method: :delete do  %>
-            <i class="fa fa-trash"></i>
-          <% end %>
+          <%= button_destroy_article(article) %>
         </li>
         <li>
           <%= link_to article.url, target: "_blank" do %>
