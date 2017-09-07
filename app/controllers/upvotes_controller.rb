@@ -1,5 +1,5 @@
 class UpvotesController < ApplicationController
-  before_action :set_upvote, only: [:create]
+  before_action :set_article, only: [:create]
 
   def create
     @article.upvotes.create! user: current_user
@@ -8,7 +8,7 @@ class UpvotesController < ApplicationController
 
   private
 
-  def set_upvote
-    @article = Article.find(params[:id])
+  def set_article
+    @article = Article.find(params[:article_id])
   end
 end

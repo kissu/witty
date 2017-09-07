@@ -4,12 +4,15 @@
       <p><%= link_to "Write your publication", new_article_path, class: "btn btn-primary"  %></p>
       <h1 class= "text-center">Articles</h1>
       <% @articles.each do |article| %>
+
         <div class="product">
-          <div class="product-arrow">
-            <div class="product-upvote">
-              <div class="product-count"><%= article.upvotes.count %></div>
-            </div>
-          </div>
+            <%= link_to article_upvotes_path(article), method: :post, class: 'product-upvote' do %>
+              <div class="product-arrow"></div>
+              <div class="product-count">
+                <%= article.upvotes.count %>
+              </div>
+            <% end %>
+
           <div class="product-body">
             <h3><%= article.title %></h3>
             <%= article.description %>
