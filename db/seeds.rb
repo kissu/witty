@@ -47,7 +47,7 @@ Tag.create!(name: "Growing")
 puts "Tags for articles created"
 
 # Link articles & tags
-ArticleTag.create!(article: Article.first, tag: Tag.limit(5).first)
+ArticleTag.create!(article: Article.first, tag: Tag.first)
 ArticleTag.create!(article: Article.second, tag: Tag.third)
 ArticleTag.create!(article: Article.third, tag: Tag.third)
 
@@ -56,7 +56,7 @@ UserTag.create!(tag: Tag.first, user: florent)
 UserTag.create!(tag: Tag.third, user: florent)
 UserTag.create!(tag: Tag.third, user: kos)
 UserTag.create!(tag: Tag.fourth, user: fouad)
-UserTag.create!(tag: Tag.all[6], user: mathieu)
+UserTag.create!(tag: Tag.fourth, user: mathieu)
 
 puts "Tags linked to articles and users"
 
