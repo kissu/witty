@@ -19,9 +19,7 @@ module ApplicationHelper
   end
 
   def button_external_link(article)
-    link_to article.url, target: "_blank" do
-      '<i class="fa fa-external-link"></i>'.html_safe
-    end
+    link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank"
   end
 
 end
