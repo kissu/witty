@@ -19,6 +19,6 @@ class User < ApplicationRecord
   def vote_for user
     user.upvotes.where(user: self).first
   end
-
+  
   #include UpvotableConcern
 end
