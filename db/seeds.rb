@@ -7,10 +7,10 @@ Article.destroy_all
 User.destroy_all
 
 # User Generation
-florent = User.create!(email: "florent@aquiti.fr", first_name: "florent".capitalize, last_name: "merian".capitalize, password: "aquiti", company: "Aquiti", role: "admin")
-fouad = User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "admin")
-kos = User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "admin")
-mathieu = User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "admin")
+florent = User.create!(email: "florent@aquiti.fr", first_name: "florent".capitalize, last_name: "merian".capitalize, password: "aquiti", company: "Aquiti", role: "super_admin")
+fouad = User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "super_admin")
+kos = User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "super_admin")
+mathieu = User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "super_admin")
 testEntrepreneur = User.create!(email: "en@test", password: "test", role: "entrepreneur")
 testInvestissor = User.create!(email: "in@test", password: "test", role: "investisseur")
 testExpert = User.create!(email: "ex@test", password: "test", role: "expert")
