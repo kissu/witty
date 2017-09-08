@@ -12,5 +12,13 @@ class User < ApplicationRecord
 
   enum role: { entrepreneur: 0, expert: 10, investisseur: 20, super_admin: 30}
 
-  include UpvotableConcern
+  def voted_for?(article)
+    article.upvotes.where(user: self).any?
+  end
+
+  def vote_for user
+    user.upvotes.where(user: self).first
+  end
+
+  #include UpvotableConcern
 end
