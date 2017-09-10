@@ -3,12 +3,14 @@
     <div class="product-count">Upvotes <%= article[:upvotes] %></div>
   </div>
 </div>
-<div class="product-body tag-<%= article[:tag].parameterize %>">
+<div class="product-body">
   <h3><%= article[:title] %></h3>
   <%= article[:description] %>
   <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li>
-      Tag: <%= article[:tag] %>
+    <li>Tag:
+      <% article[:tags].each do |tag| %>
+        <%= tag.name %>
+      <% end %>
     </li>
     <li>
       <%#= button_edit_article(article) %>
