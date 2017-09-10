@@ -1,0 +1,25 @@
+<div class="product-arrow">
+  <div class="product-upvote">
+    <div class="product-count">Upvotes <%= article[:upvotes] %></div>
+  </div>
+</div>
+<div class="product-body tag-<%= article[:tag].parameterize %>">
+  <h3><%= article[:title] %></h3>
+  <%= article[:description] %>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li>
+      Tag: <%= article[:tag] %>
+    </li>
+    <li>
+      <%#= button_edit_article(article) %>
+    </li>
+    <li>
+      <%#= button_destroy_article(article) %>
+    </li>
+    <li>
+      <%#= link_to @array_sorted_articles[article][4], target: "_blank" do %>
+        <i class="fa fa-external-link"></i>
+      <%# end %>
+    </li>
+  </ul>
+</div>
