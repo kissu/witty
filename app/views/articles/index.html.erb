@@ -1,32 +1,15 @@
 <h1 class= "text-center">Articles</h1>
 
-<div class="product">
-  <% @array_sorted_articles.each_index do |article| %>
-    <div class="product-arrow">
-      <div class="product-upvote">
-        <div class="product-count">Upvotes <%= @array_sorted_articles[article][1] %></div>
-      </div>
-    </div>
-    <div class="product-body">
-      <h3><%= @array_sorted_articles[article][2] %></h3>
-      <%= @array_sorted_articles[article][3] %>
+<hr>--------- ★ NEW ARTICLES ★ -----------<hr>
 
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li>
-          <% @array_sorted_articles[article][5] %>
-        </li>
-        <li>
-          <%#= button_edit_article(article) %>
-        </li>
-        <li>
-          <%#= button_destroy_article(article) %>
-        </li>
-        <li>
-          <%#= link_to @array_sorted_articles[article][4], target: "_blank" do %>
-            <i class="fa fa-external-link"></i>
-          <%# end %>
-        </li>
-      </ul>
-    </div>
+<div class="product">
+  <% @new_articles.each do |article| %>
+    <%= render partial: "articles/content", locals: { article: article } %>
+  <% end %>
+
+<hr>--------- ↓ OLDER ONES ↓ -----------<hr>
+
+  <% @array_sorted_articles.each do |article| %>
+    <%= render partial: "articles/content", locals: { article: article } %>
   <% end %>
 </div>

@@ -40,7 +40,8 @@ Article.create!(title: "NEW article) Piratage d'Equifax : des données très sen
               description: "La société américaine Equifax, spécialisée dans les dossiers et historiques de crédits, s’est fait dérober durant l’été les données personnelles de millions de clients. Une cyberattaque désastreuse pour les victimes, tant les informations peuvent être sensibles. D’autant que ce n’est pas la première fois que l’entreprise est épinglée.",
               url: "https://www.nextinpact.com/news/105125-piratage-dequifax-jusqua-143-millions-victimes-donnees-tres-sensibles-derobees.htm",
               permalink: "#",
-              user: kos)
+              user: kos,
+              created_at: "Sun, 12 Dec 2012 12:12:12 CEST +02:00")
 
 puts "Articles created"
 

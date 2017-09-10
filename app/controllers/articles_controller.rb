@@ -1,18 +1,32 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @articles = policy_scope(Article)
     @articles = Article.all
+    @articles = policy_scope(Article)
+
     @array_sorted_articles = []
-
+    @new_articles = []
     @articles.each do |article|
-      @array_sorted_articles << [ article.id, article.upvotes.size,
-        article.title, article.description, article.url, article.tags.first.name ]
+      # test below : last user connection >= 1 day of the last article posted ?
+      if (current_user.last_sign_in_at - article.created_at > 86400)
+        @new_articles << { id: article.id,
+                           upvotes: article.upvotes.size,
+                           title: article.title,
+                           description: article.description,
+                           url: article.url,
+                           tag: article.tags.first.name }
+      else
+        @array_sorted_articles << { id: article.id,
+                                    upvotes: article.upvotes.size,
+                                    title: article.title,
+                                    description: article.description,
+                                    url: article.url,
+                                    tag: article.tags.first.name }
+      end
     end
-
-    # on trie les articles en ordre decroissant
-    @array_sorted_articles.sort_by!{ |article,vote| vote }.reverse!
+    @array_sorted_articles.sort_by!{ |k,v| k[:upvotes] }.reverse!
   end
 
   def new
