@@ -16,14 +16,14 @@ class ArticlesController < ApplicationController
                            title: article.title,
                            description: article.description,
                            url: article.url,
-                           tag: article.tags.first.name }
+                           tags: article.tags }
       else
         @array_sorted_articles << { id: article.id,
                                     upvotes: article.upvotes.size,
                                     title: article.title,
                                     description: article.description,
                                     url: article.url,
-                                    tag: article.tags.first.name }
+                                    tags: article.tags }
       end
     end
     @array_sorted_articles.sort_by!{ |k,v| k[:upvotes] }.reverse!
