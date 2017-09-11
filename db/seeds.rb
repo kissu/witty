@@ -57,9 +57,9 @@ puts "Tags for articles created"
 ArticleTag.create!(article: Article.first, tag: Tag.first)
 ArticleTag.create!(article: Article.second, tag: Tag.second)
 ArticleTag.create!(article: Article.second, tag: Tag.third)
-ArticleTag.create!(article: Article.third, tag: Tag.first)
-ArticleTag.create!(article: Article.third, tag: Tag.second)
 ArticleTag.create!(article: Article.third, tag: Tag.third)
+ArticleTag.create!(article: Article.third, tag: Tag.second)
+# ArticleTag.create!(article: Article.third, tag: Tag.third)
 ArticleTag.create!(article: Article.fourth, tag: Tag.fourth)
 
 # Link users & tags
