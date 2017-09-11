@@ -1,0 +1,20 @@
+<div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'><%= article.upvotes.count %></div>
+  </div>
+  <div class='product-body'>
+    <h3><%= link_to article.title, article.url , target: "_blank" %></h3>
+    <p><%= article.description %></p>
+    <p>
+      <% article.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </p>
+  </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li><%= button_edit_article(article) %></li>
+    <li><%= button_destroy_article(article) %></li>
+    <li><%= button_external_link(article) %>
+  </ul>
+</div>
