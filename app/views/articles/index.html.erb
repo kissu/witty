@@ -1,14 +1,39 @@
 <h1 class= "text-center">Articles</h1>
 
+<hr>--------- 🏴 TAG SORT 🏴 -----------<hr>
+
+<ul>
+   <li data-multifilter="all"> All items </li>
+   <li data-multifilter="1">1) Building</li>
+   <li data-multifilter="2">2) Hiring</li>
+   <li data-multifilter="3">3) Funding</li>
+   <li data-multifilter="4">4) Growing</li>
+   <li data-shuffle> Shuffle items </li>
+</ul>
+
+<!-- <div class="filtr-container">
+    <div class="filtr-item" data-category="1">
+       <p>hello</p>
+    </div>
+    <div class="filtr-item" data-category="2">
+       <p>yolo</p>
+    </div>
+    <div class="filtr-item" data-category="3">
+       <p>swag</p>
+    </div>
+</div> -->
+
 <hr>--------- ★ NEW ARTICLES ★ -----------<hr>
 
 <div class="product">
   <% @new_articles.each do |article| %>
     <%= render partial: "articles/content", locals: { article: article } %>
   <% end %>
+</div>
 
 <hr>--------- ↓ OLDER ONES ↓ -----------<hr>
 
+<div class="product filtr-container">
   <% @array_sorted_articles.each do |article| %>
     <%= render partial: "articles/content", locals: { article: article } %>
   <% end %>
