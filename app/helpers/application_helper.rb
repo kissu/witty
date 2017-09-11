@@ -26,6 +26,6 @@ module ApplicationHelper
     mail_to "florent.merian@aquiti.fr", "Envoyer vos metrics",
       subject: "Sujet du message",
       body: "Corps du message ... interpollation de variable => email : #{current_user.email}",
-      class: "mail_to"
+      class: "mail_to navbar-btn"
   end
 end
