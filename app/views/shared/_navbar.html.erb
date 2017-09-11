@@ -11,7 +11,8 @@
 
       <!-- Links when logged in -->
       <%= button_new_article %>
-      <%= link_to "Mail To", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= send_mail%>
+
 
 
       <!-- Avatar with dropdown menu -->
@@ -21,7 +22,7 @@
           <i class="fa fa-user avatar dropdown-toggle" aria-hidden="true" id="navbar-wagon-menu" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_password_path(current_user) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
