@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 350px;
 }
 
 /* Basic navbar item */
@@ -44,6 +45,13 @@
 .navbar-wagon-link:hover {
   color: $orange;
   text-decoration: none;
+}
+.mail_to {
+  color: $white;
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
 }
 
 /* Dropdown menu */
