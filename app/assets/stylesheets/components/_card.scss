@@ -67,23 +67,24 @@
   padding: 0;
 }
 .product-controls a {
-  color: $light-gray;
+  color: $gray;
   padding: 20px;
+  &:hover {
+  color: $blue ;
+  }
   i {
-    font-size: 20px;
+    font-size: 30px;
   }
 
 }
-.product-controls a:hover {
-  color: $real-white ;
-}
+
 .product-controls-hidden a {
   color: transparent;
   font-size: 15px;
   transition: all 0.15s ease;
   border-color: transparent;
 }
-.btn-share {
+#btn-share {
   background-color: $blue;
   color: $real-white;
   padding: 20px;
