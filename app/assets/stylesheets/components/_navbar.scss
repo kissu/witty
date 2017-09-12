@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $gray;
+  background: white;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -39,19 +39,35 @@
 /* Navbar link */
 .navbar-wagon-link {
   transition: color 0.3s ease;
-  color: #FFF;
+  color: $turquoise;
   font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: $orange;
+  &:hover {
+  color: $blue;
   text-decoration: none;
+  }
 }
+
 .mail_to {
   color: #FFF;
   &:hover {
     color: $orange;
     text-decoration: none;
   }
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $turquoise;
+  border-radius: 20px;
 }
 .navbar-btn {
   cursor: pointer;
@@ -60,11 +76,8 @@
   text-decoration: none;
   padding: 10px;
   transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   display: inline-block;
-  color: #FFF;
+  color: white;
   border: 2px #FFF solid;
   &:hover {
   background-color: $blue;
