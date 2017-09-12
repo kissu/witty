@@ -10,21 +10,21 @@ class ArticlesController < ApplicationController
     @new_articles = []
     @articles.each do |article|
       # test below : last user connection >= 1 day of the last article posted ?
-      if (current_user.last_sign_in_at - article.created_at > 86400)
-        @new_articles << { id: article.id,
-                           upvotes: article.upvotes.size,
-                           title: article.title,
-                           description: article.description,
-                           url: article.url,
-                           tags: article.tags }
-      else
-        @array_sorted_articles << { id: article.id,
-                                    upvotes: article.upvotes.size,
-                                    title: article.title,
-                                    description: article.description,
-                                    url: article.url,
-                                    tags: article.tags }
-      end
+      # if (current_user.last_sign_in_at - article.created_at > 86400)
+      #   @new_articles << { id: article.id,
+      #                      upvotes: article.upvotes.size,
+      #                      title: article.title,
+      #                      description: article.description,
+      #                      url: article.url,
+      #                      tags: article.tags }
+      # else
+      #   @array_sorted_articles << { id: article.id,
+      #                               upvotes: article.upvotes.size,
+      #                               title: article.title,
+      #                               description: article.description,
+      #                               url: article.url,
+      #                               tags: article.tags }
+      # end
     end
     @array_sorted_articles.sort_by!{ |k,v| k[:upvotes] }.reverse!
   end

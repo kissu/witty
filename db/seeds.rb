@@ -41,7 +41,7 @@ Article.create!(title: "NEW article) Piratage d'Equifax : des données très sen
               url: "https://www.nextinpact.com/news/105125-piratage-dequifax-jusqua-143-millions-victimes-donnees-tres-sensibles-derobees.htm",
               permalink: "#",
               user: kos,
-              created_at: "Sun, 12 Dec 2012 12:12:12 CEST +02:00")
+              created_at: "Sun, 1 Aug 2017 12:12:12 CEST +02:00")
 
 puts "Articles created"
 
@@ -72,12 +72,12 @@ UserTag.create!(tag: Tag.fourth, user: mathieu)
 puts "Tags linked to articles and users"
 
 # Upvote Generation
-Upvote.create!(upvotable: Article.first, user: kos)
-Upvote.create!(upvotable: Article.first, user: fouad)
-Upvote.create!(upvotable: Article.second, user: mathieu)
-Upvote.create!(upvotable: Article.second, user: kos)
-Upvote.create!(upvotable: Article.second, user: florent)
-Upvote.create!(upvotable: Article.third, user: fouad)
+# Upvote.create!(upvotable: Article.first, user: kos)
+# Upvote.create!(upvotable: Article.first, user: fouad)
+# Upvote.create!(upvotable: Article.second, user: mathieu)
+# Upvote.create!(upvotable: Article.second, user: kos)
+# Upvote.create!(upvotable: Article.second, user: florent)
+# Upvote.create!(upvotable: Article.third, user: fouad)
 
 # print all the upvoted articles by fouad
 # upvotes.where(user: f)

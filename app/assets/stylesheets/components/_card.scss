@@ -1,0 +1,117 @@
+.product {
+  display: flex;
+  justify-content: space-arround;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+  margin: 30px 0;
+  border-radius: 5px;
+  transition: all 0.15s ease;
+  background: #FFF;
+}
+
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+  h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+  }
+  p {
+  font-weight: lighter;
+  color: $gray;
+  margin-bottom: 0;
+  }
+  a {
+    color: $gray;
+    &:hover {
+    text-decoration: none;
+    color: $blue;
+    }
+  }
+
+}
+
+/* Upvote design */
+.product-upvote {
+  padding-right: 30px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.product-count {
+  margin: 2px 0 0;
+}
+.product-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.product-controls {
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0px;
+  padding: 0;
+}
+.product-controls a {
+  color: $gray;
+  padding: 20px;
+  &:hover {
+  color: $blue ;
+  }
+  i {
+    font-size: 30px;
+  }
+
+}
+
+.product-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+#btn-share {
+  background-color: $blue;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  &:hover {
+    background-color: $light-gray;
+  }
+}
+
+/* Hover effects */
+.product:hover {
+  background: #FFF;
+  cursor: pointer;
+}
+.product-upvote:hover, .product-upvote.product-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.product-upvote-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+// .product:hover .product-upvote {
+//   transform: scale(1.2)
+// }
+.product:hover .product-controls-hidden a {
+  color: #E6E6E6;
+}
+.product-upvote:hover .product-arrow {
+  border-bottom: 9px solid #5898f1;
+}
