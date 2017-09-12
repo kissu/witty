@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def button_external_link(article)
-    link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank"
+    link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end
 
   def send_mail
