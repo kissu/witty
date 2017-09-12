@@ -22,4 +22,10 @@ module ApplicationHelper
     link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end
 
+  def send_mail
+    mail_to "florent.merian@aquiti.fr", "Envoyer vos metrics",
+      subject: "Sujet du message",
+      body: "Corps du message ... interpollation de variable => email : #{current_user.email}",
+      class: "mail_to navbar-btn"
+  end
 end
