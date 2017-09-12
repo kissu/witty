@@ -86,7 +86,7 @@
 }
 #btn-share {
   background-color: $blue;
-  color: $real-white;
+  color: #FFF;
   padding: 20px;
   border-radius: 5px;
   &:hover {
@@ -96,7 +96,7 @@
 
 /* Hover effects */
 .product:hover {
-  background: $real-white;
+  background: #FFF;
   cursor: pointer;
 }
 .product-upvote:hover, .product-upvote.product-upvote-upvoted {
