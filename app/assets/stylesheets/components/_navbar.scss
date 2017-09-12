@@ -39,7 +39,7 @@
 /* Navbar link */
 .navbar-wagon-link {
   transition: color 0.3s ease;
-  color: $white;
+  color: #FFF;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -47,7 +47,7 @@
   text-decoration: none;
 }
 .mail_to {
-  color: $white;
+  color: #FFF;
   &:hover {
     color: $orange;
     text-decoration: none;
@@ -64,11 +64,11 @@
   -moz-transition: .3s;
   -o-transition: .3s;
   display: inline-block;
-  color: $white;
-  border: 2px $white solid;
+  color: #FFF;
+  border: 2px #FFF solid;
   &:hover {
   background-color: $blue;
-  color: $white;
+  color: #FFF;
   }
 }
 
@@ -97,7 +97,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: #FFF;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
