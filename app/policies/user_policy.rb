@@ -1,13 +1,7 @@
 class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      @users = []
-      scope.find_each do |user|
-        if user.invitation_accepted?
-          @users << user
-        end
-      end
-      @users
+      scope.where.not(invitation_accepted_at: nil)
     end
   end
 end
