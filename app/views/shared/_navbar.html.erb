@@ -16,11 +16,7 @@
 
       <div class="navbar-wagon-item navbar-wagon-link">
         <div class="badge-container">
-          <%= mail_to "florent.merian@aquiti.fr", '<i class="fa fa-bolt"></i>'.html_safe, subject: "Reporting", class: "badge" do %>
-              <p>Bonjour,</p>
-
-              <h3>Nos derniers indicateurs</h3>
-          <% end %>
+          <%= send_mail %>
         </div>
       </div>
       <!-- Avatar with dropdown menu -->
