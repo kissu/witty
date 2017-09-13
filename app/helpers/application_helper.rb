@@ -22,7 +22,7 @@ module ApplicationHelper
     link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end
 
-  def send_mail
+  def send_reporting
     mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "badge",
     body: "Bonjour,\n
       Nos derniers indicateurs :
