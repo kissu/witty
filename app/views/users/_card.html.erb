@@ -1,0 +1,20 @@
+<div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'><%= element.upvotes.count %></div>
+  </div>
+  <div class='product-body'>
+    <h3><%= element.title %></h3>
+    <p><%= element.description %></p>
+    <p>
+      <% element.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </p>
+  </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
