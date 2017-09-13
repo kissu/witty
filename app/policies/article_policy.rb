@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    user.entrepreneur?
+    true
   end
 
   def update?
@@ -16,6 +16,4 @@ class ArticlePolicy < ApplicationPolicy
   def destroy?
     user.investisseur? or user.super_admin?
   end
-
-  private
 end

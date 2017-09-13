@@ -10,14 +10,19 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= button_new_article %>
-      <%= send_mail%>
+      <div>
+        <%= button_new_article  %>
+      </div>
 
+      <div class="navbar-wagon-item navbar-wagon-link">
+        <div class="badge-container">
+          <%= link_to '<i class="fa fa-bolt"></i>'.html_safe, "#", class:"badge" %>
+        </div>
+      </div>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-
-          <i class="fa fa-user avatar dropdown-toggle" aria-hidden="true" id="navbar-wagon-menu" data-toggle="dropdown"></i>
+          <%= image_tag 'img-user-tag', class:"avatar dropdown-toggle", id:"navbar-wagon-menu" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_password_path(current_user) do %>
