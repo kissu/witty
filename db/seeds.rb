@@ -41,7 +41,7 @@ Article.create!(title: "NEW article) Piratage d'Equifax : des données très sen
               url: "https://www.nextinpact.com/news/105125-piratage-dequifax-jusqua-143-millions-victimes-donnees-tres-sensibles-derobees.htm",
               permalink: "#",
               user: kos,
-              created_at: "Sun, 12 Dec 2012 12:12:12 CEST +02:00")
+              created_at: "Sun, 1 Aug 2017 12:12:12 CEST +02:00")
 
 puts "Articles created"
 

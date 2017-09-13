@@ -6,24 +6,14 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    is_entrepreneur?
+    true
   end
 
   def update?
-    is_investor_or_superior?
+    user.investisseur? or user.super_admin?
   end
 
   def destroy?
-    is_investor_or_superior?
-  end
-
-  private
-
-  def is_investor_or_superior?
-    user.role >= "investisseur" # investor and superior
-  end
-
-  def is_entrepreneur?
-    user.role >= "entrepreneur" #
+    user.investisseur? or user.super_admin?
   end
 end
