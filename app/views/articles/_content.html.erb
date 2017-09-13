@@ -15,32 +15,31 @@
     <% end %>
   <% end %>
 
-<div class="article-card filtr-item" data-category="<% article[:tags].each do |tag| %><%= tag.id %><% end %>">
-  <div class="product-body">
-    <div class="product-arrow">
-      <div class="product-upvote">
-        <div class="product-count">Upvotes <%= article[:upvotes] %></div>
+  <!-- sorry for this nasty line, will be fixed asap -->
+  <div class="article-card filtr-item" data-category="<% article.tags.each do |tag| %><%= tag.id %><% end %>">
+    <div class="product-body">
+      <div class="product-arrow">
+        <div class="product-upvote">
+          <div class="product-count">Upvotes <%= article.upvotes.size %></div>
+        </div>
       </div>
+      <h3><%= article[:title] %></h3>
+      <%= article[:description] %>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li>Tag:
+          <!-- sorry for this nasty line, will be fixed asap -->
+          <% article.tags.each do |tag| %><%= tag.name %><% end %>
+        <li>
+          <%= button_edit_article(article) %>
+        </li>
+        <li>
+          <%= button_destroy_article(article) %>
+        </li>
+        <li>
+          <%= link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank" %>
+        </li>
+      </ul>
     </div>
-    <h3><%= article[:title] %></h3>
-    <%= article[:description] %>
-    <ul class="list-inline product-controls hidden-sm hidden-xs">
-      <li>Tag:
-        <% article[:tags].each do |tag| %>
-          <%= tag.name %>
-        <% end %>
-      </li>
-      <li>
-        <%#= button_edit_article(article) %>
-      </li>
-      <li>
-        <%#= button_destroy_article(article) %>
-      </li>
-      <li>
-        <%#= link_to @array_sorted_articles[article][4], target: "_blank" do %>
-          <i class="fa fa-external-link"></i>
-        <%# end %>
-      </li>
-    </ul>
   </div>
+
 </div>

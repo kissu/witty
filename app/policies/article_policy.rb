@@ -10,11 +10,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.investisseur? or user.admin?
+    user.investisseur? or user.super_admin?
   end
 
   def destroy?
-    user.investisseur? or user.admin?
+    user.investisseur? or user.super_admin?
   end
 
   private
