@@ -23,9 +23,10 @@ module ApplicationHelper
   end
 
   def send_mail
-    mail_to "florent.merian@aquiti.fr", "Envoyer vos metrics",
-      subject: "Sujet du message",
-      body: "Corps du message ... interpollation de variable => email : #{current_user.email}",
-      class: "mail_to navbar-btn"
+    mail_to "florent.merian@aquiti.fr", '<i class="fa fa-bolt"></i>'.html_safe,
+      subject: "Reporting",
+      body: "Bonjour,
+              <strong>Nos derniers</strong> indicateurs",
+      class: "badge"
   end
 end

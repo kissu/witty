@@ -16,13 +16,17 @@
 
       <div class="navbar-wagon-item navbar-wagon-link">
         <div class="badge-container">
-          <%= link_to '<i class="fa fa-bolt"></i>'.html_safe, "#", class:"badge" %>
+          <%= mail_to "florent.merian@aquiti.fr", '<i class="fa fa-bolt"></i>'.html_safe, subject: "Reporting", class: "badge" do %>
+              <p>Bonjour,</p>
+
+              <h3>Nos derniers indicateurs</h3>
+          <% end %>
         </div>
       </div>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag 'img-user-tag', class:"avatar dropdown-toggle", id:"navbar-wagon-menu" %>
+          <%= image_tag 'img-user-tag', class: "avatar dropdown-toggle", id:"navbar-wagon-menu" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_password_path(current_user) do %>
