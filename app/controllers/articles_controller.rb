@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
+    @articles = Article.all
     @articles = policy_scope(Article)
+
+    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC')
   end
 
   def new

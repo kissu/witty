@@ -1,49 +1,24 @@
-<%= render 'button_tag' %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1 class= "text-center">Articles</h1>
-      <% @articles.each do |article| %>
-        <div class="product">
-          <% if current_user.voted_for?(article) %>
-            <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'product-upvote' do %>
-              <div class="product-arrow"></div>
-              <div class="product-count">
-                <%= article.upvotes.count %>
-              </div>
-            <% end %>
-          <% else %>
-            <%= link_to upvotes_path(upvotable_id: article.id, upvotable_type: article.class), method: :post, class: 'product-upvote' do %>
-              <div class="product-arrow"></div>
-              <div class="product-count">
-                <%= article.upvotes.count %>
-              </div>
-            <% end %>
-          <% end %>
+<!-- <div class="filtr-container">
+    <div class="filtr-item" data-category="1">
+       <p>hello</p>
+    </div>
+    <div class="filtr-item" data-category="2">
+       <p>yolo</p>
+    </div>
+    <div class="filtr-item" data-category="3">
+       <p>swag</p>
+    </div>
+</div> -->
+<!-- <hr>--------- ★ NEW ARTICLES ★ -----------<hr>
+<div class="product"> -->
+  <%# @sorted_articles.each do |article| %>
+    <%#= render partial: "articles/content", locals: { article: article } %>
+  <%# end %>
+<!-- </div> -->
+<hr>--------- ↓ OLDER ONES ↓ -----------<hr>
 
-          <div class="product-body">
-            <h3><%= article.title %></h3>
-            <%= article.description %>
-            <ul class="list-inline product-controls hidden-sm hidden-xs">
-              <li>
-                <% article.tags.each do |tag| %>
-                  <%= tag.name %>
-                <% end %>
-              </li>
-              <li>
-               <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_article_path(article) %>
-              </li>
-              <li>
-                <%= link_to '<i class="fa fa-trash"></i>'.html_safe, article_path(article), method: :delete %>
-              </li>
-              <li>
-                <%= link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank" %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-  </div>
+<div class="product filtr-container">
+  <% @sorted_articles.each do |article| %>
+    <%= render partial: "articles/content", locals: { article: article } %>
+  <% end %>
 </div>
