@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :article_tags
-  has_many :user_tags
+  has_and_belongs_to_many :articles
+  has_and_belongs_to_many :contacts
 end
