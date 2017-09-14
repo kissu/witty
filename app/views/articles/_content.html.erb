@@ -1,31 +1,27 @@
 <div class="product">
-  <% if current_user.voted_for?(article) %>
-    <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'product-upvote' do %>
-      <div class="product-arrow"></div>
-      <div class="product-count">
-        <%= article.upvotes.count %>
-      </div>
-    <% end %>
-  <% else %>
-    <%= link_to upvotes_path(upvotable_id: article.id, upvotable_type: article.class), method: :post, class: 'product-upvote' do %>
-      <div class="product-arrow"></div>
-      <div class="product-count">
-        <%= article.upvotes.count %>
-      </div>
-    <% end %>
-  <% end %>
-
   <!-- sorry for this nasty line, will be fixed asap -->
   <div class="article-card filtr-item" data-category="<% article.tags.each do |tag| %><%= tag.id %><% end %>">
+
     <div class="product-body">
-      <div class="product-arrow">
-        <div class="product-upvote">
-          <div class="product-count">Upvotes <%= article.upvotes.size %></div>
-        </div>
-      </div>
+      <% if current_user.voted_for?(article) %>
+        <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'product-upvote' do %>
+          <div class="product-arrow">↑</div>
+          <div class="product-count">
+            <%= article.upvotes.count %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to upvotes_path(upvotable_id: article.id, upvotable_type: article.class), method: :post, class: 'product-upvote' do %>
+          <div class="product-arrow">↑</div>
+          <div class="product-count">
+            <%= article.upvotes.count %>
+          </div>
+        <% end %>
+      <% end %>
+
       <h3><%= article[:title] %></h3>
       <%= article[:description] %>
-      <ul class="list-inline product-controls hidden-sm hidden-xs">
+      <ul class="list-inline product-controls">
         <li>Tag:
           <!-- sorry for this nasty line, will be fixed asap -->
           <% article.tags.each do |tag| %><%= tag.name %><% end %>
@@ -40,5 +36,6 @@
         </li>
       </ul>
     </div>
+
   </div>
 </div>
