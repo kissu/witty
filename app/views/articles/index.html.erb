@@ -9,22 +9,28 @@
        <p>swag</p>
     </div>
 </div> -->
-
-<hr>--------- ★ NEW ARTICLES ★ -----------<hr>
-<div class="products-container">
-  <% @new_articles.each do |article| %>
-    <%= render partial: "articles/content", locals: { article: article } %>
-  <% end %>
-</div>
-<hr>--------- ↓ OLDER ONES ↓ -----------<hr>
-
-<div class="products-container filtr-container infinite-container">
-  <% @sorted_articles.each do |article| %>
-    <%= render partial: "articles/content", locals: { article: article } %>
-  <% end %>
+<p class="text-center">--------- ★ NEW ARTICLES ★ -----------<p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="products-container">
+        <% @new_articles.each do |article| %>
+          <%= render partial: "articles/content", locals: { article: article } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="pagination">
-  <span class="pagination__current">Page 1</span>
-  <a class="pagination__next" href="/">Next</a>
+<p class="text-center">--------- ↓ OLDER ONES ↓ -----------<p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="products-container filtr-container infinite-container">
+        <% @sorted_articles.each do |article| %>
+          <%= render partial: "articles/content", locals: { article: article } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
