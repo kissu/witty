@@ -22,10 +22,27 @@ module ApplicationHelper
     link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end
 
-  def send_mail
-    mail_to "florent.merian@aquiti.fr", "Envoyer vos metrics",
-      subject: "Sujet du message",
-      body: "Corps du message ... interpollation de variable => email : #{current_user.email}",
-      class: "mail_to navbar-btn"
+  def send_reporting
+    mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "badge",
+    body: "Bonjour,\n
+      Nos derniers indicateurs :
+          Chiffre d’affaires mensuel : €
+          Dépenses mensuelles : €
+          Trésorerie disponible à date : €
+          Nombre de clients : #
+          Taux de conversion lead -- client : %
+          Taux de satisfaction client : %\n
+      Mes besoins :
+          Une nouvelle offre d’emploi
+          Une mise en relation avec un de nos experts
+          Un conseil particulier ?\n
+      Quelques informations diverses :
+          Un nouveau cas client ? une récente publication ? Une interview ?
+          Bonne nouvelle ou mauvaise nouvelle ;
+          Peu importe, nous sommes à votre écoute\n
+      Merci\n
+      Bonne journée," do
+          "<i class='fa fa-bolt'></i>".html_safe
+          end
   end
 end
