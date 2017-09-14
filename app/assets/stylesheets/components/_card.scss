@@ -1,32 +1,36 @@
-.product {
-  padding: 30px 30px 30px 30px;
-  margin: 30px 0;
-  border-radius: 5px;
-  transition: all 0.15s ease;
-  background: #FFF;
+not sure if needed, do we have
+* {
+  box-sizing: border-box;
 }
-
-/* Body design */
-.product-body {
+.wrapper {
+  width: 75vw;
+  margin: 0 auto;
+}
+.products-container {
+  // don't delete this selector, reminder for later on..
+}
+.product {
   display: flex;
   justify-content: space-around;
+  padding: 30px;
+  margin: $margin-between-cards;
+  border-radius: $border-radius-large;
   align-items: center;
-  flex: 1 1 auto;
-  h3 {
-  font-weight: bold;
-  font-size: 23px;
-  margin-top: 0;
+  background-color: #fff;
+  h2 {
+    font-weight: bold;
+    font-size: 23px;
   }
   p {
-  font-weight: lighter;
-  color: $gray;
-  margin-bottom: 0;
+    font-weight: lighter;
+    color: $gray;
+    font-size: 14px;
   }
   a {
-    color: $gray;
+    background-color: $green;
+    color: #fff;
     &:hover {
       text-decoration: none;
-      color: $blue;
     }
   }
 }
@@ -42,6 +46,7 @@
 }
 .product-count {
   margin: 2px 0 0;
+  color: red;
 }
 .product-arrow {
   transition: all 0.15s ease;
@@ -51,7 +56,7 @@
   border-right: 6px solid transparent;
   border-top: 6px solid transparent;
   border-bottom: 9px solid black;
-  border-radius: 2px;
+  border-radius: $border-radius-small;
   margin: auto;
 }
 
@@ -61,20 +66,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-align: center;
-  margin: 0px;
-  padding: 0;
 }
 .product-controls a {
   color: $gray;
   padding: 20px;
   &:hover {
-  color: $blue ;
+    color: $green;
   }
   i {
     font-size: 30px;
   }
-
 }
 
 // .product-controls-hidden a {
@@ -83,34 +84,53 @@
 //   transition: all 0.15s ease;
 //   border-color: transparent;
 // }
-// #btn-share {
-//   background-color: $blue;
-//   color: #FFF;
-//   padding: 20px;
-//   border-radius: 5px;
-//   &:hover {
-//     background-color: $light-gray;
-//   }
-// }
+#btn-share {
+  background-color: $green;
+  color: #FFF;
+  padding: 20px;
+  border-radius: $border-radius-large;
+  &:hover {
+    background-color: $light-gray;
+  }
+}
 
-// /* Hover effects */
-// .product:hover {
-//   background: #FFF;
-//   cursor: pointer;
-// }
-// .product-upvote:hover, .product-upvote.product-upvote-upvoted {
-//   color: #5898f1;
-//   cursor: pointer;
-// }
-// .product-upvote-upvoted .product-arrow {
-//   border-bottom-color: #5898f1;
-// }
-// // .product:hover .product-upvote {
-// //   transform: scale(1.2)
-// // }
-// .product:hover .product-controls-hidden a {
-//   color: #E6E6E6;
-// }
-// .product-upvote:hover .product-arrow {
-//   border-bottom: 9px solid #5898f1;
-// }
+// Hover effects
+.product:hover {
+  background: #FFF;
+  cursor: pointer;
+}
+.product-upvote:hover, .product-upvote.product-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.product-upvote-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+.product:hover .product-upvote {
+  transform: scale(1.2)
+}
+.product:hover .product-controls-hidden a {
+  color: #E6E6E6;
+}
+.product-upvote:hover .product-arrow {
+  border-bottom: 9px solid #5898f1;
+}
+
+// horizontal rules separators "latest" & "most popular"
+hr.latest, hr.popular {
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+}
+hr.latest::after, hr.popular::after {
+  content: 'LATEST';
+  display: inline-block;
+  position: relative;
+  top: -14px;
+  padding: 0 40px;
+  background: #F4F4F4;
+  color: #8c8b8b;
+  font-size: 18px;
+}
+hr.popular::after {
+  content: 'MOST POPULAR';
+}
