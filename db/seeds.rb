@@ -8,13 +8,13 @@ User.destroy_all
 
 # User Generation
 users_array = []
-users_array << User.create!(email: "florent@aquiti.fr", first_name: "florent".capitalize, last_name: "merian".capitalize, password: "aquiti", company: "Aquiti", role: "super_admin")
-users_array << User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "super_admin")
-users_array << User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "super_admin")
-users_array << User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "super_admin")
-users_array << User.create!(email: "en@test", password: "test", role: "entrepreneur")
-users_array << User.create!(email: "in@test", password: "test", role: "investisseur")
-users_array << User.create!(email: "ex@test", password: "test", role: "expert")
+users_array << User.create!(title: "Financeur de startup",description: "à contacter pour toutes vos demande de financement",email: "florent@aquiti.fr", first_name: "florent".capitalize, invitation_accepted_at: DateTime.now, last_name: "merian".capitalize, password: "aquiti", company: "Aquiti", role: "super_admin")
+users_array << User.create!(title: "Entrepreneur dans la santé",description: "serial entrepreneur, a pour ambition d'apporter des solutions ",email: "fouad@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
+users_array << User.create!(title: "Expert de GIT mais pas de Github",description: "",email: "kos@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
+users_array << User.create!(title: "Entrepreneur",description: "",email: "mathieu@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
+users_array << User.create!(title: "Entrepreneur de la silicon vallée",description: "",email: "en@test", password: "test", role: "entrepreneur", invitation_accepted_at: DateTime.now)
+users_array << User.create!(title: "Investisseur, buisiness Angel",description: "",email: "in@test", password: "test", role: "investisseur", invitation_accepted_at: DateTime.now)
+users_array << User.create!(title: "Expert en mécanique quantique",description: "",email: "ex@test", password: "test", role: "expert", invitation_accepted_at: DateTime.now)
 
 puts "Users created"
 
