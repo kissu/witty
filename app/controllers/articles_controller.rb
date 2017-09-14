@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @articles = policy_scope(Article)
 
-    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC')
+    @new_articles = Article.last(3).reverse
+    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC').offset(3)
   end
 
   def new
