@@ -45,4 +45,24 @@ module ApplicationHelper
           "<i class='fa fa-bolt'></i>".html_safe
           end
   end
+
+  def ask_for_contact(contact)
+    mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "badge",
+    body: "Bonjour,\n
+    Je souhaite rencontrer cette personne:\n
+     #{contact.title}.
+     #{contact.description}\n
+
+    Pour rappel, notre activité :
+      Solution :......
+      Marché visé :.......\n
+    Nos derniers indicateurs :
+      Chiffre d’affaires mensuel : .....€
+      Nombre de clients : ....#
+      Taux de satisfaction : .....%\n
+    Merci
+    Bonne journée," do
+          "<i class='fa fa-envelope'></i>".html_safe
+          end
+  end
 end
