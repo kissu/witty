@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def button_new_article
     if policy(Article).new?
-      link_to '<i class="fa fa-plus green-lg" aria-hidden="true"></i>'.html_safe, new_article_path(@article)
+      link_to 'Add a Link'.html_safe, new_article_path(@article), class: "navbar-wagon-link"
     end
   end
 
