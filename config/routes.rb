@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'articles#index', as: :authenticated_root
+      root 'articles#index'
     end
     unauthenticated :user do
       root 'devise/sessions#new', as: :unauthenticated_root
@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   resources :articles
   resources :upvotes, only: [:create, :destroy]
+
+  get 'network', to: 'users#index'
 end

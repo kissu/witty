@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized
     flash[:alert] = "Vous n'êtes pas authorisé à effectuer cette action."
-    redirect_to authenticated_root_path
+    redirect_to root_path
   end
 
   private

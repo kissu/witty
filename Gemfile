@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'pundit'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
