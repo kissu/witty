@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+nersource 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'devise'
