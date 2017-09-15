@@ -22,6 +22,10 @@ module ApplicationHelper
     link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end
 
+  def button_new_invitation
+    link_to 'Nouvel utilisateur', new_user_invitation_path, class: "btn btn-success"
+  end
+
   def send_reporting
     mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "badge",
     body: "Bonjour,\n
@@ -43,6 +47,26 @@ module ApplicationHelper
       Merci\n
       Bonne journée," do
           "<i class='fa fa-bolt'></i>".html_safe
+          end
+  end
+
+  def ask_for_contact(contact)
+    mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "badge",
+    body: "Bonjour,\n
+    Je souhaite rencontrer cette personne:\n
+     #{contact.title}.
+     #{contact.description}\n
+
+    Pour rappel, notre activité :
+      Solution :......
+      Marché visé :.......\n
+    Nos derniers indicateurs :
+      Chiffre d’affaires mensuel : .....€
+      Nombre de clients : ....#
+      Taux de satisfaction : .....%\n
+    Merci
+    Bonne journée," do
+          "<i class='fa fa-envelope'></i>".html_safe
           end
   end
 end

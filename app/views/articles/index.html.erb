@@ -1,36 +1,20 @@
-<!-- <div class="filtr-container">
-    <div class="filtr-item" data-category="1">
-       <p>hello</p>
-    </div>
-    <div class="filtr-item" data-category="2">
-       <p>yolo</p>
-    </div>
-    <div class="filtr-item" data-category="3">
-       <p>swag</p>
-    </div>
-</div> -->
-<p class="text-center">--------- ★ NEW ARTICLES ★ -----------<p>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <div class="products-container">
-        <% @new_articles.each do |article| %>
-          <%= render partial: "articles/content", locals: { article: article } %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%#= render partial: "shared/button_tag" %>
 
-<p class="text-center">--------- ↓ OLDER ONES ↓ -----------<p>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <div class="products-container filtr-container infinite-container">
-        <% @sorted_articles.each do |article| %>
-          <%= render partial: "articles/content", locals: { article: article } %>
-        <% end %>
-      </div>
-    </div>
+<div class="wrapper">
+  <hr class="latest">
+  <!-- products-container is here to make a group of the latest articles -->
+  <div class="products-container">
+    <% @new_articles.each do |article| %>
+      <%= render partial: "articles/card", locals: { article: article } %>
+    <% end %>
   </div>
+
+  <hr class="popular">
+  <!-- same as above but add js stuff on this container :D -->
+  <div class="products-container filtr-container infinite-container">
+    <% @sorted_articles.each do |article| %>
+      <%= render partial: "articles/card", locals: { article: article } %>
+    <% end %>
+  </div>
+
 </div>
