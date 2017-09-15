@@ -1,88 +1,72 @@
-/* Main navbar */
+// main container
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
-  transition: all 0.3s ease;
-  height: 70px;
+  height: 14vh;
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+}
+#navbar-wagon-left, #navbar-wagon-middle, #navbar-wagon-right {
+  height: 10vh;
 }
 
-/* Logo */
+#navbar-wagon-left {
+  display: flex;
+  flex: 1 1 (100% / 3);
+  justify-content: center;
+}
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 60px;
 }
 
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+#navbar-wagon-middle {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 (100% / 3);
+  justify-content: center;
+  font-weight: bold;
+  .section {
+    color: $medium-gray;
+    cursor: pointer;
+    padding: 15px 60px;
+    font-size: $p-size;
+    height: 120%;
+    &:hover {
+      color: $green;
+    }
+  }
+  .active {
+    border-bottom: solid $green 10px;
+    color: #000;
+    text-align: center;
+  }
 }
-
-/* Right section */
-.navbar-wagon-right {
+#navbar-wagon-right {
+  flex: 1 1 (100% / 3);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 250px;
+  justify-content: center;
 }
-
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
   transition: color 0.3s ease;
+  font-weight: bold;
+  margin-right: 20px;
   color: $green;
   font-size: 14px;
   &:hover {
-    color: $orange;
+    color: $yellow;
     text-decoration: none;
   }
 }
-
-.mail_to {
-  color: #FFF;
-  &:hover {
-    color: $orange;
-    text-decoration: none;
-  }
-}
-
-.badge {
-  display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 17px;
-  font-weight: bold;
-  color: white;
-  line-height: 1;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-align: center;
-  background-color: $green;
-  border-radius: 20px;
-}
-.navbar-btn {
-  cursor: pointer;
-  margin: 10px;
-  border-radius: 5px;
+a:hover, a:focus {
   text-decoration: none;
-  padding: 10px;
-  transition: .3s;
-  display: inline-block;
-  color: white;
-  border: 2px #FFF solid;
-  &:hover {
-    background-color: $green;
-    color: #FFF;
-  }
 }
 
 /* Dropdown menu */
@@ -93,15 +77,15 @@
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: $green !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  font-weight: lighter;
+  color: $green;
+  font-size: 15px;
+  line-height: 22px;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: $orange !important;
+  background: transparent;
+  color: $orange;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -115,25 +99,3 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-
-#navbar-wagon-menu {
-  font-size: 40px;
-  color: $light-gray;
-}
-
-.green-lg {
-  color: $green;
-  font-size : 22px;
-}
-
-// kos
-
-#sections {
-  display: flex;
-  flex-direction: row;
-  * {
-    padding: 0 10px;
-    margin: 0;
-  }
-}
-
