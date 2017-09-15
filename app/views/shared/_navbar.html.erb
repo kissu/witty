@@ -1,47 +1,47 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.svg" %>
-  <% end %>
+  <!-- Left Part (logo) -->
+  <div id="navbar-wagon-left">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+  </div>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <!-- Middle Part -->
+  <div id="navbar-wagon-middle">
+    <p class="section active">KNOWLEDGE</p>
+    <p class="section">NETWORK</p>
+  </div>
 
+  <!-- Right Part -->
+  <div id="navbar-wagon-right">
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div>
-        <%= button_new_article  %>
+      <div><%= button_new_article %></div>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="dropdown">
+        <%= link_to "\u25bc", '#', class:"dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to edit_user_password_path(current_user) do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fa fa-home"></i><%= t(".profile", default: "Home") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
+
       </div>
 
-      <div class="navbar-wagon-item navbar-wagon-link">
-        <div class="badge-container">
-          <%= send_reporting %>
-        </div>
-      </div>
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag 'http://placehold.it/50x50', class:"avatar dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to edit_user_password_path(current_user) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -59,5 +59,5 @@
       </ul>
     </div>
   </div>
-</div>
 
+</div>
