@@ -51,7 +51,7 @@ puts "Upvotes done"
 10.times do
   c = Contact.create(title: Faker::Job.title, description: Faker::Lorem.sentence(3))
   2.times do
-  c.tags << tags_array.sample
+    c.tags << tags_array.sample
   end
 end
 
