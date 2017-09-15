@@ -7,7 +7,7 @@
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 /* Logo */
@@ -125,3 +125,15 @@
   color: $green;
   font-size : 22px;
 }
+
+// kos
+
+#sections {
+  display: flex;
+  flex-direction: row;
+  * {
+    padding: 0 10px;
+    margin: 0;
+  }
+}
+

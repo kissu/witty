@@ -1,12 +1,19 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.svg" %>
-  <% end %>
+  <!-- Left Part (logo) -->
+  <div id="logo">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+  </div>
 
-  <!-- Right Navigation -->
+  <!-- Middle Part -->
+  <div id="sections">
+    <p>ARTICLE</p>
+    <p>NETWORK</p>
+  </div>
+
+  <!-- Right Part -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
@@ -43,6 +50,7 @@
         </div>
       </div>
     <% else %>
+
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -59,5 +67,5 @@
       </ul>
     </div>
   </div>
-</div>
 
+</div>
