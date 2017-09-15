@@ -1,17 +1,9 @@
-not sure if needed, do we have
-* {
-  box-sizing: border-box;
-}
-.wrapper {
-  width: 75vw;
-  margin: 0 auto;
-}
 .products-container {
   // don't delete this selector, reminder for later on..
 }
 .product {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 30px;
   margin: $margin-between-cards;
   border-radius: $border-radius-large;
@@ -19,62 +11,74 @@ not sure if needed, do we have
   background-color: #fff;
   h2 {
     font-weight: bold;
-    font-size: 23px;
+    font-size: $h2-size;
   }
   p {
-    font-weight: lighter;
     color: $gray;
-    font-size: 14px;
+    font-size: $p-size;
   }
   a {
-    background-color: $green;
-    color: #fff;
+    color: $green;
     &:hover {
       text-decoration: none;
+      color: $green;
     }
   }
 }
 
 /* Upvote design */
-.product-upvote {
-  padding-right: 30px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
+.upvote-block, .product-upvote {
+  display: flex;
+  // border: solid 1px yellow;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 3%;
 }
-.product-count {
-  margin: 2px 0 0;
-  color: red;
+.product-upvote {
+  transition: all 0.15s ease;
+  font-size: $p-size;
+  line-height: 10px;
+  &:focus {
+    text-decoration: none;
+  }
 }
 .product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: $border-radius-small;
-  margin: auto;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.product-count {
+  font-size: 15px;
+  color: $green;
+  text-align: center;
+}
+
+// middle of the card, with the title & the description
+.product-details {
+  display: flex;
+  flex: 2 1 60%;
+  flex-direction: column;
+  justify-content: center;
+  // border: solid 1px red;
 }
 
 /* Controls design */
 .product-controls {
-  flex: 0 0 200px;
+  flex: 0 0 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // border: 1px solid teal;
 }
 .product-controls a {
-  color: $gray;
+  color: #fff;
   padding: 20px;
+  border-radius: $border-radius-large;
+  background-color: $green;
   &:hover {
-    color: $green;
+    color: $yellow;
   }
   i {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -84,15 +88,6 @@ not sure if needed, do we have
 //   transition: all 0.15s ease;
 //   border-color: transparent;
 // }
-#btn-share {
-  background-color: $green;
-  color: #FFF;
-  padding: 20px;
-  border-radius: $border-radius-large;
-  &:hover {
-    background-color: $light-gray;
-  }
-}
 
 // Hover effects
 .product:hover {
@@ -112,14 +107,12 @@ not sure if needed, do we have
 .product:hover .product-controls-hidden a {
   color: #E6E6E6;
 }
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
-}
 
 // horizontal rules separators "latest" & "most popular"
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;
+  margin-top: 50px;
 }
 hr.latest::after, hr.popular::after {
   content: 'LATEST';
@@ -127,7 +120,7 @@ hr.latest::after, hr.popular::after {
   position: relative;
   top: -14px;
   padding: 0 40px;
-  background: #F4F4F4;
+  background: $light-gray;
   color: #8c8b8b;
   font-size: 18px;
 }
