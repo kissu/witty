@@ -39,7 +39,7 @@
 /* Navbar link */
 .navbar-wagon-link {
   transition: color 0.3s ease;
-  color: $blue;
+  color: $green;
   font-size: 14px;
   &:hover {
     color: $orange;
@@ -66,7 +66,7 @@
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
-  background-color: $blue;
+  background-color: $green;
   border-radius: 20px;
 }
 .navbar-btn {
@@ -80,8 +80,8 @@
   color: white;
   border: 2px #FFF solid;
   &:hover {
-  background-color: $blue;
-  color: #FFF;
+    background-color: $green;
+    color: #FFF;
   }
 }
 
@@ -94,7 +94,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: $blue !important;
+  color: $green !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
