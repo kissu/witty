@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913075241) do
+ActiveRecord::Schema.define(version: 20170915084005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 20170913075241) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "article_tags", force: :cascade do |t|
-    t.bigint "article_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_article_tags_on_article_id"
-    t.index ["tag_id"], name: "index_article_tags_on_tag_id"
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -50,6 +41,23 @@ ActiveRecord::Schema.define(version: 20170913075241) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "articles_tags", id: false, force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "tag_id", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "description", limit: 140
+  end
+
+  create_table "contacts_tags", id: false, force: :cascade do |t|
+    t.bigint "contact_id", null: false
+    t.bigint "tag_id", null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -57,22 +65,12 @@ ActiveRecord::Schema.define(version: 20170913075241) do
   end
 
   create_table "upvotes", force: :cascade do |t|
-    t.string "upvotable_type"
-    t.bigint "upvotable_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["upvotable_type", "upvotable_id"], name: "index_upvotes_on_upvotable_type_and_upvotable_id"
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_upvotes_on_article_id"
     t.index ["user_id"], name: "index_upvotes_on_user_id"
-  end
-
-  create_table "user_tags", force: :cascade do |t|
-    t.bigint "tag_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_user_tags_on_tag_id"
-    t.index ["user_id"], name: "index_user_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,14 +84,9 @@ ActiveRecord::Schema.define(version: 20170913075241) do
     t.datetime "last_sign_in_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "company"
     t.integer "role", default: 0
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "title"
-    t.string "description"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -110,10 +103,7 @@ ActiveRecord::Schema.define(version: 20170913075241) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "article_tags", "articles"
-  add_foreign_key "article_tags", "tags"
   add_foreign_key "articles", "users"
+  add_foreign_key "upvotes", "articles"
   add_foreign_key "upvotes", "users"
-  add_foreign_key "user_tags", "tags"
-  add_foreign_key "user_tags", "users"
 end
