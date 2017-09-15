@@ -1,5 +1,5 @@
 class UpvotesController < ApplicationController
-  before_action :article, only: [:create]
+  before_action :set_article, only: [:create]
 
   def create
     upvote = @article.upvotes.new user: current_user
