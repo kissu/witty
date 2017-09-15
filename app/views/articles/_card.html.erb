@@ -10,7 +10,7 @@
       <% end %>
 
     <% else %>
-      <%= link_to upvotes_path(upvotable_id: article.id, upvotable_type: article.class), method: :post, class: 'product-upvote' do %>
+      <%= link_to upvotes_path(article_id: article.id), method: :post, class: 'product-upvote' do %>
         <span class="product-arrow">&#9650;</span>
         <div class="product-count">
           <%= article.upvotes.count %>
