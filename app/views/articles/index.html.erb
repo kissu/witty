@@ -1,11 +1,11 @@
-<%#= render partial: "button_tag" %>
+<%#= render partial: "shared/button_tag" %>
 
 <div class="wrapper">
   <hr class="latest">
   <!-- products-container is here to make a group of the latest articles -->
   <div class="products-container">
     <% @new_articles.each do |article| %>
-      <%= render partial: "articles/content", locals: { article: article } %>
+      <%= render partial: "articles/card", locals: { article: article } %>
     <% end %>
   </div>
 
@@ -13,7 +13,7 @@
   <!-- same as above but add js stuff on this container :D -->
   <div class="products-container filtr-container infinite-container">
     <% @sorted_articles.each do |article| %>
-      <%= render partial: "articles/content", locals: { article: article } %>
+      <%= render partial: "articles/card", locals: { article: article } %>
     <% end %>
   </div>
 
