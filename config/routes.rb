@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :articles
   resources :upvotes, only: [:create, :destroy]
 
-  get 'network', to: 'contact#index'
+  resources :contacts, only: [:index, :new, :create]
+
 end

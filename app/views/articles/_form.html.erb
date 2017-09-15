@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for @article do |f| %>
         <%= f.input :title, label: 'Titre' %>
-        <%= f.input :description,  :maxlength => 240 %>
+        <%= f.input :description,  :maxlength => 140 %>
         <%= f.input :url, label: "Lien de l'article" %>
         <%= f.association :tags,   as: :check_boxes, collection_select: :selected %>
         <%= f.submit "Enregister", class: "btn btn-primary" %>

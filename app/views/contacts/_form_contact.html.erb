@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @contact do |c| %>
+        <%= c.input :email, label: 'Email' %>
+        <%= c.input :role,  :maxlength => 140 %>
+        <%= c.submit "Enregister", class: "btn btn-success" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
