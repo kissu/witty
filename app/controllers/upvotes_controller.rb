@@ -1,8 +1,8 @@
 class UpvotesController < ApplicationController
-  before_action :set_upvotable, only: [:create]
+  before_action :set_article, only: [:create]
 
   def create
-    upvote = @upvotable.upvotes.new user: current_user
+    upvote = @article.upvotes.new user: current_user
     authorize upvote
     upvote.save
     redirect_to articles_path
@@ -17,7 +17,7 @@ class UpvotesController < ApplicationController
 
   private
 
-  def set_upvotable
-    @upvotable = params[:upvotable_type].constantize.find(params[:upvotable_id])
+  def set_article
+    @article = Article.find(params[:article_id])
   end
 end
