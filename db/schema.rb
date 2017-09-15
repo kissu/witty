@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170915081502) do
+ActiveRecord::Schema.define(version: 20170915084005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,12 +65,11 @@ ActiveRecord::Schema.define(version: 20170915081502) do
   end
 
   create_table "upvotes", force: :cascade do |t|
-    t.string "upvotable_type"
-    t.bigint "upvotable_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["upvotable_type", "upvotable_id"], name: "index_upvotes_on_upvotable_type_and_upvotable_id"
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_upvotes_on_article_id"
     t.index ["user_id"], name: "index_upvotes_on_user_id"
   end
 
@@ -105,5 +104,6 @@ ActiveRecord::Schema.define(version: 20170915081502) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "upvotes", "articles"
   add_foreign_key "upvotes", "users"
 end
