@@ -1,16 +1,28 @@
 .button-tags-container {
   display: flex;
   flex-direction: column;
-  width: 12vw;
-  left: 0;
+  justify-content: space-around;
+  padding: 10px 0;
+  width: 25vw;
+  height: 400px;
+  background-color: #fff;
+  border-radius: $border-radius-large;
+
+  .checkbox, .green-credits {
+    margin: 0 40px;
+  }
+
+  .shuffle {
+    background-color: $green;
+    color:#fff;
+    border-radius: $border-radius-large;
+  }
 
   label {
-    width: 10vw;
-    height: 3vw;
-    padding: 5px;
-    margin: 5px 0;
+    display: flex;
+    padding: 10px;
     text-decoration:none;
-    color: $turquoise;
+    justify-content: center;
     // border: 1px solid $turquoise;
     border-radius: 25px;
     cursor: default;
@@ -19,10 +31,19 @@
   input[type=checkbox] {
     display: none;
     &:checked + label {
-      background-color: $turquoise;
+      background-color: $gray;
       color: #fff;
       box-shadow: none;
       transition: 400ms;
     }
+  }
+
+  .made-love {
+    margin: 0;
+    font-size: $p-size + 2;
+  }
+  .green-credits {
+    color: $green;
+    font-weight: bold;
   }
 }

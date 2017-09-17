@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :upvotes, only: [:create, :destroy]
 
   get 'network', to: 'users#index'
+  get 'contact', to: 'contacts#index'
 end

@@ -1,0 +1,7 @@
+<%= render partial: "shared/button_tag" %>
+
+<section>
+  <% @contacts.each do |contact| %>
+    <%= render partial: "contacts/card", locals: { contact: contact } %>
+  <% end %>
+</section>
