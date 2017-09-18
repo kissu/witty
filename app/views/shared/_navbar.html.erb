@@ -17,15 +17,45 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div><%= link_to 'Send your report',"#", data: {toggle: "modal", target: ".bs-example-modal-lg"} %></div>
-      <!-- Large modal -->
+
+        <div class="dropdown">
+          <%= link_to "Send your report", '#', class:"dropdown-toggle navbar-wagon-link", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+            <%= form_tag("/reporting", method: :post, class: "dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu form-group text-center", id: "report") do %>
+              <h3>Nos derniers indicateurs :</h3>
+              <%= label_tag(:ca, "Chiffre d'affaire") %>
+              <%= text_field_tag(:ca, nil, class: "form-control", size: "500x50")%>
+              <%= label_tag(:depenses, "Dépenses mensuelles") %>
+              <%= text_field_tag(:depenses, nil, class: "form-control") %>
+              <%= label_tag(:treso, "Trésorerie disponible") %>
+              <%= text_field_tag(:treso, nil, class: "form-control") %>
+              <%= label_tag(:nb_client, "Nombre de clients") %>
+              <%= text_field_tag(:nb_client, nil, class: "form-control") %>
+              <%= label_tag(:conversion, "Taux de conversion lead -- client") %>
+              <%= text_field_tag(:conversion, nil, class: "form-control") %>
+              <%= label_tag(:tx_satisfaction, "Taux de satisfaction client") %>
+              <%= text_field_tag(:tx_satisfaction, nil, class: "form-control") %>
+
+              <h3>Mes besoins</h3>
+
+              <%= label_tag(:besoins, "Mes besoins") %>
+              <%= text_area_tag(:besoin, nil, class: "form-control", placeholder: "Une nouvelle offre d'emploi? , Un conseil particulier?, Un mise en relation avec un de nos expert?") %>
+
+              <h3>Quelques informations diverses :</h3>
+              <%= label_tag(:communication, "Infos diverses") %>
+              <%= text_area_tag(:communication, nil , class: "form-control", placeholder: "Un nouveau cas client ? une récente publication ? Une interview ?, Bonne nouvelle ou mauvaise nouvelle ?, Peu importe, nous sommes à votre écoute") %>
 
 
+              <%= submit_tag "Envoyer", class: "btn btn-success" %>
+            <% end %>
 
+
+        </div>
+<!-- Large modal -->
       <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
-
+            <h3 class="modal-title">Reporting</h3>
             <%= form_tag("/reporting", method: :post) do %>
               <%= label_tag(:ca, "Chiffre d’affaires mensuel :") %>
               <%= text_field_tag(:ca) %>
@@ -36,8 +66,6 @@
 
               <%= submit_tag("Envoyer") %>
             <% end %>
-
-
 
           </div>
         </div>
