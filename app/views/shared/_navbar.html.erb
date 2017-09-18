@@ -32,13 +32,13 @@
         <%= link_to "\u25bc", '#', class:"dropdown-toggle", id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to edit_user_password_path(current_user) do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <%= link_to root_path(current_user) do %>
+              <i class="fa fa-home"></i> <%= t(".profile", default: "Home") %>
             <% end %>
           </li>
           <li>
-            <%= link_to root_path do %>
-              <i class="fa fa-home"></i><%= t(".profile", default: "Home") %>
+            <%= link_to unboarding_path do %>
+              <i class="fa fa-user"></i><%= t(".profile", default: "Unboarding") %>
             <% end %>
           </li>
           <li>

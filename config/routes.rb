@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   get 'networks', to: 'users#index'
   get 'contacts', to: 'contacts#index'
+  get 'unboarding', to: 'pages#index'
 end
