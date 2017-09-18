@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable,
@@ -13,7 +14,10 @@ class User < ApplicationRecord
   enum role: { entrepreneur: 0, expert: 10, investisseur: 20, super_admin: 30 }
 
   include UpvotableConcern
+
   after_create :send_invitation_mail
+
+  private
 
   def send_invitation_mail
     UserMailer.welcome(User.last).deliver_now
