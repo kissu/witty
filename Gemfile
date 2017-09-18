@@ -23,6 +23,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'normalize-rails'
 
+gem 'mailjet'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
