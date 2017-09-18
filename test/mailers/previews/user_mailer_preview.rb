@@ -3,4 +3,9 @@ class UserMailerPreview < ActionMailer::Preview
     user = User.first
     UserMailer.welcome(user)
   end
+
+  def reporting
+    user = User.first
+    UserMailer.reporting(user)
+  end
 end

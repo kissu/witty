@@ -17,7 +17,34 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div><%= button_new_article %></div>
+      <div><%= link_to 'Send your report',"#", data: {toggle: "modal", target: ".bs-example-modal-lg"} %></div>
+      <!-- Large modal -->
+
+
+
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+
+            <%= form_tag("/reporting", method: :post) do %>
+              <%= label_tag(:ca, "Chiffre d’affaires mensuel :") %>
+              <%= text_field_tag(:ca) %>
+              <%= label_tag(:depenses, "Dépenses mensuelles :") %>
+              <%= text_field_tag(:depenses) %>
+              <%= label_tag(:nb_client, "Nombre de clients :") %>
+              <%= text_field_tag(:nb_client) %>
+
+              <%= submit_tag("Envoyer") %>
+            <% end %>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
 
       <!-- Avatar with dropdown menu -->
       <div class="dropdown">
