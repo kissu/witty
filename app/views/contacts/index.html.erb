@@ -1,7 +1,6 @@
-<%= render partial: "shared/button_tag" %>
-
+<%= render partial: "shared/button_tag", locals: { button: 'shuffle' } %>
 <div class="products-container">
   <% @contacts.each do |contact| %>
-    <%= render partial: "contacts/card", locals: { contact: contact, test: "nice" } %>
+    <%= render partial: "contacts/card", locals: { contact: contact } %>
   <% end %>
 </div>

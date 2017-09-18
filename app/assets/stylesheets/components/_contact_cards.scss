@@ -1,13 +1,15 @@
+h2 {
+  margin-top: 0;
+}
 .products-container {
   width: 70%;
   display: flex;
   flex-flow: row wrap;
   margin-left: -$gutter;
-  border: 1px solid teal;
 }
 .vertical-card {
   flex-direction: column;
-  flex: 1 1 calc(40% - #{$gutter});
+  flex: 0 1 calc(40% - #{$gutter});
   margin-left: $gutter;
 }
 
@@ -15,10 +17,22 @@
 .sliced {
   @extend .product;
   margin: 0 0 20px $gutter;
-  border: 1px solid red;
+  a {
+    color: #fff;
+    font-size: $p-size;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: $border-radius-large;
+  }
 }
 
 .horizontal-wrapper {
   @extend .wrapper;
   @include flex-direction(row);
+}
+.filtr-container {
+  margin-left: 26%;
+}
+.ask-intro {
+  background-color: $green;
 }

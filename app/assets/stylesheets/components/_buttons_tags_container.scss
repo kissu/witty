@@ -1,22 +1,26 @@
 .button-tags-container {
+  width: 26%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 10px 0;
-
   margin-right: 30px;
   height: 400px;
   background-color: #fff;
   border-radius: $border-radius-large;
 
-  .checkbox, .green-credits {
+  .checkbox {
+    text-transform: uppercase;
     margin: 0 40px;
   }
 
-  .shuffle {
+  .green-button {
     background-color: $green;
+    text-transform: uppercase;
     color:#fff;
     border-radius: $border-radius-large;
+    margin: 0 40px;
+    padding: 10px;
   }
 
   label {
@@ -46,5 +50,9 @@
   .green-credits {
     color: $green;
     font-weight: bold;
+    margin: 0 40px;
+  }
+  .red-heart {
+    color: $red;
   }
 }

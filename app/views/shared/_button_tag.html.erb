@@ -1,8 +1,9 @@
 <div class="button-tags-container text-center">
-  <div class="checkbox shuffle">
-    <input type="checkbox" id="shuffle" name="shuffle">
-    <label for="shuffle">Shuffle</label>
-  </div>
+  <% if button == 'shuffle' %>
+      <a href="#shuffled" class="green-button"><%= button %></a>
+  <% else %>
+    <%= link_to button, new_article_path, class:"green-button" %>
+  <% end %>
   <div class="checkbox">
     <input type="checkbox" id="building" name="building">
     <label for="building">Building</label>
@@ -19,6 +20,6 @@
     <input type="checkbox" id="growing" name="growing">
     <label for="growing">Growing</label>
   </div>
-  <p class="made-love">Made w/ <3 in Bordeaux</p>
-  <p class="green-credits">Credits</p>
+  <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
+  <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
 </div>
