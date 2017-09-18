@@ -1,4 +1,4 @@
-<section class="product vertical-card sliced">
+<section class="product filtr-item vertical-card sliced" data-category="<% contact.tags.each do |tag| %><%= tag.id %><% end %>">
   <h2><%= contact.title %></h2>
   <p><%= contact.description %></p>
   <%= link_to "Demander une intro", root_path, class:"ask-intro" %>

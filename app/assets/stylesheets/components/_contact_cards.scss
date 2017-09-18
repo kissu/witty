@@ -23,6 +23,9 @@ h2 {
     font-weight: bold;
     padding: 10px;
     border-radius: $border-radius-large;
+    &:hover {
+      color: $orange;
+    }
   }
 }
 
