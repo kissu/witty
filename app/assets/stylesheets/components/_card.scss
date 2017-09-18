@@ -1,9 +1,5 @@
 // je test en erb si view article ou pas, si "non", on display none le upvote-block
 // si oui, on display et on flex-direction column le product
-
-.products-container {
-  // don't delete this selector, reminder for later on..
-}
 .product {
   display: flex;
   justify-content: space-between;
@@ -112,6 +108,7 @@
 }
 
 // horizontal rules separators "latest" & "most popular"
+// display: flex; kicks the beautiful hr...
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;

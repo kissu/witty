@@ -1,0 +1,10 @@
+@mixin flex-direction($direction) {
+  flex-flow: $direction wrap;
+}
+.wrapper {
+  padding-top: 50px;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  @include flex-direction(column);
+}

@@ -6,15 +6,23 @@
     <% end %>
   </div>
 
-  <!-- Middle Part -->
-  <div id="navbar-wagon-middle">
-    <p class="section active">KNOWLEDGE</p>
-    <p class="section">NETWORK</p>
-  </div>
+  <% if user_signed_in? %>
+    <!-- Middle Part -->
+    <nav id="navbar-wagon-middle">
+      <%= link_to_if(current_page?(articles_path), "KNOWLEDGE", articles_path,
+                                    html_option = {class:"section active"}) do
+        link_to "KNOWLEDGE", articles_path, class:"section" # << else
+      end %>
+      <%= link_to_if(current_page?(contacts_path), "NETWORK", contacts_path,
+                                    html_option = {class:"section active"}) do
+        link_to "NETWORK", contacts_path, class:"section"
+      end %>
+    </nav>
+  <% end %>
 
   <!-- Right Part -->
-  <div id="navbar-wagon-right">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <div id="navbar-wagon-right">
 
       <!-- Links when logged in -->
       <div><%= button_new_article %></div>
@@ -39,25 +47,23 @@
             <% end %>
           </li>
         </ul>
-
       </div>
 
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Connaissances", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Network", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "À faire", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
+  <% if user_signed_in? %>
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "Connaissances", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Network", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "À faire", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  <% end %>
 
 </div>
