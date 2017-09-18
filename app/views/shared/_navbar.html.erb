@@ -39,11 +39,11 @@
               <h3>Mes besoins</h3>
 
               <%= label_tag(:besoins, "Mes besoins") %>
-              <%= text_area_tag(:besoin, nil, class: "form-control", placeholder: "Une nouvelle offre d'emploi? , Un conseil particulier?, Un mise en relation avec un de nos expert?") %>
+              <%= text_area_tag(:besoin, nil, class: "form-control", placeholder: "Une nouvelle offre d'emploi? , Un conseil particulier?, Un mise en relation avec un de nos expert?", size: "5x5") %>
 
               <h3>Quelques informations diverses :</h3>
               <%= label_tag(:communication, "Infos diverses") %>
-              <%= text_area_tag(:communication, nil , class: "form-control", placeholder: "Un nouveau cas client ? une récente publication ? Une interview ?, Bonne nouvelle ou mauvaise nouvelle ?, Peu importe, nous sommes à votre écoute") %>
+              <%= text_area_tag(:communication, nil , class: "form-control", placeholder: "Un nouveau cas client ? une récente publication ? Une interview ?, Bonne nouvelle ou mauvaise nouvelle ?, Peu importe, nous sommes à votre écoute", size: "5x5") %>
 
 
               <%= submit_tag "Envoyer", class: "btn btn-success" %>
