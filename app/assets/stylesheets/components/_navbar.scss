@@ -2,19 +2,23 @@
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
-  height: 14vh;
+  height: 80px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
 }
 #navbar-wagon-left, #navbar-wagon-middle, #navbar-wagon-right {
-  height: 10vh;
+  height: 100px;
 }
 
 #navbar-wagon-left {
   display: flex;
   flex: 1 1 (100% / 3);
   justify-content: center;
+}
+.navbar-wagon-brand {
+  display: flex;
+  align-items: center;
 }
 .navbar-wagon-brand img {
   height: 60px;
@@ -29,9 +33,9 @@
   .section {
     color: $medium-gray;
     cursor: pointer;
-    padding: 15px 60px;
+    padding: 35px 60px;
     font-size: $p-size;
-    height: 120%;
+    height: 90%;
     &:hover {
       color: $green;
     }

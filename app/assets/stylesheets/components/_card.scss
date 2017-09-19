@@ -1,11 +1,11 @@
-.products-container {
-  // don't delete this selector, reminder for later on..
-}
+// je test en erb si view article ou pas, si "non", on display none le upvote-block
+// si oui, on display et on flex-direction column le product
 .product {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  padding: 30px;
-  margin: $margin-between-cards;
+  padding: 15px 30px;
+  margin: 0 0 35px 30px;
   border-radius: $border-radius-large;
   align-items: center;
   background-color: #fff;
@@ -29,10 +29,10 @@
 /* Upvote design */
 .upvote-block, .product-upvote {
   display: flex;
-  // border: solid 1px yellow;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
-  margin: 0 3%;
+  margin: 0 10px;
 }
 .product-upvote {
   transition: all 0.15s ease;
@@ -55,25 +55,28 @@
 // middle of the card, with the title & the description
 .product-details {
   display: flex;
-  flex: 2 1 60%;
+  flex: 4 1 auto;
+  margin-right: 60px;
   flex-direction: column;
   justify-content: center;
-  // border: solid 1px red;
 }
 
 /* Controls design */
 .product-controls {
-  flex: 0 0 20%;
+  flex: 1 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   justify-content: space-between;
-  // border: 1px solid teal;
+  margin-right: 20px;
 }
 .product-controls a {
-  color: #fff;
+  color: $medium-gray;
   padding: 20px;
   border-radius: $border-radius-large;
-  background-color: $green;
+  a {
+    text-decoration: none;
+  }
   &:hover {
     color: $yellow;
   }
@@ -109,10 +112,11 @@
 }
 
 // horizontal rules separators "latest" & "most popular"
+// display: flex; kicks the beautiful hr...
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;
-  margin-top: 50px;
+  width: 80%;
 }
 hr.latest::after, hr.popular::after {
   content: 'LATEST';

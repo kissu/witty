@@ -19,7 +19,7 @@ puts "Users created"
 
 articles_array = []
 rand(20..30).times do
-  articles_array << Article.create!(title: Faker::Name.title, description: Faker::Lorem.sentence(25, false, 0), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
+  articles_array << Article.create!(title: Faker::Name.title, description: Faker::Lorem.sentence(12, false, 0), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
 end
 
 puts "Articles created"
@@ -48,9 +48,9 @@ end
 puts "Upvotes done"
 
 #Contacts generation
-10.times do
-  c = Contact.create(title: Faker::Job.title, description: Faker::Lorem.sentence(3))
-  2.times do
+9.times do
+  c = Contact.create(title: Faker::Job.title, description: Faker::Lorem.sentence(12, false, 0))
+  1.times do
     c.tags << tags_array.sample
   end
 end
