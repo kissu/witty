@@ -16,6 +16,7 @@ class UserMailer < ApplicationMailer
     @ca = params[:ca]
     @depenses = params[:depenses]
     @nb_client = params[:nb_client]
+
     mail(from: @user.email, to: 'florent.merian@aquiti.fr', subject: 'Reporting')
   end
 
