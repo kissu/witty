@@ -1,20 +1,17 @@
-<%#= render partial: "shared/button_tag" %>
+<%= render partial: "shared/button_tag", locals: { button: 'Add a link' } %>
 
-<div class="wrapper">
+<!-- products-container is here to make a group of the latest articles -->
+<section class="products-container">
   <hr class="latest">
-  <!-- products-container is here to make a group of the latest articles -->
-  <div class="products-container">
-    <% @new_articles.each do |article| %>
-      <%= render partial: "articles/card", locals: { article: article } %>
-    <% end %>
-  </div>
+  <% @new_articles.each do |article| %>
+    <%= render partial: "articles/card", locals: { article: article } %>
+  <% end %>
+</section>
 
+<!-- same as above but add js stuff on this container :D -->
+<section class="products-container filtr-container infinite-container">
   <hr class="popular">
-  <!-- same as above but add js stuff on this container :D -->
-  <div class="products-container filtr-container infinite-container">
-    <% @sorted_articles.each do |article| %>
-      <%= render partial: "articles/card", locals: { article: article } %>
-    <% end %>
-  </div>
-
-</div>
+  <% @sorted_articles.each do |article| %>
+    <%= render partial: "articles/card", locals: { article: article } %>
+  <% end %>
+</section>

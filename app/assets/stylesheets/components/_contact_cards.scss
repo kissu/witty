@@ -1,0 +1,55 @@
+h2 {
+  margin-top: 0;
+}
+.products-container {
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -$gutter;
+}
+.vertical-card {
+  flex-direction: column;
+  flex: 0 1 calc(50% - #{$gutter});
+  margin-left: $gutter;
+}
+
+// tricks for the contacts page
+.sliced {
+  @extend .product;
+  margin: 0 0 20px $gutter;
+  a {
+    color: #fff;
+    font-size: $p-size;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: $border-radius-large;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.horizontal-wrapper {
+  @extend .wrapper;
+  @include flex-direction(row);
+}
+.filtr-container {
+  margin-left: 26%;
+}
+.ask-intro {
+  background-color: $green;
+}
+
+
+// fancy hover stuff
+@mixin shadow($depth) {
+  box-shadow: 0 0 ($depth * 8px) 0 rgba(0,0,0,0.2),
+      ($depth * 2px) ($depth * 2px) ($depth * 2px) 0 rgba(0,0,0,0.25);
+}
+
+.product {
+  transition: all .5s ease-in-out;
+  &:hover {
+    @include shadow(1);
+  }
+}
