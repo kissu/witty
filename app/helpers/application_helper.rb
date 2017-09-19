@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 #-------helper contact-------------------------------------------
 
-  def button_new_contact(contact)
+  def button_new_contact
     if policy(Contact).new?
       link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
     end
