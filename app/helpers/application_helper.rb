@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def button_new_article
     if policy(Article).new?
-      link_to 'Add a link'.html_safe, new_article_path(@article), class: "green-button"
+      link_to 'Add a link'.html_safe, new_article_path, class: "green-button"
     end
   end
 
@@ -21,7 +21,7 @@ module ApplicationHelper
 
   def button_new_contact(contact)
     if policy(Contact).new?
-      link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path(@contact)
+      link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
     end
   end
   def button_edit_contact(contact)
