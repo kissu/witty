@@ -2,4 +2,9 @@
   <h2><%= contact.title %></h2>
   <p><%= contact.description %></p>
   <%= ask_for_contact(contact) %>
+  <div class="product-controls" id="icon">
+    <%= button_edit_contact(contact) %>
+    <%= button_destroy_contact(contact) %>
+    <%= button_new_contact(contact) %>
+  </div>
 </section>

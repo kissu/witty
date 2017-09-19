@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :upvotes, only: [:create, :destroy]
 
-  resources :contacts, only: [:index, :new, :create]
+  resources :contacts
 
   get 'unboarding', to: 'pages#unboarding'
 
