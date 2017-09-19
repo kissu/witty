@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:index, :new, :create]
 
+  get 'unboarding', to: 'pages#unboarding'
+
 end

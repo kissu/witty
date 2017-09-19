@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def button_new_article
     if policy(Article).new?
-      link_to 'Send your report'.html_safe, new_article_path(@article), class: "navbar-wagon-link"
+      link_to 'Add a link'.html_safe, new_article_path(@article), class: "green-button"
     end
   end
 
@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def send_reporting
-    mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "badge",
+    mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "",
     body: "Bonjour,\n
       Nos derniers indicateurs :
           Chiffre d’affaires mensuel : €
@@ -46,12 +46,12 @@ module ApplicationHelper
           Peu importe, nous sommes à votre écoute\n
       Merci\n
       Bonne journée," do
-          "<i class='fa fa-bolt'></i>".html_safe
+          'Send your report'
           end
   end
 
   def ask_for_contact(contact)
-    mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "badge",
+    mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "ask-intro",
     body: "Bonjour,\n
     Je souhaite rencontrer cette personne:\n
      #{contact.title}.
@@ -66,7 +66,7 @@ module ApplicationHelper
       Taux de satisfaction : .....%\n
     Merci
     Bonne journée," do
-          "<i class='fa fa-envelope'></i>".html_safe
+          "Demander une intro"
           end
   end
 end

@@ -4,8 +4,8 @@ class ArticlesController < ApplicationController
   def index
     @articles = policy_scope(Article)
 
-    @new_articles = Article.last(3).reverse
-    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC').offset(3)
+    @new_articles = Article.last(2).reverse
+    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC').offset(2)
   end
 
   def new

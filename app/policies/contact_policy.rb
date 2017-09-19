@@ -3,17 +3,17 @@ class ContactPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def update?
-      true
-    end
+  def update?
+    true
+  end
 
-    def destroy?
-      true
-    end
+  def destroy?
+    true
   end
 end
