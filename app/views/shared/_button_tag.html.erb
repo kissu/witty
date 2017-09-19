@@ -2,7 +2,7 @@
   <% if button == 'shuffle' %>
       <a href="#shuffled" class="green-button" data-shuffle><%= button %></a>
   <% else %>
-    <%= link_to button, new_article_path, class:"green-button" %>
+    <%= button_new_article %>
   <% end %>
   <div class="checkbox">
     <input type="checkbox" id="building" name="building">
