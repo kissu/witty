@@ -24,11 +24,11 @@
     <p><%= article[:description] %></p>
   </div>
 
-  <ul class="list-inline product-controls">
+  <div class="product-controls">
     <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
-    <li><%= button_edit_article(article) %></li>
-    <li><%= button_destroy_article(article) %></li>
-    <li><%= link_to '<i class="fa fa-external-link"></i>'.html_safe, article.url, target: "_blank" %></li>
-  </ul>
+    <%= button_edit_article(article) %>
+    <%= button_destroy_article(article) %>
+    <%= button_external_link(article) %>
+  </div>
 
 </div>
