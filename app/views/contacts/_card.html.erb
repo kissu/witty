@@ -1,5 +1,32 @@
 <section class="product filtr-item vertical-card sliced" data-category="<% contact.tags.each do |tag| %><%= tag.id %><% end %>">
   <h2><%= contact.title %></h2>
   <p><%= contact.description %></p>
-  <%= ask_for_contact(contact) %>
+  <%= link_to "Demander une intro", ask_for_contact_path(contact), method: :post, class: "dropdown-toggle ask-intro", "data-toggle" => "dropdown"%>
+  <!-- à sortir dans une modal ou autre affichage plus sympa !!!!  -->
+
+  <%= form_tag("/ask_for_contact", method: :post, class: "dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu form-group text-center", id: "report") do %>
+              <h3>Nos derniers indicateurs :</h3>
+              <%= label_tag(:ca, "Chiffre d'affaire") %>
+              <%= text_field_tag(:ca, nil, class: "form-control", size: "500x50")%>
+              <%= label_tag(:depenses, "Dépenses mensuelles") %>
+              <%= text_field_tag(:depenses, nil, class: "form-control") %>
+              <%= label_tag(:treso, "Trésorerie disponible") %>
+              <%= text_field_tag(:treso, nil, class: "form-control") %>
+              <%= label_tag(:nb_client, "Nombre de clients") %>
+              <%= text_field_tag(:nb_client, nil, class: "form-control") %>
+              <%= label_tag(:conversion, "Taux de conversion lead -- client") %>
+              <%= text_field_tag(:conversion, nil, class: "form-control") %>
+              <%= label_tag(:satisfaction, "Taux de satisfaction client") %>
+              <%= text_field_tag(:satisfaction, nil, class: "form-control") %>
+
+              <h3>Mes besoins</h3>
+              <%= label_tag(:needs, "Mes besoins") %>
+              <%= text_area_tag(:needs, nil, class: "form-control", placeholder: "Une nouvelle offre d'emploi? , Un conseil particulier?, Un mise en relation avec un de nos expert?", size: "5x5") %>
+
+              <h3>Quelques informations diverses :</h3>
+              <%= label_tag(:infos, "Infos diverses") %>
+              <%= text_area_tag(:infos, nil , class: "form-control", placeholder: "Un nouveau cas client ? une récente publication ? Une interview ?, Bonne nouvelle ou mauvaise nouvelle ?, Peu importe, nous sommes à votre écoute", size: "5x5") %>
+
+              <%= submit_tag "Envoyer", class: "btn btn-success" %>
+            <% end %>
 </section>

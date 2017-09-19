@@ -24,7 +24,14 @@ class UserMailer < ApplicationMailer
     )
   end
 
-  def contact
+  def contact(contact)
+    @contact = contact
+
+    mail(
+      from: 'florent.merian@aquiti.fr',
+      to: 'florent.merian@aquiti.fr',
+      subject: 'Demande de mise en relation'
+    )
 
   end
 end

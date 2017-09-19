@@ -26,30 +26,6 @@ module ApplicationHelper
     link_to 'Nouvel utilisateur', new_user_invitation_path, class: "btn btn-success"
   end
 
-  def send_reporting
-    mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "",
-    body: "Bonjour,\n
-      Nos derniers indicateurs :
-          Chiffre d’affaires mensuel : €
-          Dépenses mensuelles : €
-          Trésorerie disponible à date : €
-          Nombre de clients : #
-          Taux de conversion lead -- client : %
-          Taux de satisfaction client : %\n
-      Mes besoins :
-          Une nouvelle offre d’emploi
-          Une mise en relation avec un de nos experts
-          Un conseil particulier ?\n
-      Quelques informations diverses :
-          Un nouveau cas client ? une récente publication ? Une interview ?
-          Bonne nouvelle ou mauvaise nouvelle ;
-          Peu importe, nous sommes à votre écoute\n
-      Merci\n
-      Bonne journée," do
-          'Send your report'
-          end
-  end
-
   def ask_for_contact(contact)
     mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "ask-intro",
     body: "Bonjour,\n

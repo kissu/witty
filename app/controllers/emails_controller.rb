@@ -12,7 +12,7 @@ class EmailsController < ApplicationController
 
   def ask_for_contact(contact)
     authorize contact
-    UserMailer.contact
+    UserMailer.contact.deliver_now
   end
 
   private
