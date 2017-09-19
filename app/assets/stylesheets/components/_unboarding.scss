@@ -21,3 +21,9 @@ p a {
     color: $turquoise;
   }
 }
+.understood-button-block {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
