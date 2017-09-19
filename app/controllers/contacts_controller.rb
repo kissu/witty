@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     authorize @contact
     if @contact.save
-      flash[:notice] = "Votre contact a bien été ajouté"
+      flash[:notice] = "Le contact a bien été ajouté"
       redirect_to contacts_path
     else
       render :new
@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    flash[:notice] = "Votre contact a bien été supprimé"
+    flash[:notice] = "Le contact a bien été supprimé"
     redirect_to contacts_path
   end
 
