@@ -1,0 +1,23 @@
+.unboarding-container {
+  background-color: #fff;
+  padding: 20px 40px;
+  h1 {
+    margin-bottom: 30px;
+    font-size: $h2-size + 8;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: $h2-size - 4;
+  }
+}
+.welcome {
+  font-weight: bold;
+  font-size: $p-size;
+  margin: 0;
+}
+p a {
+  color: $green;
+  &:hover {
+    color: $turquoise;
+  }
+}

@@ -1,1 +1,45 @@
-<p>Hi, this is the unboarding page ! :D</p>
+<div class="button-tags-container text-center">
+    <a class="active green-credits" href="#unboarding_text_1"
+      aria-controls="unboarding_text_1" role="tab" data-toggle="tab">
+      Onboarding #1
+    </a>
+    <a class="green-credits" href="#unboarding_text_2"
+      aria-controls="unboarding_text_2" role="tab" data-toggle="tab">
+      Onboarding #2
+    </a>
+    <a class="green-credits" href="#unboarding_text_3"
+      aria-controls="unboarding_text_3" role="tab" data-toggle="tab">
+      Onboarding #3
+    </a>
+    <a class="green-credits" href="#unboarding_text_4"
+      aria-controls="unboarding_text_4" role="tab" data-toggle="tab">
+      Onboarding #4
+    </a>
+    <p class="made-love">
+      Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux
+    </p>
+    <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
+</div>
+
+<div class="tab-content vertical-card products-container unboarding-container">
+  <div role="tabpanel" class="tab-pane fade" id="unboarding_text_1">
+    <%= render partial: "unboarding_text_1" %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="unboarding_text_2">
+    <%= render partial: "unboarding_text_2" %>
+  </div>
+  <div role="tabpanel" class="tab-pane active" id="unboarding_text_3">
+    <%= render partial: "unboarding_text_3" %>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="unboarding_text_4">
+    <%= render partial: "unboarding_text_4" %>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade" id="unboarding_text_3">
+    <p>
+      yolo
+    </p>
+  </div>
+</div>
