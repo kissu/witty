@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def button_new_article
     if policy(Article).new?
-      link_to 'Add a link'.html_safe, new_article_path(@article), class: "green-button"
+      link_to 'Add a link'.html_safe, new_article_path, class: "green-button"
     end
   end
 
@@ -17,7 +17,25 @@ module ApplicationHelper
       link_to '<i class="fa fa-trash"></i>'.html_safe, article_path(article), method: :delete
     end
   end
+#-------helper contact-------------------------------------------
 
+  def button_new_contact
+    if policy(Contact).new?
+      link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
+    end
+  end
+  def button_edit_contact(contact)
+    if policy(contact).update?
+      link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_contact_path(contact)
+    end
+  end
+
+  def button_destroy_contact(contact)
+    if policy(contact).destroy?
+      link_to '<i class="fa fa-trash"></i>'.html_safe, contact_path(contact), method: :delete
+    end
+  end
+#-----------------------------------------------------------------
   def button_external_link(article)
     link_to '<i class="fa fa-share"></i>'.html_safe, article.url, target: "_blank", id: "btn-share"
   end

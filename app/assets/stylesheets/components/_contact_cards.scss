@@ -18,13 +18,13 @@ h2 {
   @extend .product;
   margin: 0 0 20px $gutter;
   a {
-    color: #fff;
+    color: $gray;
     font-size: $p-size;
     font-weight: bold;
     padding: 10px;
     border-radius: $border-radius-large;
     &:hover {
-      color: $orange;
+      color: $yellow;
     }
   }
 }

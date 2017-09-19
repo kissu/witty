@@ -6,14 +6,14 @@ class ContactPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.super_admin?
   end
 
   def update?
-    true
+    user.super_admin?
   end
 
   def destroy?
-    true
+    user.super_admin?
   end
 end
