@@ -5,17 +5,17 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome(user)
-    @user = user  # Instance variable => available in view
-
-    mail(to: @user.email, subject: 'Welcome to Le Wagon')
-  end
 
   def reporting(user, params)
     @user = user
     @ca = params[:ca]
     @depenses = params[:depenses]
+    @treso = params[:treso]
     @nb_client = params[:nb_client]
+    @conversion = params[:conversion]
+    @satisfaction = params[:satisfaction]
+    @needs = params[:needs]
+    @infos = params[:infos]
 
     mail(
       from: 'florent.merian@aquiti.fr',

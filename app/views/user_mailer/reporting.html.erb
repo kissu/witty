@@ -1,32 +1,29 @@
-<h1>test</h1>
 <p>Bonjour,</p>
 
-  <p class="text-right">Nos derniers indicateurs :</p>
+  <p>Les derniers indicateurs pour <%= @user.email %> :</p>
   <ul>
     <li>Chiffre d’affaires mensuel : <%= @ca %>€</li>
     <li>Dépenses mensuelles : <%= @depenses %>€</li>
-    <li>Trésorerie disponible à date : €</li>
+    <li>Trésorerie disponible à date : <%= @treso %>€</li>
     <li>Nombre de clients : <%= @nb_client %></li>
-    <li>Taux de conversion lead -- client : %</li>
-    <li>Taux de satisfaction client : %\n</li>
+    <li>Taux de conversion lead -- client : <%= @conversion %> %</li>
+    <li>Taux de satisfaction client : <%= @satisfaction %>%</li>
   </ul>
 
-  <p>Mes besoins</p>
-  <ul>
-    <li><em>Une nouvelle offre d’emploi</em></li>
-    <li><em>Une mise en relation avec un de nos experts</em></li>
-    <li><em>Un conseil particulier ?</em></li>
-  </ul>
+  <% if @needs != "" %>
+    <p>Mes besoins</p>
+    <p><%= @needs %></p>
+  <% else %>
+    <p>Pas de besoin en particulier</p>
+  <% end %>
 
-
-  <p>Quelques informations diverses :</p>
-  <ul>
-    <li><em>Un nouveau cas client ? une récente publication ? Une interview ?</em></li>
-    <li><em>Bonne nouvelle ou mauvaise nouvelle ;</em></li>
-    <li><em>Peu importe, nous sommes à votre écoute</em></li>
-  </ul>
-
+  <% if @infos != "" %>
+    <p>Quelques informations diverses :</p>
+    <p><%= @infos %></p>
+  <% else %>
+    <p>Pas d'infos particuilère</p>
+  <% end %>
   <p>Merci</p>
   <p>Bonne journée</p>
 
-     <p><%= @user.email %></p>
+  <p><%= @user.email %></p>
