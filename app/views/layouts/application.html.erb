@@ -11,7 +11,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="<%= 'horizontal-' if current_page?(contacts_path) %>wrapper">
+    <div class="<%= 'horizontal-' if current_page?(network_path) %>wrapper">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>

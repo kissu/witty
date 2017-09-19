@@ -24,8 +24,16 @@ class UserMailer < ApplicationMailer
     )
   end
 
-  def contact(contact)
+  def contact(contact, params)
     @contact = contact
+    @ca = params[:ca]
+    @depenses = params[:depenses]
+    @treso = params[:treso]
+    @nb_client = params[:nb_client]
+    @conversion = params[:conversion]
+    @satisfaction = params[:satisfaction]
+    @needs = params[:needs]
+    @infos = params[:infos]
 
     mail(
       from: 'florent.merian@aquiti.fr',

@@ -10,15 +10,17 @@ class EmailsController < ApplicationController
 
   end
 
-  def ask_for_contact(contact)
-    authorize contact
-    UserMailer.contact.deliver_now
+  def ask_for_contact
+    contact = Contact.find(params[:contact_id])
+    UserMailer.contact(contact, email_params).deliver_now
+    flash[:notice] = "Votre demande d'introduction a bien été envoyée"
+    redirect_to network_path
   end
 
   private
 
   def email_params
     params.permit(:ca, :depenses, :treso, :nb_client, :conversion, :satisfaction,
-                  :needs, :infos)
+                  :needs, :infos, :contact, :solution, :market)
   end
 end
