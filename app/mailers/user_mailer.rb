@@ -41,6 +41,5 @@ class UserMailer < ApplicationMailer
       to: 'florent.merian@aquiti.fr',
       subject: 'Demande de mise en relation'
     )
-
   end
 end

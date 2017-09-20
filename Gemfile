@@ -13,6 +13,7 @@ gem 'redis'
 gem 'faker'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'mailjet'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -22,8 +23,6 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'normalize-rails'
-
-gem 'mailjet'
 
 group :development, :test do
   gem 'pry-byebug'

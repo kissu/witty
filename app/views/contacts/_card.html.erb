@@ -1,11 +1,11 @@
 <section class="product filtr-item vertical-card sliced" data-category="<% contact.tags.each do |tag| %><%= tag.id %><% end %>">
   <h2><%= contact.title %></h2>
   <p><%= contact.description %></p>
+
   <div class="dropdown">
-
     <%= button_ask_intro(contact) %>
-
     <%= render 'shared/contact', contact: contact %>
+  </div>
   <div class="product-controls" id="icon">
     <%= button_edit_contact(contact) %>
     <%= button_destroy_contact(contact) %>

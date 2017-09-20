@@ -6,10 +6,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def send_reporting?
-    true
-  end
-
-  def ask_for_contact?
-    true
+    user.entrepreneur?
   end
 end

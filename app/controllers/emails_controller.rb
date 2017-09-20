@@ -10,13 +10,13 @@ class EmailsController < ApplicationController
 
   end
 
-  def ask_for_contact
+  def ask_intro
     user = current_user
-    authorize user
     contact = Contact.find(params[:contact_id])
+    authorize contact
     UserMailer.contact(user, contact, email_params).deliver_now
     flash[:notice] = "Votre demande d'introduction a bien été envoyée"
-    redirect_to network_path
+    redirect_to contacts_path
   end
 
   private
