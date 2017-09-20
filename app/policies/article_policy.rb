@@ -16,4 +16,8 @@ class ArticlePolicy < ApplicationPolicy
   def destroy?
     user.investisseur? or user.super_admin?
   end
+
+  def share?
+    user.entrepreneur?
+  end
 end
