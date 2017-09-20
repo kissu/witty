@@ -18,6 +18,6 @@ class ContactPolicy < ApplicationPolicy
   end
 
   def ask_intro?
-    user.entrepreneur?
+    user.entrepreneur? or user.expert?
   end
 end

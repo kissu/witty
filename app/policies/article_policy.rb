@@ -18,6 +18,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def share?
-    user.entrepreneur?
+    user.entrepreneur? or user.expert?
   end
 end
