@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def send_reporting?
     user.entrepreneur?
   end
+
+  def invitation?
+    user.super_admin?
+  end
 end
