@@ -12,11 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :articles
   resources :upvotes, only: [:create, :destroy]
-
-  resources :contacts
+  resources :knowledge, controller: 'articles', as: 'articles'
+  resources :network, controller: 'contacts', as: 'contacts'
 
   get 'unboarding', to: 'pages#unboarding'
+
+  post 'reporting', to: 'emails#send_reporting'
+  post 'ask_intro', to: 'emails#ask_intro'
 
 end

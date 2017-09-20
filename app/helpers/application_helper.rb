@@ -33,6 +33,7 @@ module ApplicationHelper
       link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
     end
   end
+
   def button_edit_contact(contact)
     if policy(contact).update?
       link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_contact_path(contact)
@@ -46,27 +47,10 @@ module ApplicationHelper
     end
   end
 
-  def ask_for_contact(contact)
+  def button_ask_intro(contact)
     if policy(contact).ask_intro?
-      mail_to "florent.merian@aquiti.fr",
-      subject: "Demande de mise en relation",
-      class: "ask-intro",
-      body: "Bonjour,\n
-      Je souhaite rencontrer cette personne:\n
-       #{contact.title}.
-       #{contact.description}\n
-
-      Pour rappel, notre activité :
-        Solution :......
-        Marché visé :.......\n
-      Nos derniers indicateurs :
-        Chiffre d’affaires mensuel : .....€
-        Nombre de clients : ....#
-        Taux de satisfaction : .....%\n
-      Merci
-      Bonne journée," do
-            "Demander une intro"
-            end
+      link_to "Demander une intro", "#", class: "dropdown-toggle ask-intro",
+       "data-toggle" => "dropdown"
     end
   end
 
@@ -76,29 +60,4 @@ module ApplicationHelper
       class: "btn btn-success"
   end
 
-  def send_reporting
-    mail_to "florent.merian@aquiti.fr",
-    subject: "Reporting",
-    class: "",
-    body: "Bonjour,\n
-      Nos derniers indicateurs :
-          Chiffre d’affaires mensuel : €
-          Dépenses mensuelles : €
-          Trésorerie disponible à date : €
-          Nombre de clients : #
-          Taux de conversion lead -- client : %
-          Taux de satisfaction client : %\n
-      Mes besoins :
-          Une nouvelle offre d’emploi
-          Une mise en relation avec un de nos experts
-          Un conseil particulier ?\n
-      Quelques informations diverses :
-          Un nouveau cas client ? une récente publication ? Une interview ?
-          Bonne nouvelle ou mauvaise nouvelle ;
-          Peu importe, nous sommes à votre écoute\n
-      Merci\n
-      Bonne journée," do
-          'Send your report'
-          end
-  end
 end

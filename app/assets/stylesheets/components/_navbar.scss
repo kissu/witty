@@ -103,3 +103,9 @@ a:hover, a:focus {
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+// css provisoire pour le formulaire de reporting
+#report {
+  width: 450px;
+  background-color: $medium-gray;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) ;
+}
