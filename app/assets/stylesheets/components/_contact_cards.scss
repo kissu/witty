@@ -12,19 +12,22 @@ h2 {
   flex: 0 1 calc(50% - #{$gutter});
   margin-left: $gutter;
 }
-
+.unboarding-container {
+  margin-left: 0; // removes the one from products-container
+  flex: 1 1 70%;
+}
 // tricks for the contacts page
 .sliced {
   @extend .product;
   margin: 0 0 20px $gutter;
   a {
-    color: #fff;
+    color: $gray;
     font-size: $p-size;
     font-weight: bold;
     padding: 10px;
     border-radius: $border-radius-large;
     &:hover {
-      color: $orange;
+      color: $yellow;
     }
   }
 }
@@ -33,13 +36,18 @@ h2 {
   @extend .wrapper;
   @include flex-direction(row);
 }
+.filtr-contact-container .product-controls {
+  @include flex-direction(row);
+  a {
+    padding: 0 20px;
+  }
+}
 .filtr-container {
   margin-left: 26%;
 }
 .ask-intro {
   background-color: $green;
 }
-
 
 // fancy hover stuff
 @mixin shadow($depth) {
@@ -48,7 +56,7 @@ h2 {
 }
 
 .product {
-  transition: all .5s ease-in-out;
+  transition: all .25s ease-in-out;
   &:hover {
     @include shadow(1);
   }

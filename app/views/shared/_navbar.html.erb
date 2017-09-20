@@ -13,9 +13,9 @@
           "KNOWLEDGE", articles_path, html_option = {class:"section active"}) do
         link_to "KNOWLEDGE", articles_path, class:"section" # << else
       end %>
-      <%= link_to_if(current_page?(network_path), "NETWORK", network_path,
+      <%= link_to_if(current_page?(contacts_path), "NETWORK", contacts_path,
                                     html_option = {class:"section active"}) do
-        link_to "NETWORK", network_path, class:"section"
+        link_to "NETWORK", contacts_path, class:"section"
       end %>
     </nav>
   <% end %>

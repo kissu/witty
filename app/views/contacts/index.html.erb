@@ -1,6 +1,9 @@
 <%= render "shared/button_tag", button: 'shuffle' %>
+
 <div class="products-container filtr-contact-container">
   <% @contacts.each do |contact| %>
     <%= render "card", contact: contact  %>
   <% end %>
 </div>
+
+<%= render partial: "shared/drift" %>

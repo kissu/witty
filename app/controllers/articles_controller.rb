@@ -1,9 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
 
   def index
-    @articles = Article.all
     @articles = policy_scope(Article)
 
     @new_articles = Article.last(2).reverse
