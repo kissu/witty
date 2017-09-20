@@ -12,7 +12,10 @@ h2 {
   flex: 0 1 calc(50% - #{$gutter});
   margin-left: $gutter;
 }
-
+.unboarding-container {
+  margin-left: 0; // removes the one from products-container
+  flex: 1 1 70%;
+}
 // tricks for the contacts page
 .sliced {
   @extend .product;
