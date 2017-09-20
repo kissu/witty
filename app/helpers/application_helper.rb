@@ -55,9 +55,19 @@ module ApplicationHelper
   end
 
 # ----------------------- OTHER STUFF -----------------------
-  def button_new_invitation
-    link_to 'Nouvel utilisateur', new_user_invitation_path,
-      class: "btn btn-success"
+  def button_new_invitation(user)
+    if policy(user).send_invitation?
+      link_to 'Nouvel utilisateur', new_user_invitation_path,
+        class: "btn btn-success"
+    end
+  end
+
+  def button_send_reporting(user)
+    if policy(user).send_reporting?
+      link_to "Send your report", '#',
+        class: "dropdown-toggle navbar-wagon-link",
+        id:"navbar-wagon-menu", "data-toggle" => "dropdown"
+    end
   end
 
 end

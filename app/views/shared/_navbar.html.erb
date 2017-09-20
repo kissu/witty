@@ -25,9 +25,8 @@
 
       <!-- Links when logged in -->
         <div class="dropdown">
-          <%= link_to "Send your report", '#',
-            class: "dropdown-toggle navbar-wagon-link",
-            id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= button_send_reporting(current_user) %>
+          <%= button_new_invitation(current_user) %>
           <%= render 'shared/reporting' %>
         </div>
 
