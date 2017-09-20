@@ -56,7 +56,7 @@ module ApplicationHelper
 
 # ----------------------- OTHER STUFF -----------------------
   def button_new_invitation(user)
-    if policy(user).invitation?
+    if policy(user).send_invitation?
       link_to 'Nouvel utilisateur', new_user_invitation_path,
         class: "btn btn-success"
     end

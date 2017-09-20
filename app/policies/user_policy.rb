@@ -9,7 +9,7 @@ class UserPolicy < ApplicationPolicy
     user.entrepreneur?
   end
 
-  def invitation?
+  def send_invitation?
     user.super_admin?
   end
 end
