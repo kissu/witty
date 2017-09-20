@@ -9,10 +9,10 @@
 
               <h3>Pour rappel, notre activité :</h3>
               <%= label_tag(:solution, "Solution") %>
-              <%= text_area_tag(:solution, nil, class: "form-control", placeholder: "En 2 mots : Quelle est la solution que vous proposez ? Pour quel problème ? ", size: "5x5") %>
+              <%= text_area_tag(:solution, nil, class: "form-control", placeholder: "En 2 mots : Quelle est la solution que vous proposez ? Pour quel problème ? ", size: "5x3") %>
               <%= label_tag(:market, "Marché visé") %>
-              <%= text_area_tag(:market, nil , class: "form-control", placeholder: "À qui va s'adresser cette solution?", size: "5x5") %>
+              <%= text_area_tag(:market, nil , class: "form-control", placeholder: "À qui va s'adresser cette solution?", size: "5x3") %>
               <%= hidden_field_tag :contact_id , contact.id %>
 
-              <%= submit_tag "Envoyer", class: "btn btn-success" %>
+              <%= submit_tag "Envoyer ma demande", class: "btn btn-success" %>
 <% end %>

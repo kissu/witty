@@ -24,7 +24,8 @@ class UserMailer < ApplicationMailer
     )
   end
 
-  def contact(contact, params)
+  def contact(user, contact, params)
+    @user = user
     @contact = contact
     @ca = params[:ca]
     @depenses = params[:depenses]
