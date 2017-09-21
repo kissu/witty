@@ -1,5 +1,4 @@
-<% content_for :title do %>
-   - Edit <%= @article.title %>
-<% end %>
+<% content_for :title, "- Edit #{@article.title}" %>
+
 <h1>Modification de l'article</h1>
 <%= render 'form' %>
