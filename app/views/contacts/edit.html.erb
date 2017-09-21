@@ -1,2 +1,6 @@
+<% content_for :title do %>
+   - Edit <%= @contact.title %>
+<% end %>
+
 <h1>Modifier <strong><%= @contact.title %></strong></h1>
 <%= render 'form' %>
