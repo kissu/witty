@@ -7,12 +7,11 @@ h2 {
   flex-flow: row wrap;
   margin-left: -$gutter;
 }
-.vertical-card {
-  flex-direction: column;
-  flex: 0 1 calc(50% - #{$gutter});
-  margin-left: $gutter;
-}
 
+.contact-cards-container .filtr-item {
+  flex-direction: column;
+  width: calc(50% - #{$gutter});
+}
 // tricks for the contacts page
 .sliced {
   @extend .product;

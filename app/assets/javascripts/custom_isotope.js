@@ -1,10 +1,10 @@
 $(document).ready(function(){
   // https://codepen.io/kissu/pen/dVMzvb
-  var $container = $('.filtr-contact-container').isotope({
+  var $container = $('.contact-cards-container').isotope({
     itemSelector: '.filtr-item'
   });
 
-  var $checkboxes = $('.button-tags-container input');
+  var $checkboxes = $('.button-tags-container .checkbox input');
   $checkboxes.change(function(){
     var filters = [];
     // get checked checkboxes values
@@ -13,6 +13,10 @@ $(document).ready(function(){
     });
     // ['.red', '.blue'] -> '.red, .blue'
     filters = filters.join(', ');
-    $container.isotope({ filter: button-tags-container });
+    $container.isotope({ filter: filters });
+  });
+
+  $('#shuffle').click(function(){
+    $container.isotope('shuffle');
   });
 })
