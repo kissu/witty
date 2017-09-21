@@ -1,20 +1,20 @@
-<div class="product filtr-item" data-category="<% article.tags.each do |tag| %><%= tag.id %><% end %>">
+<section class="card filtered-item <% article.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
   <div class="upvote-block">
   <!-- this condition part need to be simplified with sass or erb ! -->
     <% if current_user.voted_for?(article) %>
-      <%= link_to upvote_path(current_user.vote_for(article)), method: :delete,
-        class: 'product-upvote' do %>
-      <span class="product-arrow">&#9650;</span>
-      <div class="product-count">
+
+      <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'card-upvote' do %>
+      <span class="card-arrow">&#9650;</span>
+      <div class="card-count">
         <%= article.upvotes.count %>
       </div>
       <% end %>
 
     <% else %>
-      <%= link_to upvotes_path(article_id: article.id), method: :post,
-        class: 'product-upvote' do %>
-        <span class="product-arrow">&#9650;</span>
-        <div class="product-count">
+
+      <%= link_to upvotes_path(article_id: article.id), method: :post, class: 'card-upvote' do %>
+        <span class="card-arrow">&#9650;</span>
+        <div class="card-count">
           <%= article.upvotes.count %>
         </div>
       <% end %>
@@ -23,18 +23,19 @@
 
   <%= link_to article.url do %>
     <object>
-      <div class="product-details">
+      <div class="card-details">
         <h2><%= article[:title] %></h2>
         <p><%= article[:description] %></p>
       </div>
     </object>
   <% end %>
 
-  <div class="product-controls">
+
+  <div class="card-controls">
     <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
     <%= button_edit_article(article) %>
     <%= button_destroy_article(article) %>
     <%= button_external_link(article) %>
   </div>
 
-</div>
+</section>
