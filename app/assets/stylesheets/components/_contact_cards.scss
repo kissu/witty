@@ -1,29 +1,15 @@
 // ----------- this style is for "Network" path -----------
-
-@mixin flex-direction($direction) {
-  flex-flow: $direction wrap;
-}
 h2 {
   margin-top: 0;
 }
 .contact-cards-container {
   width: 70%;
   display: flex;
-  flex-flow: row wrap;
   margin-left: -$gutter;
   .card {
-    @extend .card;
-    flex-flow: row wrap;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 15px 30px;
-    margin: 0 0 35px 30px;
-    border-radius: $border-radius-large;
-    background-color: #fff;
-    align-items: center;
+    width: calc(50% - #{$gutter});
     a {
-      color: #gray;
+      color: #fff;
       &:hover {
         color: $orange;
       }
@@ -33,6 +19,13 @@ h2 {
   .filtered-item {
     flex-direction: column;
     width: calc(50% - #{$gutter});
+    height: 20vh;
+  }
+  .contact-cards-container .ask-intro a {
+    background-color: $green;
+    padding: 7px;
+    border-radius: $border-radius-large;
+    border: 1px solid red;
   }
 }
 
@@ -62,12 +55,6 @@ h2 {
     padding: 0 20px;
   }
 }
-.ask-intro {
-  color: #fff;
-  background-color: $green;
-  padding: 7px;
-  border-radius: $border-radius-large;
-}
 
 // fancy hover stuff
 @mixin shadow($depth) {
@@ -76,7 +63,6 @@ h2 {
 }
 
 .card {
-  transition: all .25s ease-in-out;
   &:hover {
     @include shadow(1);
   }
