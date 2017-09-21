@@ -12,25 +12,35 @@ h2 {
   flex-direction: column;
   width: calc(50% - #{$gutter});
 }
-// tricks for the contacts page
-.sliced {
-  @extend .product;
-  margin: 0 0 20px $gutter;
-  a {
-    color: $gray;
-    font-size: $p-size;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: $border-radius-large;
-    &:hover {
-      color: $yellow;
-    }
-  }
+.unboarding-container {
+  margin-left: 0; // removes the one from products-container
+  flex: 1 1 70%;
 }
+// surely need to be erased
+// .sliced {
+//   @extend .product;
+//   margin: 0 0 20px $gutter;
+//   a {
+//     color: $gray;
+//     font-size: $p-size;
+//     font-weight: bold;
+//     padding: 10px;
+//     border-radius: $border-radius-large;
+//     &:hover {
+//       color: $yellow;
+//     }
+//   }
+// }
 
 .horizontal-wrapper {
   @extend .wrapper;
   @include flex-direction(row);
+}
+.contact-cards-container .product-controls {
+  @include flex-direction(row);
+  a {
+    padding: 0 20px;
+  }
 }
 .filtr-container {
   margin-left: 26%;
@@ -39,7 +49,6 @@ h2 {
   background-color: $green;
 }
 
-
 // fancy hover stuff
 @mixin shadow($depth) {
   box-shadow: 0 0 ($depth * 8px) 0 rgba(0,0,0,0.2),
@@ -47,7 +56,7 @@ h2 {
 }
 
 .product {
-  transition: all .5s ease-in-out;
+  transition: all .25s ease-in-out;
   &:hover {
     @include shadow(1);
   }

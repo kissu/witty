@@ -5,3 +5,8 @@
 $margin-between-cards: 50px 0;
 // gouttiere entre 2 produits dans la grille sur la page contacts
 $gutter: 30px;
+
+// the rules below certainly need to go into another file...
+.red-trash {
+  color: $red;
+}

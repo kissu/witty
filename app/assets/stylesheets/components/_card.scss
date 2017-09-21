@@ -69,6 +69,7 @@
   justify-content: center;
   justify-content: space-between;
   margin-right: 20px;
+  @include flex-direction(column);
 }
 .product-controls a {
   color: $medium-gray;

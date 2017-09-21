@@ -16,4 +16,8 @@ class ContactPolicy < ApplicationPolicy
   def destroy?
     user.super_admin?
   end
+
+  def ask_intro?
+    user.entrepreneur? or user.expert?
+  end
 end
