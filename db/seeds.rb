@@ -48,7 +48,7 @@ end
 puts "Upvotes done"
 
 #Contacts generation
-9.times do
+51.times do
   c = Contact.create(title: Faker::Job.title, description: Faker::Lorem.sentence(12, false, 0))
   1.times do
     c.tags << tags_array.sample
