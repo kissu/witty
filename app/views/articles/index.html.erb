@@ -1,19 +1,19 @@
-<%= render partial: "shared/button_tag", locals: { button: 'Add a link' } %>
+<%= render "shared/button_tag", button: 'Add a link' %>
 
 <!-- products-container is here to make a group of the latest articles -->
-<section class="products-container">
+<div class="article-latest-cards-container">
   <hr class="latest">
   <% @new_articles.each do |article| %>
-    <%= render partial: "articles/card", locals: { article: article } %>
+    <%= render "articles/card", article: article %>
   <% end %>
-</section>
+</div>
 
+<hr class="popular">
 <!-- same as above but add js stuff on this container :D -->
-<section class="products-container filtr-container infinite-container">
-  <hr class="popular">
+<div class="article-upvoted-cards-container">
   <% @sorted_articles.each do |article| %>
-    <%= render partial: "articles/card", locals: { article: article } %>
+    <%= render "articles/card", article: article %>
   <% end %>
-</section>
+</div>
 
 <%= render partial: "shared/drift" %>

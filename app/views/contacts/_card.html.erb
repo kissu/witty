@@ -1,4 +1,4 @@
-<section class="product filtr-item <% contact.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
+<section class="card filtered-item <% contact.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
   <h2><%= contact.title %></h2>
   <p><%= contact.description %></p>
 
@@ -6,7 +6,7 @@
     <%= button_ask_intro(contact) %>
     <%= render 'shared/contact', contact: contact %>
   </div>
-  <div class="product-controls" id="icon">
+  <div class="card-controls" id="icon">
     <%= button_edit_contact(contact) %>
     <%= button_destroy_contact(contact) %>
     <%= button_new_contact %>

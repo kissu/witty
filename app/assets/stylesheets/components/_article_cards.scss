@@ -1,6 +1,18 @@
-// je test en erb si view article ou pas, si "non", on display none le upvote-block
-// si oui, on display et on flex-direction column le product
-.product {
+// ----------- this style is for "Knowledge" path -----------
+.article-latest-cards-container {
+  width: 70%;
+  margin-left: -30px;
+}
+.article-upvoted-cards-container {
+  margin-left: calc(26% + #{$gutter});
+  width: 100%;
+  .filtered-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+.card {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -27,14 +39,14 @@
 }
 
 /* Upvote design */
-.upvote-block, .product-upvote {
+.upvote-block, .card-upvote {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
   margin: 0 10px;
 }
-.product-upvote {
+.card-upvote {
   transition: all 0.15s ease;
   font-size: $p-size;
   line-height: 10px;
@@ -42,18 +54,18 @@
     text-decoration: none;
   }
 }
-.product-arrow {
+.card-arrow {
   font-size: 30px;
   margin-bottom: 15px;
 }
-.product-count {
+.card-count {
   font-size: 15px;
   color: $green;
   text-align: center;
 }
 
 // middle of the card, with the title & the description
-.product-details {
+.card-details {
   display: flex;
   flex: 4 1 auto;
   margin-right: 60px;
@@ -62,16 +74,15 @@
 }
 
 /* Controls design */
-.product-controls {
+.card-controls {
   flex: 1 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   margin-right: 20px;
   @include flex-direction(column);
 }
-.product-controls a {
+.card-controls a {
   color: $medium-gray;
   padding: 20px;
   border-radius: $border-radius-large;
@@ -86,37 +97,16 @@
   }
 }
 
-// .product-controls-hidden a {
-//   color: transparent;
-//   font-size: 15px;
-//   transition: all 0.15s ease;
-//   border-color: transparent;
-// }
-
-// Hover effects
-.product:hover {
-  background: #FFF;
-  cursor: pointer;
-}
-.product-upvote:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product-upvote-upvoted .product-arrow {
-  border-bottom-color: #5898f1;
-}
-// .product:hover .product-upvote {
-//   transform: scale(1.2)
-// }
-.product:hover .product-controls-hidden a {
-  color: #E6E6E6;
-}
-
 // horizontal rules separators "latest" & "most popular"
 // display: flex; kicks the beautiful hr...
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;
+  width: 80%;
+}
+// need to refacto this better...
+hr.popular {
+  margin-left: calc(28% + #{$gutter});
   width: 80%;
 }
 hr.latest::after, hr.popular::after {

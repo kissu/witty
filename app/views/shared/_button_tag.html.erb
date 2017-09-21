@@ -1,25 +1,25 @@
-<div class="button-tags-container text-center">
+<div class="button-tags-container text-center test">
   <% if button == 'shuffle' %>
       <a href="#shuffled" class="green-button" id='shuffle'><%= button %></a>
   <% else %>
     <%= button_new_article %>
   <% end %>
-  <div class="checkbox">
+  <section class="checkbox">
     <input type="checkbox" id="building" value=".building" name="building">
     <label for="building">Building</label>
-  </div>
-  <div class="checkbox">
+  </section>
+  <section class="checkbox">
     <input type="checkbox" id="hiring" value=".hiring" name="hiring">
     <label for="hiring">Hiring</label>
-  </div>
-  <div class="checkbox">
+  </section>
+  <section class="checkbox">
     <input type="checkbox" id="funding" value=".funding" name="funding">
     <label for="funding">Funding</label>
-  </div>
-  <div class="checkbox">
+  </section>
+  <section class="checkbox">
     <input type="checkbox" id="growing" value=".growing" name="growing">
     <label for="growing">Growing</label>
-  </div>
+  </section>
   <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
   <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
 </div>

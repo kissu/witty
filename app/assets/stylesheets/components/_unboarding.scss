@@ -1,6 +1,14 @@
+p a {
+  color: $green;
+  &:hover {
+    color: $turquoise;
+  }
+}
 .unboarding-container {
   background-color: #fff;
   padding: 20px 40px;
+  margin-left: 0; // removes the one from cards-container
+  flex: 1 1 70%;
   h1 {
     margin-bottom: 30px;
     font-size: $h2-size + 8;
@@ -14,12 +22,6 @@
   font-weight: bold;
   font-size: $p-size;
   margin: 0;
-}
-p a {
-  color: $green;
-  &:hover {
-    color: $turquoise;
-  }
 }
 .understood-button-block {
   display: flex;

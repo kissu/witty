@@ -1,24 +1,26 @@
+// ----------- this style is for "Network" path -----------
+
+@mixin flex-direction($direction) {
+  flex-flow: $direction wrap;
+}
 h2 {
   margin-top: 0;
 }
-.products-container {
+.contact-cards-container {
   width: 70%;
   display: flex;
   flex-flow: row wrap;
   margin-left: -$gutter;
+  // maybe export it into the isotope.js script ?
+  .filtered-item {
+    flex-direction: column;
+    width: calc(50% - #{$gutter});
+  }
 }
 
-.contact-cards-container .filtr-item {
-  flex-direction: column;
-  width: calc(50% - #{$gutter});
-}
-.unboarding-container {
-  margin-left: 0; // removes the one from products-container
-  flex: 1 1 70%;
-}
 // surely need to be erased
 // .sliced {
-//   @extend .product;
+//   @extend .card;
 //   margin: 0 0 20px $gutter;
 //   a {
 //     color: $gray;
@@ -36,14 +38,11 @@ h2 {
   @extend .wrapper;
   @include flex-direction(row);
 }
-.contact-cards-container .product-controls {
+.contact-cards-container .card-controls {
   @include flex-direction(row);
   a {
     padding: 0 20px;
   }
-}
-.filtr-container {
-  margin-left: 26%;
 }
 .ask-intro {
   background-color: $green;
@@ -55,9 +54,18 @@ h2 {
       ($depth * 2px) ($depth * 2px) ($depth * 2px) 0 rgba(0,0,0,0.25);
 }
 
-.product {
+.card {
   transition: all .25s ease-in-out;
   &:hover {
     @include shadow(1);
   }
+}
+
+.wrapper {
+  padding-top: 50px;
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  @include flex-direction(row);
 }
