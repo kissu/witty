@@ -4,7 +4,8 @@ $(document).ready(function(){
     itemSelector: '.filtered-item'
   });
   var $network_container = $('.contact-cards-container').isotope({
-    itemSelector: '.filtered-item'
+    itemSelector: '.filtered-item',
+    layoutMode: 'fitRows'
   });
 
   var $checkboxes = $('.button-tags-container .checkbox input');

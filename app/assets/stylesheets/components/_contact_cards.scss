@@ -11,6 +11,24 @@ h2 {
   display: flex;
   flex-flow: row wrap;
   margin-left: -$gutter;
+  .card {
+    @extend .card;
+    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin: 0 0 35px 30px;
+    border-radius: $border-radius-large;
+    background-color: #fff;
+    align-items: center;
+    a {
+      color: #gray;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
   // maybe export it into the isotope.js script ?
   .filtered-item {
     flex-direction: column;
@@ -45,7 +63,10 @@ h2 {
   }
 }
 .ask-intro {
+  color: #fff;
   background-color: $green;
+  padding: 7px;
+  border-radius: $border-radius-large;
 }
 
 // fancy hover stuff
