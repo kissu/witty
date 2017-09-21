@@ -16,7 +16,7 @@ module ApplicationHelper
   def button_destroy_article(article)
     if policy(article).destroy?
       link_to '<i class="fa fa-trash red-trash"></i>'.html_safe, article_path(article),
-        method: :delete
+        method: :delete, data: { confirm: "Are you sure?" }
     end
   end
 
@@ -43,7 +43,7 @@ module ApplicationHelper
   def button_destroy_contact(contact)
     if policy(contact).destroy?
       link_to '<i class="fa fa-trash red-trash"></i>'.html_safe, contact_path(contact),
-        method: :delete
+        method: :delete, data: { confirm: "Are you sure?" }
     end
   end
 

@@ -19,10 +19,14 @@
     <% end %>
   </div>
 
-  <div class="card-details">
-    <h2><%= article[:title] %></h2>
-    <p><%= article[:description] %></p>
-  </div>
+  <%= link_to article.url do %>
+    <object>
+      <div class="card-details">
+        <h2><%= article[:title] %></h2>
+        <p><%= article[:description] %></p>
+      </div>
+    </object>
+  <% end %>
 
   <div class="card-controls">
     <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
