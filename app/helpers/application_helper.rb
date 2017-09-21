@@ -1,22 +1,26 @@
 module ApplicationHelper
 
-# ----------------------- ARTICLE SIDE -----------------------
+  def button_edit(element)
+    if policy(element).update?
+      object_in_string = element.class.to_s.downcase
+      link_to '<i class="fa fa-pencil"></i>'.html_safe,
+        eval("edit_#{object_in_string}_path(element)")
+    end
+  end
+
+  def button_destroy(element)
+    if policy(element).destroy?
+      object_in_string = element.class.to_s.downcase
+      link_to '<i class="fa fa-trash red-trash"></i>'.html_safe,
+        eval("#{object_in_string}_path(element)"),
+        method: :delete, data: { confirm: "Are you sure?" }
+    end
+  end
+
+  # ----------------------- ARTICLE SIDE -----------------------
   def button_new_article
     if policy(Article).new?
       link_to 'Add a link'.html_safe, new_article_path, class: "green-button"
-    end
-  end
-
-  def button_edit_article(article)
-    if policy(article).update?
-      link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_article_path(article)
-    end
-  end
-
-  def button_destroy_article(article)
-    if policy(article).destroy?
-      link_to '<i class="fa fa-trash red-trash"></i>'.html_safe, article_path(article),
-        method: :delete, data: { confirm: "Are you sure?" }
     end
   end
 
@@ -31,19 +35,6 @@ module ApplicationHelper
   def button_new_contact
     if policy(Contact).new?
       link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
-    end
-  end
-
-  def button_edit_contact(contact)
-    if policy(contact).update?
-      link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_contact_path(contact)
-    end
-  end
-
-  def button_destroy_contact(contact)
-    if policy(contact).destroy?
-      link_to '<i class="fa fa-trash red-trash"></i>'.html_safe, contact_path(contact),
-        method: :delete, data: { confirm: "Are you sure?" }
     end
   end
 
