@@ -7,7 +7,7 @@ class UpvotesController < ApplicationController
     upvote.save
     respond_to do |format|
       format.html { redirect_to articles_path }
-      format.js
+      format.js { render :upvote }
     end
   end
 
@@ -18,7 +18,7 @@ class UpvotesController < ApplicationController
     upvote.destroy
     respond_to do |format|
       format.html { redirect_to articles_path }
-      format.js
+      format.js { render :upvote }
     end
   end
 
