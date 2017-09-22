@@ -4,7 +4,9 @@ class ArticlesController < ApplicationController
   def index
     @articles = policy_scope(Article)
 
-    @new_articles = Article.last(2).reverse
+    @new_articles = Article.where("created_at > ?",
+      current_user.last_sign_in_at)
+
     @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC').offset(2)
   end
 
