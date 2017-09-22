@@ -5,14 +5,21 @@ class UpvotesController < ApplicationController
     upvote = @article.upvotes.new user: current_user
     authorize upvote
     upvote.save
-    redirect_to articles_path
+    respond_to do |format|
+      format.html { redirect_to articles_path }
+      format.js
+    end
   end
 
   def destroy
     upvote = Upvote.find(params[:id])
     authorize upvote
+    @article = upvote.article
     upvote.destroy
-    redirect_to articles_path
+    respond_to do |format|
+      format.html { redirect_to articles_path }
+      format.js
+    end
   end
 
   private
