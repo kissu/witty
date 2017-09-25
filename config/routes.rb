@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
 
   resources :upvotes, only: [:create, :destroy]
-  resources :knowledge, controller: 'articles', as: 'articles'
+  resources :knowledge, controller: 'articles', as: 'articles' do
+    member do
+      get 'featured', to: "articles#featured"
+    end
+  end
   resources :network, controller: 'contacts', as: 'contacts'
 
   get 'unboarding', to: 'pages#unboarding'
