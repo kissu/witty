@@ -3,4 +3,5 @@ class Contact < ApplicationRecord
 
   validates :description, presence: true
   validates :title, presence: true
+  validates :tags, presence: true
 end

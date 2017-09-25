@@ -7,6 +7,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :url, presence: true
+  validates :tags, presence: true
 
   include UpvotableConcern
 

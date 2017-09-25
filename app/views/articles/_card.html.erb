@@ -1,22 +1,6 @@
 <section class="card filtered-item <% article.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
-  <div class="upvote-block">
-  <!-- this condition part need to be simplified with sass or erb ! -->
-    <% if current_user.voted_for?(article) %>
-      <%= link_to upvote_path(current_user.vote_for(article)), method: :delete, class: 'card-upvote' do %>
-      <span class="card-arrow">&#9650;</span>
-      <div class="card-count">
-        <%= article.upvotes.count %>
-      </div>
-      <% end %>
-
-    <% else %>
-      <%= link_to upvotes_path(article_id: article.id), method: :post, class: 'card-upvote' do %>
-        <span class="card-arrow">&#9650;</span>
-        <div class="card-count">
-          <%= article.upvotes.count %>
-        </div>
-      <% end %>
-    <% end %>
+  <div class="upvote-block" id="upvote-<%= article.id %>">
+    <%= render 'upvotes/show', article: article %>
   </div>
 
   <%= link_to article.url do %>

@@ -4,6 +4,7 @@
       <%= simple_form_for @contact do |c| %>
         <%= c.input :title, label: 'Title' %>
         <%= c.input :description, as: :text, :maxlength => 140 %>
+        <%= c.association :tags, as: :radio_buttons, collection_select: :selected %>
         <%= c.submit "Enregister", class: "btn btn-success" %>
       <% end %>
 

@@ -1,0 +1,17 @@
+
+<% if current_user.voted_for?(article) %>
+  <%= link_to upvote_path(current_user.vote_for(article)), remote: true, method: :delete, class: 'card-upvote' do %>
+  <span class="card-arrow"><%= image_tag "voted.svg" %></span>
+  <div class="card-count">
+    <%= article.upvotes.count %>
+  </div>
+  <% end %>
+
+<% else %>
+  <%= link_to upvotes_path(article_id: article.id), remote: true, method: :post, class: 'card-upvote' do %>
+    <span class="card-arrow"><%= image_tag "arrow.svg" %></span>
+    <div class="card-count">
+      <%= article.upvotes.count %>
+    </div>
+  <% end %>
+<% end %>
