@@ -3,8 +3,7 @@
   <p><%= contact.description %></p>
 
   <div class="dropdown">
-    <%= button_ask_intro(contact) %>
-    <%= render 'shared/contact', contact: contact %>
+    <%= ask_intro(contact) %>
   </div>
   <div class="card-controls" id="icon">
     <%= button_edit(contact) %>
