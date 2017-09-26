@@ -68,7 +68,6 @@ module ApplicationHelper
     end
   end
 #------------------------ MAILING ------------------------
-
   def send_reporting
       mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "navbar-wagon-link",
       body: "Bonjour,\n
