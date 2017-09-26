@@ -5,7 +5,7 @@
         <%= f.input :title, label: 'Titre' %>
         <%= f.input :description, as: :text, :maxlength => 140 %>
         <%= f.input :url, label: "Lien de l'article" %>
-        <%= f.association :tags,  collection_select: :selected %>
+        <%= f.association :tags, as: :check_boxes, collection_select: :selected %>
         <%= f.submit "Enregister", class: "btn btn-primary" %>
       <% end %>
 
