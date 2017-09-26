@@ -68,7 +68,8 @@ module ApplicationHelper
     end
   end
 #------------------------ MAILING ------------------------
-  def send_reporting
+  def send_reporting(user)
+    if policy(user).send_reporting?
       mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "navbar-wagon-link",
       body: "Bonjour,\n
         Nos derniers indicateurs :
@@ -91,8 +92,10 @@ module ApplicationHelper
             "Send your report"
             end
     end
+  end
 
-    def ask_intro(contact)
+  def ask_intro(contact)
+    if policy(contact).ask_intro?
       mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "",
       body: "Bonjour,\n
       Je souhaite rencontrer cette personne:\n
@@ -110,4 +113,5 @@ module ApplicationHelper
             "Demander une intro"
             end
     end
+  end
 end
