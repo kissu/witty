@@ -96,7 +96,7 @@ module ApplicationHelper
 
   def ask_intro(contact)
     if policy(contact).ask_intro?
-      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "",
+      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "btn btn-success btn-sm",
       body: "Bonjour,\n
       Je souhaite rencontrer cette personne:\n
         #{contact.title}.

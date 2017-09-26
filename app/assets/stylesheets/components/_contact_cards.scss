@@ -1,6 +1,7 @@
 // ----------- this style is for "Network" path -----------
 h2 {
   margin-top: 0;
+  font-size: 26px;
 }
 .contact-cards-container {
   width: 70%;
@@ -9,9 +10,9 @@ h2 {
   .card {
     width: calc(50% - #{$gutter});
     a {
-      color: #fff;
-      &:hover {
-        color: $orange;
+      color: #FFF;
+      i {
+        color: $medium-gray;
       }
     }
   }
@@ -19,7 +20,7 @@ h2 {
   .filtered-item {
     flex-direction: column;
     width: calc(50% - #{$gutter});
-    height: 20vh;
+    height: 30vh;
   }
   .contact-cards-container .ask-intro a {
     background-color: $green;
