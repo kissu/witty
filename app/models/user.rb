@@ -12,4 +12,8 @@ class User < ApplicationRecord
   enum role: { entrepreneur: 0, expert: 10, investisseur: 20, super_admin: 30 }
 
   include UpvotableConcern
+
+  def name
+    email
+  end
 end
