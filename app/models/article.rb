@@ -9,5 +9,4 @@ class Article < ApplicationRecord
   validates :tags, presence: true
 
   include UpvotableConcern
-
 end
