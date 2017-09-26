@@ -7,13 +7,9 @@ Contact.destroy_all
 
 # User Generation
 users_array = []
-users_array << User.create!(email: "florent@aquiti.fr",password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "fouad@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "kos@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "mathieu@aquiti.fr", password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "en@test", password: "test", role: "entrepreneur", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "in@test", password: "test", role: "investisseur", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "ex@test", password: "test", role: "expert", invitation_accepted_at: DateTime.now)
+users_array << User.create!(email: "florent.merian@aquiti.fr",password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
+users_array << User.create!(email: "entrepreneur@test.fr", password: "aquiti", role: "entrepreneur", invitation_accepted_at: DateTime.now)
+users_array << User.create!(email: "investisseur@test.fr", password: "aquiti", role: "investisseur", invitation_accepted_at: DateTime.now)
 
 puts "Users created"
 
