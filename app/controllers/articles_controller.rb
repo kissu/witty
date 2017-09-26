@@ -1,11 +1,10 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :set_article, only: [:edit, :update, :destroy, :featured]
 
   def index
-    @articles = policy_scope(Article)
-
-    @new_articles = Article.last(2).reverse
-    @sorted_articles = Article.includes(:upvotes).order('upvotes_count DESC').offset(2)
+    @sorted_articles = policy_scope(Article)
+    @featured_articles = Article.where(
+      featured_at: (Date.today - 30.day)..Date.today)
   end
 
   def new
@@ -39,6 +38,17 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     flash[:notice] = "Votre article a bien été supprimé"
+    redirect_to articles_path
+  end
+
+  def featured
+    authorize @article
+    if @article.featured_at?
+      @article.featured_at = nil
+    else
+      @article.featured_at = Date.today
+    end
+    @article.save
     redirect_to articles_path
   end
 

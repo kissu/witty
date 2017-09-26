@@ -1,10 +1,13 @@
 $(document).ready(function(){
   // https://codepen.io/kissu/pen/dVMzvb
   var $knowledge_container = $('.article-upvoted-cards-container').isotope({
-    itemSelector: '.filtered-item'
+    itemSelector: '.filtered-item',
+    percentPosition: true
   });
   var $network_container = $('.contact-cards-container').isotope({
-    itemSelector: '.filtered-item'
+    itemSelector: '.filtered-item',
+    percentPosition: true,
+    layoutMode: 'fitRows'
   });
 
   var $checkboxes = $('.button-tags-container .checkbox input');
