@@ -5,7 +5,7 @@
 <!-- products-container is here to make a group of the latest articles -->
 <div class="article-latest-cards-container">
   <hr class="latest">
-  <% @new_articles.each do |article| %>
+  <% @featured_articles.each do |article| %>
     <%= render "articles/card", article: article %>
   <% end %>
 </div>

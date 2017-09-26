@@ -110,7 +110,7 @@ hr.popular {
   width: 80%;
 }
 hr.latest::after, hr.popular::after {
-  content: 'LATEST';
+  content: 'FEATURED';
   display: inline-block;
   position: relative;
   top: -14px;

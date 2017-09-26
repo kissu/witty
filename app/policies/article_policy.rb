@@ -1,7 +1,7 @@
 class ArticlePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.includes(:upvotes).where(featured_at: nil).order('upvotes_count DESC')
     end
   end
 
@@ -19,5 +19,9 @@ class ArticlePolicy < ApplicationPolicy
 
   def share?
     user.entrepreneur? or user.expert?
+  end
+
+  def featured?
+    user.super_admin?
   end
 end

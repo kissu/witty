@@ -14,6 +14,7 @@
 
   <div class="card-controls">
     <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
+    <%= button_featured(article) %>
     <%= button_edit(article) %>
     <%= button_destroy(article) %>
     <%= button_external_link(article) %>

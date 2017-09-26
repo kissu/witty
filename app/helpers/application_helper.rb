@@ -31,6 +31,13 @@ module ApplicationHelper
     end
   end
 
+  def button_featured(article)
+    if policy(article).featured?
+      link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe,
+      featured_article_path(article)
+    end
+  end
+
 # ----------------------- CONTACT SIDE -----------------------
   def button_new_contact
     if policy(Contact).new?
