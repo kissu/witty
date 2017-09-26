@@ -1,20 +1,31 @@
 // ----------- this style is for "Network" path -----------
-
-@mixin flex-direction($direction) {
-  flex-flow: $direction wrap;
-}
 h2 {
   margin-top: 0;
 }
 .contact-cards-container {
   width: 70%;
   display: flex;
-  flex-flow: row wrap;
   margin-left: -$gutter;
+  .card {
+    width: calc(50% - #{$gutter});
+    a {
+      color: #fff;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
   // maybe export it into the isotope.js script ?
   .filtered-item {
     flex-direction: column;
     width: calc(50% - #{$gutter});
+    height: 20vh;
+  }
+  .contact-cards-container .ask-intro a {
+    background-color: $green;
+    padding: 7px;
+    border-radius: $border-radius-large;
+    border: 1px solid red;
   }
 }
 
@@ -44,9 +55,6 @@ h2 {
     padding: 0 20px;
   }
 }
-.ask-intro {
-  background-color: $green;
-}
 
 // fancy hover stuff
 @mixin shadow($depth) {
@@ -55,7 +63,6 @@ h2 {
 }
 
 .card {
-  transition: all .25s ease-in-out;
   &:hover {
     @include shadow(1);
   }
@@ -66,6 +73,6 @@ h2 {
   width: 65%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   @include flex-direction(row);
 }

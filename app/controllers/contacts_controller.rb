@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:edit, :update, :destroy]
 
   def index
-    @contacts = policy_scope(Contact)
+    @contacts = policy_scope(Contact).shuffle
   end
 
   def new
