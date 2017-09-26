@@ -17,28 +17,25 @@ users_array << User.create!(email: "ex@test", password: "test", role: "expert", 
 
 puts "Users created"
 
-articles_array = []
-rand(20..30).times do
-  articles_array << Article.create!(title: Faker::Name.title, description: Faker::Lorem.sentence(10, false, 0), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
-end
-
-puts "Articles created"
-
 # Tags for the articles
 list_tags = %w(Building Hiring Funding Growing)
 tags_array = []
 list_tags.each do |tag|
   tags_array << Tag.create!(name: tag)
 end
-
 puts "Tags for articles created"
 
-# Link articles & tags
-articles_array.each do |article|
-  article.tags << tags_array.sample
+articles_array = []
+rand(20..30).times do
+  a = Article.new(title: Faker::Name.title, description: Faker::Lorem.sentence(10, false, 0), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
+  a.tags << tags_array.sample
+  a.save
+  articles_array << a
 end
 
-puts "Tags linked to articles"
+
+puts "Articles created"
+
 
 # Upvote Generation
 rand(50..60).times do
@@ -49,10 +46,9 @@ puts "Upvotes done"
 
 #Contacts generation
 51.times do
-  c = Contact.create(title: Faker::Job.title, description: Faker::Lorem.sentence(12, false, 0))
-  1.times do
-    c.tags << tags_array.sample
-  end
+  c = Contact.new(title: Faker::Job.title, description: Faker::Lorem.sentence(12, false, 0))
+  c.tags << tags_array.sample
+  c.save
 end
 
 puts "Contact done"
