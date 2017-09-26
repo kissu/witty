@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   def index
     @sorted_articles = policy_scope(Article)
-    @featured_articles = Article.where.not(featured_at: nil)
+    @featured_articles = Article.where(
+      featured_at: (Date.today - 30.day)..Date.today)
   end
 
   def new
