@@ -41,7 +41,7 @@ module ApplicationHelper
 # ----------------------- CONTACT SIDE -----------------------
   def button_new_contact
     if policy(Contact).new?
-      link_to '<i class="fa fa-plus"></i>'.html_safe, new_contact_path
+      link_to 'ADD A CONTACT', new_contact_path, class: "green-button"
     end
   end
 

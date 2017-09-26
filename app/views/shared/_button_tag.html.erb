@@ -1,5 +1,7 @@
 <div class="button-tags-container text-center sticky">
-  <% if button == 'shuffle' %>
+  <% if current_user.super_admin? && current_page?('/network') %>
+    <%= button_new_contact %>
+  <% elsif button == 'shuffle' %>
     <a href="#shuffled" class="green-button" id='shuffle'><%= button %></a>
   <% else %>
     <%= button_new_article %>

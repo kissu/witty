@@ -8,5 +8,7 @@ class Article < ApplicationRecord
   validates :url, presence: true
   validates :tags, presence: true
 
+  accepts_nested_attributes_for :tags, allow_destroy: true
+
   include UpvotableConcern
 end
