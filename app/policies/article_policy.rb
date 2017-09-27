@@ -10,15 +10,15 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.investisseur? or user.super_admin?
+    user.super_admin?
   end
 
   def destroy?
-    user.investisseur? or user.super_admin?
+    user.super_admin?
   end
 
   def share?
-    user.entrepreneur? or user.expert?
+    user.entrepreneur?
   end
 
   def featured?
