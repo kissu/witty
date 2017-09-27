@@ -1,11 +1,4 @@
 <% content_for :title, "- New article" %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="form-article">
-        <h1 class="text-center">New article</h1>
-        <%= render 'form' %>
-      </div>
-    </div>
-  </div>
-</div>
+
+<%= render 'form', action: "New article" %>
+

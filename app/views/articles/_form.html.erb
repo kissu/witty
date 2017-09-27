@@ -1,30 +1,46 @@
-<%= simple_form_for @article, class: "input-group text-center" do |f| %>
+<div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <%= f.input :title %>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-article">
+        <h1 class="text-center"><%= action %></h1>
+
+        <%= simple_form_for @article, class: "input-group text-center" do |f| %>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :title %>
+              </div>
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :url %>
+            </div>
+          </div>
+          <%= f.input :description, as: :text, :maxlength => 140 %>
+          <%= f.association :tags, as: :check_boxes, collection_select: :selected %>
+
+          <div class="form-group check_boxes required article_tags">
+            <input type="hidden" name="article[tag_ids][]" value="">
+
+            <div class="tag-choices">
+              <% Tag.all.each do |tag| %>
+                <input class="hidden" type="checkbox" value="<%= tag.id %>"
+                  name="article[tag_ids][]" id="article_tag_ids_<%= tag.id %>">
+                <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="article_tag_ids_<%= tag.id %>">
+                  <%= tag.name %>
+                </label>
+              <% end %>
+            </div>
+          </div>
+
+
+          <%= f.submit "Save your article", class: "btn btn-success" %>
+        <% end %>
+
       </div>
-    <div class="col-xs-12 col-md-6">
-      <%= f.input :url %>
     </div>
   </div>
-  <%= f.input :description, as: :text, :maxlength => 140 %>
-  <div class="form-group">
-    <input type="hidden" name="article[tag_ids][]" value="">
-
-    <div class="tag-choices">
-      <% Tag.all.each do |tag| %>
-        <input class="hidden" type="checkbox" value="<%= tag.id %>"
-          name="article[tag_ids][]" id="article_tag_ids_<%= tag.id %>">
-        <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="article_tag_ids_<%= tag.id %>">
-          <%= tag.name %>
-          <i class="fa fa-check"></i>
-        </label>
-      <% end %>
-    </div>
-  </div>
+</div>
 
 
-  <%= f.submit "Save your article", class: "btn btn-success" %>
-<% end %>
+
+
 
 
