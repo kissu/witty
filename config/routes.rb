@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   resources :network, controller: 'contacts', as: 'contacts'
 
-  get 'unboarding', to: 'pages#unboarding'
+  get 'onboarding', to: 'pages#onboarding'
 
   post 'reporting', to: 'emails#send_reporting'
   post 'ask_intro', to: 'emails#ask_intro'

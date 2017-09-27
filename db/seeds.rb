@@ -9,7 +9,7 @@ Contact.destroy_all
 users_array = []
 users_array << User.create!(email: "florent.merian@aquiti.fr",password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
 users_array << User.create!(email: "entrepreneur@test.fr", password: "aquiti", role: "entrepreneur", invitation_accepted_at: DateTime.now)
-users_array << User.create!(email: "investisseur@test.fr", password: "aquiti", role: "investisseur", invitation_accepted_at: DateTime.now)
+# users_array << User.create!(email: "investisseur@test.fr", password: "aquiti", role: "investisseur", invitation_accepted_at: DateTime.now)
 
 puts "Users created"
 
@@ -23,7 +23,7 @@ puts "Tags for articles created"
 
 articles_array = []
 rand(20..30).times do
-  a = Article.new(title: Faker::Name.title, description: Faker::Lorem.sentence(10, false, 0), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
+  a = Article.new(title: Faker::Name.title, description: Faker::Lorem.sentence(5, true, 5), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
   a.tags << tags_array.sample
   a.save
   articles_array << a
