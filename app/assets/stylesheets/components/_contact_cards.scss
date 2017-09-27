@@ -1,7 +1,6 @@
 // ----------- this style is for "Network" path -----------
 h2 {
   margin-top: 0;
-  font-size: 26px;
 }
 .contact-cards-container {
   width: 70%;
@@ -19,8 +18,8 @@ h2 {
   // maybe export it into the isotope.js script ?
   .filtered-item {
     flex-direction: column;
+    flex: 1;
     width: calc(50% - #{$gutter});
-    height: 30vh;
   }
   .contact-cards-container .ask-intro a {
     background-color: $green;
