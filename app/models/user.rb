@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :upvotes, dependent: :nullify
   has_many :articles, dependent: :nullify
 
-  enum role: { entrepreneur: 0, expert: 10, investisseur: 20, super_admin: 30 }
+  enum role: { entrepreneur: 0, super_admin: 30 }
 
   include UpvotableConcern
 
