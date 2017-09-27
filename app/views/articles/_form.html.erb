@@ -14,14 +14,14 @@
             </div>
           </div>
           <%= f.input :description, as: :text, :maxlength => 140 %>
-          <%= f.association :tags, as: :check_boxes, collection_select: :selected %>
+          <%= f.association :tags, as: :check_boxes, collection_select: :selected, class: "hidden" %>
 
-          <div class="form-group check_boxes required article_tags">
+          <div class="form-group">
             <input type="hidden" name="article[tag_ids][]" value="">
 
             <div class="tag-choices">
               <% Tag.all.each do |tag| %>
-                <input class="hidden" type="checkbox" value="<%= tag.id %>"
+                <input class="" type="checkbox" value="<%= tag.id %>"
                   name="article[tag_ids][]" id="article_tag_ids_<%= tag.id %>">
                 <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="article_tag_ids_<%= tag.id %>">
                   <%= tag.name %>
