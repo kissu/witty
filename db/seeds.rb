@@ -22,7 +22,7 @@ puts "Tags for articles created"
 
 articles_array = []
 rand(20..30).times do
-  a = Article.new(title: Faker::Name.title, description: Faker::Lorem.sentence(5, true, 15), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
+  a = Article.new(title: Faker::Name.title, description: Faker::Lorem.sentence(5, true, 5), url: Faker::Internet.url, permalink: "#", user: users_array.sample)
   a.tags << tags_array.sample
   a.save
   articles_array << a
