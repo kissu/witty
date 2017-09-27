@@ -1,14 +1,30 @@
-<div class="container">
+<%= simple_form_for @article, class: "input-group text-center" do |f| %>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for @article do |f| %>
-        <%= f.input :title, label: 'Titre' %>
-        <%= f.input :description, as: :text, :maxlength => 140 %>
-        <%= f.input :url, label: "Lien de l'article" %>
-        <%= f.association :tags, as: :check_boxes, collection_select: :selected %>
-        <%= f.submit "Enregister", class: "btn btn-primary" %>
-      <% end %>
-
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :title %>
+      </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :url %>
     </div>
   </div>
-</div>
+  <%= f.input :description, as: :text, :maxlength => 140 %>
+  <div class="form-group">
+    <input type="hidden" name="article[tag_ids][]" value="">
+
+    <div class="tag-choices">
+      <% Tag.all.each do |tag| %>
+        <input class="hidden" type="checkbox" value="<%= tag.id %>"
+          name="article[tag_ids][]" id="article_tag_ids_<%= tag.id %>">
+        <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="article_tag_ids_<%= tag.id %>">
+          <%= tag.name %>
+          <i class="fa fa-check"></i>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+
+  <%= f.submit "Save your article", class: "btn btn-success" %>
+<% end %>
+
+
