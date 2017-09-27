@@ -70,6 +70,7 @@
   p {
     color: $gray;
     font-size: $p-size;
+    word-break: break-all;
   }
   h2 {
     font-weight: bold;
