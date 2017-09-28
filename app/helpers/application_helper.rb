@@ -47,22 +47,22 @@ module ApplicationHelper
 
   def button_ask_intro(contact)
     if policy(contact).ask_intro?
-      link_to "Demander une intro", "#", class: "dropdown-toggle ask-intro",
-       "data-toggle" => "dropdown"
+      link_to "Ask an intro", ask_intro_contact_path(contact), method: :post,
+        class: "btn btn-success btn-sm ask-intro"
     end
   end
 
 # ----------------------- OTHER STUFF -----------------------
   def button_new_invitation(user)
     if policy(user).send_invitation?
-      link_to 'Nouvel utilisateur', new_user_invitation_path,
+      link_to 'New user', new_user_invitation_path,
         class: "btn btn-success"
     end
   end
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
-      link_to "Send your report", '#',
+      link_to "Send your report", reporting_path, method: :post,
         class: "dropdown-toggle navbar-wagon-link",
         id:"navbar-wagon-menu", "data-toggle" => "dropdown"
     end

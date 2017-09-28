@@ -18,11 +18,15 @@ Rails.application.routes.draw do
       get 'featured', to: "articles#featured"
     end
   end
-  resources :network, controller: 'contacts', as: 'contacts'
+  resources :network, controller: 'contacts', as: 'contacts' do
+    member do
+      post 'ask_intro', to: 'emails#ask_intro'
+    end
+  end
 
   get 'onboarding', to: 'pages#onboarding'
 
   post 'reporting', to: 'emails#send_reporting'
-  post 'ask_intro', to: 'emails#ask_intro'
+
 
 end
