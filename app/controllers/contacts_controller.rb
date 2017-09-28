@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
   end
 
   def update
-    if @contact.update!(contact_params)
+    if @contact.update(contact_params)
       flash[:notice] = "The contact has modified"
       redirect_to contacts_path
     else

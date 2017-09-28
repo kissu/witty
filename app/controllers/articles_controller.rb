@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
