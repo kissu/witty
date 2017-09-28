@@ -14,7 +14,7 @@
             </div>
           </div>
           <%= f.input :description, as: :text, :maxlength => 140 %>
-          <%= f.association :tags, as: :check_boxes, collection_select: :selected, class: "hidden" %>
+          <%#= f.association :tags, as: :check_boxes, collection_select: :selected, class: "hidden" %>
 
           <div class="form-group">
             <input type="hidden" name="article[tag_ids][]" value="">
