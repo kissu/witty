@@ -1,0 +1,9 @@
+// bootstrap ones => 576, 768, 992, 1200
+@media (max-width: 992px) {
+  .contact-cards-container .card {
+    width: 100%;
+  }
+  .filtered-item {
+    flex-wrap: nowrap;
+  }
+}

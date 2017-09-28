@@ -19,3 +19,29 @@
 </div>
 
 <%= render partial: "shared/drift" %>
+
+<% content_for(:after_js) do %>
+<script>
+  $(document).ready(function(){
+    var $knowledge_container = $('.article-upvoted-cards-container').isotope({
+      itemSelector: '.filtered-item',
+      percentPosition: true
+    });
+
+    var $checkboxes = $('.button-tags-container .checkbox input');
+    $checkboxes.change(function(){
+      var filters = [];
+      $checkboxes.filter(':checked').each(function(){
+        filters.push( this.value );
+      });
+
+      filters = filters.join(', ');
+      $knowledge_container.isotope({ filter: filters });
+    });
+
+    $('#shuffle').click(function(){
+      $network_container.isotope('shuffle');
+    });
+  })
+</script>
+<% end %>

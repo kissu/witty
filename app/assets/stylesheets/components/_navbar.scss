@@ -59,7 +59,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  transition: color 0.3s ease;
+  // transition: color 0.3s ease;
   font-weight: bold;
   margin-right: 20px;
   color: $green;
@@ -80,7 +80,7 @@ a:hover, a:focus {
   border-color: $light-gray;
 }
 .navbar-wagon-dropdown-menu li > a {
-  transition: color 0.3s ease;
+  // transition: color 0.3s ease;
   font-weight: lighter;
   color: $green;
   font-size: 15px;
