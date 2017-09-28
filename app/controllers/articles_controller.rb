@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     authorize @article
+
     if @article.save
       flash[:notice] = "Votre article a bien été ajouté"
       redirect_to articles_path
