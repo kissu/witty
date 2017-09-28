@@ -31,7 +31,7 @@
   justify-content: center;
   font-weight: bold;
   .section {
-    color: $medium-gray;
+    color: $black;
     cursor: pointer;
     padding: 35px 60px;
     font-size: $p-size;
@@ -65,7 +65,7 @@
   color: $green;
   font-size: 14px;
   &:hover {
-    color: $yellow;
+    color: $turquoise;
     text-decoration: none;
   }
 }
@@ -80,16 +80,16 @@ a:hover, a:focus {
   border-color: $light-gray;
 }
 .navbar-wagon-dropdown-menu li > a {
-  // transition: color 0.3s ease;
+  transition: color 0.3s ease;
   font-weight: lighter;
-  color: $green;
+  color: $black;
   font-size: 15px;
   line-height: 22px;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent;
-  color: $orange;
+  color: $turquoise;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';

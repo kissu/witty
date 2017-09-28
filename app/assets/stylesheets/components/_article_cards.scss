@@ -43,6 +43,9 @@
   justify-content: center;
   text-align: center;
   margin: 0 10px;
+  & > * {
+    color: $green;
+  }
 }
 .card-upvote {
   transition: all 0.15s ease;
