@@ -1,13 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for @contact do |c| %>
-        <%= c.input :title, label: 'Title' %>
-        <%= c.input :description, as: :text, :maxlength => 140 %>
-        <%= c.association :tags, as: :check_boxes, collection_select: :selected %>
-        <%= c.submit "Enregister", class: "btn btn-success" %>
-      <% end %>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-article">
+        <h1 class="text-center"><%= action %></h1>
 
+        <%= simple_form_for @contact, class: "input-group text-center" do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description, as: :text, :maxlength => 140 %>
+
+          <div class="form-group">
+            <input type="hidden" name="contact[tag_ids][]" value="">
+
+            <div class="tag-choices">
+              <% Tag.all.each do |tag| %>
+                <input class="hidden" type="checkbox" value="<%= tag.id %>"
+                  name="contact[tag_ids][]" id="contact_tag_ids_<%= tag.id %>">
+                <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="contact_tag_ids_<%= tag.id %>">
+                  <%= tag.name %>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <%= f.submit "Save your contact", class: "btn btn-success" %>
+        <% end %>
+
+      </div>
     </div>
   </div>
 </div>
