@@ -5,7 +5,17 @@
         <h1 class="text-center"><%= action %></h1>
 
         <%= simple_form_for @article, class: "input-group text-center" do |f| %>
-          <%= f.error_notification %>
+
+          <% if @article.errors.any? %>
+              <div id="error_explanation" class="alert alert-danger" >
+                <ul>
+                <% @article.errors.full_messages.each do |message| %>
+                  <li ><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <div class="row">
             <div class="col-xs-12 col-md-6">
               <%= f.input :title %>
