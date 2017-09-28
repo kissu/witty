@@ -17,25 +17,23 @@
   }
 }
 
-// @mixin generic-card {
-  .card {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 15px 30px;
-    margin: 0 0 35px 30px;
-    border-radius: $border-radius-large;
-    align-items: center;
-    background-color: #fff;
-    a {
+.card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 30px;
+  margin: 0 0 35px 30px;
+  border-radius: $border-radius-large;
+  align-items: center;
+  background-color: #fff;
+  a {
+    color: $green;
+    &:hover {
+      text-decoration: none;
       color: $green;
-      &:hover {
-        text-decoration: none;
-        color: $green;
-      }
     }
   }
-// }
+}
 
 /* Upvote design */
 .upvote-block, .card-upvote {
@@ -43,6 +41,7 @@
   flex: 0 1 auto;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   margin: 0 10px;
 }
 .card-upvote {
@@ -95,31 +94,27 @@
 // middle of the card, with the title & the description
 .card-details {
   display: flex;
-  flex: 4 1 auto;
-  margin-right: 60px;
-  margin-left: 10px;
+  flex: 6 1 70%;
   flex-direction: column;
-  justify-content: left;
-  width: 400px;
   p {
-      color: $gray;
-      font-size: $p-size;
+    color: $gray;
+    font-size: $p-size;
+    word-break: break-all;
   }
   h2 {
-      font-weight: bold;
-      font-size: $h2-size;
-      color: $gray;
+    font-weight: bold;
+    font-size: $h2-size;
+    color: $gray;
   }
-
-
 }
 
 /* Controls design */
 .card-controls {
-  flex: 0 0 auto;
+  flex: 0 0 20%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
+  margin-left: auto;
   @include flex-direction(column);
 }
 .card-controls a {

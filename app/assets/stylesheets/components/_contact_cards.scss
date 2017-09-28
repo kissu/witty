@@ -1,11 +1,8 @@
 // ----------- this style is for "Network" path -----------
-h2 {
-  margin-top: 0;
-  font-size: 26px;
-}
 .contact-cards-container {
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   margin-left: -$gutter;
   .card {
     width: calc(50% - #{$gutter});
@@ -18,9 +15,14 @@ h2 {
   }
   // maybe export it into the isotope.js script ?
   .filtered-item {
+    display: flex;
     flex-direction: column;
     width: calc(50% - #{$gutter});
-    height: 30vh;
+    justify-content: center;
+    h2 {
+      font-size: $h2-size;
+      align-self: flex-start;
+    }
   }
   .contact-cards-container .ask-intro a {
     background-color: $green;
@@ -60,7 +62,7 @@ h2 {
 // fancy hover stuff
 @mixin shadow($depth) {
   box-shadow: 0 0 ($depth * 8px) 0 rgba(0,0,0,0.2),
-      ($depth * 2px) ($depth * 2px) ($depth * 2px) 0 rgba(0,0,0,0.25);
+    ($depth * 2px) ($depth * 2px) ($depth * 2px) 0 rgba(0,0,0,0.25);
 }
 
 .card {
