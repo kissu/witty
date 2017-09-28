@@ -18,6 +18,13 @@ p a {
     font-size: $h2-size - 4;
   }
 }
+
+.button-tags-container .active {
+  color: $blue;
+  &:hover {
+    color: $blue;
+  }
+}
 .welcome {
   font-weight: bold;
   font-size: $p-size;
