@@ -21,12 +21,6 @@
   }
 }
 
-
-
-
-
-
-
 // WIP !!
 .card {
   display: flex;
@@ -38,7 +32,6 @@
   background-color: #fff;
   a {
     display: flex;
-    color: $green;
     &:hover {
       text-decoration: none;
       color: $green;
@@ -66,6 +59,10 @@ object {
   flex: 0 1 70%;
 }
 
+object .card-upvote:hover > * {
+  color: $green;
+  // background-color: red;
+}
 // WIP !!
 
 
@@ -74,16 +71,16 @@ object {
 
 
 /* Upvote design */
-.upvote-block, .card-upvote {
+.upvote-block {
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   margin: 0 10px;
-  & > * {
-    color: $green;
-  }
+  // & > * {
+  //   color: $green;
+  // }
 }
 .card-upvote {
   transition: all 0.15s ease;
@@ -97,40 +94,6 @@ object {
   font-size: 30px;
   margin-bottom: 15px;
 }
-.card-count {
-  margin: 10px 0 0;
-  font-size: 15px;
-  color: $black;
-  text-align: center;
-}
-.card-count-green {
-  margin: 10px 0 0;
-  font-size: 15px;
-  color: $green;
-  text-align: center;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: 2px;
-  margin: auto;
-}
-.product-arrow-green {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid $green;
-  border-radius: 2px;
-  margin: auto;
-}
 
 // middle of the card, with the title & the description
 .card-details {
@@ -143,8 +106,8 @@ object {
 .card-controls {
   flex: 0 0 20%;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   @include flex-direction(column);
 }
