@@ -21,16 +21,23 @@
   }
 }
 
+
+
+
+
+
+
+// WIP !!
 .card {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 15px 30px;
   margin: 0 0 35px 30px;
   border-radius: $border-radius-large;
   align-items: center;
   background-color: #fff;
   a {
+    display: flex;
     color: $green;
     &:hover {
       text-decoration: none;
@@ -38,6 +45,33 @@
     }
   }
 }
+
+a[href*="google"] {
+  border: 1px solid green;
+  display: flex;
+  flex: 1;
+  padding: 10px 20px;
+}
+
+object {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+}
+.test-middle {
+  display: flex;
+  align-items: flex-start;
+  flex: 0 1 70%;
+}
+
+// WIP !!
+
+
+
+
+
 
 /* Upvote design */
 .upvote-block, .card-upvote {

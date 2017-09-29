@@ -1,21 +1,25 @@
 <section class="card filtered-item <% article.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
-  <div class="upvote-block" id="upvote-<%= article.id %>">
-    <%= render 'upvotes/show', article: article %>
-  </div>
+  <a href="google.com">
+    <object data="" type="" class="upvote-block">
+      <div id="upvote-<%= article.id %>">
+        <%= render 'upvotes/show', article: article %>
+      </div>
+    </object>
 
-  <%= link_to article.url, target: "_blank" do %>
-    <div class="card-details">
+    <div class="card-details test-middle">
       <h2><%= article[:title] %></h2>
       <p><%= article[:description] %></p>
     </div>
-  <% end %>
 
-  <div class="card-controls">
-    <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
-    <%= button_featured(article) %>
-    <%= button_edit(article) %>
-    <%= button_destroy(article) %>
-    <%= button_external_link(article) %>
-  </div>
+    <object class="card-controls">
+      <div>
+        <!-- <li>Tag: <%# article.tags.each do |tag| %><%#= tag.name %><%# end %><li> -->
+        <%= button_featured(article) %>
+        <%= button_edit(article) %>
+        <%= button_destroy(article) %>
+        <%= button_external_link(article) %>
+      </div>
+    </object>
 
+  </a>
 </section>
