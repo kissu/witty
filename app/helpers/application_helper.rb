@@ -60,18 +60,17 @@ module ApplicationHelper
     end
   end
 
-  def button_send_reporting(user)
-    if policy(user).send_reporting?
-      link_to "Send your report", reporting_path, method: :post,
-        class: "dropdown-toggle navbar-wagon-link",
-        id:"navbar-wagon-menu", "data-toggle" => "dropdown"
-    end
-  end
+  # def button_send_reporting(user)
+  #   if policy(user).send_reporting?
+  #     link_to "Send your report", reporting_path, method: :post,
+  #       class: "dropdown-toggle navbar-wagon-link",
+  #       id:"navbar-wagon-menu", "data-toggle" => "dropdown"
+  #   end
+  # end
 #------------------------ MAILING ------------------------
   def send_reporting(user)
     if policy(user).send_reporting?
-      mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "navbar-wagon-link",
-      body: "Bonjour,\n
+      "Bonjour,\n
         Nos derniers indicateurs :
             Chiffre d’affaires mensuel : ....€
             Dépenses mensuelles : ....€
@@ -88,9 +87,7 @@ module ApplicationHelper
             Bonne nouvelle ou mauvaise nouvelle ;
             Peu importe, nous sommes à votre écoute\n
         Merci,\n
-        Bonne journée," do
-            "Send your report"
-            end
+        Bonne journée,"
     end
   end
 

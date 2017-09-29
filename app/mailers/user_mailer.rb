@@ -13,6 +13,7 @@ class UserMailer < ApplicationMailer
     mail(
       from: 'florent.merian@aquiti.fr',
       to: 'florent.merian@aquiti.fr',
+      reply_to: @user.email,
       subject: 'Reporting'
     )
   end
