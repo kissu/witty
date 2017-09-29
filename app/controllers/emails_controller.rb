@@ -22,7 +22,6 @@ class EmailsController < ApplicationController
   private
 
   def email_params
-    params.permit(:ca, :depenses, :treso, :nb_client, :conversion, :satisfaction,
-                  :needs, :infos, :contact, :solution, :market, :id)
+    params.permit(:report, :id)
   end
 end

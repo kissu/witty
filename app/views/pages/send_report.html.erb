@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-model">
+        <h1 class="text-center">Your report</h1>
+        <%= form_tag("/reporting", method: :post, id: "report") do %>
+
+            <%= label_tag(:report, "Report") %>
+            <%= text_area_tag(:report, (render 'text_report').html_safe, style: "text/html", size: "10x25", escape: true, class: "form-control") %>
+
+            <%= submit_tag "Send your report", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
