@@ -63,7 +63,7 @@ module ApplicationHelper
   def button_send_reporting(user)
     if policy(user).send_reporting?
       link_to "Send your report", '#',
-        class: "dropdown-toggle navbar-wagon-link",
+        class: "dropdown-toggle call-to-action",
         id:"navbar-wagon-menu", "data-toggle" => "dropdown"
     end
   end

@@ -24,10 +24,10 @@
     <div id="navbar-wagon-right">
 
       <!-- Links when logged in -->
-        <div class="dropdown">
-          <%= send_reporting(current_user) %>
-          <%= button_new_invitation(current_user) %>
-        </div>
+      <div class="call-to-action">
+        <%= send_reporting(current_user) %>
+        <%= button_new_invitation(current_user) %>
+      </div>
 
       <div class="dropdown">
         <%= link_to "\u25bc", '#', class: "dropdown-toggle",

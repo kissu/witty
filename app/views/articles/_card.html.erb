@@ -4,12 +4,10 @@
   </div>
 
   <%= link_to article.url, target: "_blank" do %>
-    <object>
-      <div class="card-details">
-        <h2><%= article[:title] %></h2>
-        <p><%= article[:description] %></p>
-      </div>
-    </object>
+    <div class="card-details">
+      <h2><%= article[:title] %></h2>
+      <p><%= article[:description] %></p>
+    </div>
   <% end %>
 
   <div class="card-controls">

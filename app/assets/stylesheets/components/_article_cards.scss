@@ -14,6 +14,10 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    &:hover .card-details * {
+      color: $green;
+      transition: 400ms;
+    }
   }
 }
 
@@ -99,16 +103,6 @@
   display: flex;
   flex: 6 1 70%;
   flex-direction: column;
-  p {
-    color: $gray;
-    font-size: $p-size;
-    word-break: break-all;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: $h2-size;
-    color: $gray;
-  }
 }
 
 /* Controls design */

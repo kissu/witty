@@ -1,0 +1,13 @@
+h1, h2 {
+  font-weight: bold;
+  font-size: $h2-size;
+}
+p {
+  font-size: $p-size;
+  // word-break: break-all;
+}
+
+li, p, h1, h2, label {
+  color: $black;
+}
+
