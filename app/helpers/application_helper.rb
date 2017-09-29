@@ -47,7 +47,7 @@ module ApplicationHelper
 
   def button_ask_intro(contact)
     if policy(contact).ask_intro?
-      link_to "Ask an intro", ask_intro_contact_path(contact), method: :post,
+      link_to "Ask an intro", ask_intro_contact_path(contact),
         class: "btn btn-success btn-sm ask-intro"
     end
   end
@@ -60,36 +60,35 @@ module ApplicationHelper
     end
   end
 
-  # def button_send_reporting(user)
-  #   if policy(user).send_reporting?
-  #     link_to "Send your report", reporting_path, method: :post,
-  #       class: "dropdown-toggle navbar-wagon-link",
-  #       id:"navbar-wagon-menu", "data-toggle" => "dropdown"
-  #   end
-  # end
-#------------------------ MAILING ------------------------
-  def send_reporting(user)
+  def button_send_reporting(user)
     if policy(user).send_reporting?
-      "Bonjour,\n
-        Nos derniers indicateurs :
-            Chiffre d’affaires mensuel : ....€
-            Dépenses mensuelles : ....€
-            Trésorerie disponible à date : ....€
-            Nombre de clients : ....#
-            Taux de conversion lead -- client : .....%
-            Taux de satisfaction client : ....%\n
-        Mes besoins :
-            Une nouvelle offre d’emploi?
-            Une mise en relation avec un de nos experts?
-            Un conseil particulier ?\n
-        Quelques informations diverses :
-            Un nouveau cas client ? une récente publication ? Une interview ?
-            Bonne nouvelle ou mauvaise nouvelle ;
-            Peu importe, nous sommes à votre écoute\n
-        Merci,\n
-        Bonne journée,"
+      link_to "Send your report", reporting_path, class: "btn btn-success"
     end
   end
+
+#------------------------ MAILING ------------------------
+  # def send_reporting(user)
+  #   if policy(user).send_reporting?
+  #     "Bonjour,\n
+  #       Nos derniers indicateurs :
+  #           Chiffre d’affaires mensuel : ....€
+  #           Dépenses mensuelles : ....€
+  #           Trésorerie disponible à date : ....€
+  #           Nombre de clients : ....#
+  #           Taux de conversion lead -- client : .....%
+  #           Taux de satisfaction client : ....%\n
+  #       Mes besoins :
+  #           Une nouvelle offre d’emploi?
+  #           Une mise en relation avec un de nos experts?
+  #           Un conseil particulier ?\n
+  #       Quelques informations diverses :
+  #           Un nouveau cas client ? une récente publication ? Une interview ?
+  #           Bonne nouvelle ou mauvaise nouvelle ;
+  #           Peu importe, nous sommes à votre écoute\n
+  #       Merci,\n
+  #       Bonne journée,"
+  #   end
+  # end
 
   def ask_intro(contact)
     if policy(contact).ask_intro?

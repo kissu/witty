@@ -30,10 +30,17 @@ class UserMailer < ApplicationMailer
     @needs = params[:needs]
     @infos = params[:infos]
 
+    headers['X-MJ-TemplateID'] = 222429
+    headers['test'] = "yahoo!"
+
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'florent.merian@aquiti.fr',
-      subject: 'Demande de mise en relation'
+      to: 'mathieu.lague@previsionweb.com',
+      reply_to: @user.email,
+      subject: 'Demande de mise en relation',
+      body: params[:intro],
+      content_type: "text/html",
+
     )
   end
 end

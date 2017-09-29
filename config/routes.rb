@@ -20,13 +20,14 @@ Rails.application.routes.draw do
   end
   resources :network, controller: 'contacts', as: 'contacts' do
     member do
+      get 'ask_intro', to: 'pages#ask_intro'
       post 'ask_intro', to: 'emails#ask_intro'
     end
   end
 
   get 'onboarding', to: 'pages#onboarding'
-  get 'reporting', to: 'pages#send_report'
 
+  get 'reporting', to: 'pages#send_report'
   post 'reporting', to: 'emails#send_reporting'
 
 

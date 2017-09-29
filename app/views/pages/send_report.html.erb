@@ -10,7 +10,7 @@
             <p>To: florent.merian@aquiti.fr</p>
             <p>From: <%= current_user.email %></p>
             <%= label_tag(:report, "Message") %>
-            <%= text_area_tag(:report, send_reporting(current_user), size: "10x25", escape: true, class: "form-control") %>
+            <%= text_area_tag(:report, (render 'text_report'), size: "10x25", escape: true, class: "form-control") %>
 
             <%= submit_tag "Send your report", class: "btn btn-success" %>
         <% end %>
