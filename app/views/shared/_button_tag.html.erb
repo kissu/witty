@@ -6,22 +6,29 @@
   <% else %>
     <%= button_new_article %>
   <% end %>
-  <section class="checkbox">
-    <input type="checkbox" id="building" value=".building" name="building">
-    <label for="building">Building</label>
-  </section>
-  <section class="checkbox">
-    <input type="checkbox" id="hiring" value=".hiring" name="hiring">
-    <label for="hiring">Hiring</label>
-  </section>
-  <section class="checkbox">
-    <input type="checkbox" id="funding" value=".funding" name="funding">
-    <label for="funding">Funding</label>
-  </section>
-  <section class="checkbox">
-    <input type="checkbox" id="growing" value=".growing" name="growing">
-    <label for="growing">Growing</label>
-  </section>
+
+  <form class="filters">
+    <label for="all">
+      <input type="radio" value="" name="filter" checked="checked">
+      Show all
+    </label>
+    <label for="building">
+      <input type="radio" value=".building" name="filter">
+      Building
+    </label>
+    <label for="hiring">
+      <input type="radio" value=".hiring" name="filter">
+      Hiring
+    </label>
+    <label for="funding">
+      <input type="radio" value=".funding" name="filter">
+      Funding
+    </label>
+    <label for="growing">
+      <input type="radio" value=".growing" name="filter">
+      Growing
+    </label>
+  </form>
   <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
   <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
 </div>

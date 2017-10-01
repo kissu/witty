@@ -2,7 +2,6 @@
 
 <%= render "shared/button_tag", button: 'Add a link' %>
 
-<!-- products-container is here to make a group of the latest articles -->
 <div class="article-latest-cards-container">
   <hr class="latest">
   <% @featured_articles.each do |article| %>
@@ -28,19 +27,9 @@
       percentPosition: true
     });
 
-    var $checkboxes = $('.button-tags-container .checkbox input');
-    $checkboxes.change(function(){
-      var filters = [];
-      $checkboxes.filter(':checked').each(function(){
-        filters.push( this.value );
-      });
-
-      filters = filters.join(', ');
-      $knowledge_container.isotope({ filter: filters });
-    });
-
-    $('#shuffle').click(function(){
-      $network_container.isotope('shuffle');
+    var $radio = $('.button-tags-container .radio input');
+    $('.filters').on('click', 'input', function() {
+      $knowledge_container.isotope({ filter: this.value });
     });
   })
 </script>

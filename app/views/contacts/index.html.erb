@@ -23,17 +23,10 @@
       }
     });
 
-    var $checkboxes = $('.button-tags-container .checkbox input');
-    $checkboxes.change(function(){
-      var filters = [];
-      $checkboxes.filter(':checked').each(function(){
-        filters.push( this.value );
-      });
-
-      filters = filters.join(', ');
-      $network_container.isotope({ filter: filters });
+    var $radio = $('.contact-cards-container .radio input');
+    $('.filters').on('click', 'input', function() {
+      $network_container.isotope({ filter: this.value });
     });
-
 
     $('#shuffle').click(function(){
       $network_container.isotope('shuffle');
