@@ -1,19 +1,14 @@
-
 <% if current_user.voted_for?(article) %>
   <%= link_to upvote_path(current_user.vote_for(article)), remote: true,
     method: :delete, class: 'card-upvote green-credits' do %>
-    <div>
-      <%= "\u25b2" %>
-      <%= article.upvotes.count %>
-    </div>
+    <span><%= "\u25b2" %></span>
+    <span><%= article.upvotes.count %></span>
   <% end %>
 
 <% else %>
   <%= link_to upvotes_path(article_id: article.id), remote: true,
     method: :post, class: 'card-upvote' do %>
-    <div>
-      <%= "\u25b2" %>
-      <%= article.upvotes.count %>
-    </div>
+    <span><%= "\u25b2" %></span>
+    <span><%= article.upvotes.count %></span>
   <% end %>
 <% end %>

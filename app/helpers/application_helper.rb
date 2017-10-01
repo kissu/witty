@@ -27,7 +27,7 @@ module ApplicationHelper
   def button_external_link(article)
     if policy(article).share?
       link_to '<i class="fa fa-share"></i>'.html_safe, article.url,
-        target: "_blank", id: "btn-share"
+        target: "_blank", class: "btn-share"
     end
   end
 

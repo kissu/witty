@@ -21,7 +21,6 @@
   }
 }
 
-// WIP !!
 .card {
   display: flex;
   width: 100%;
@@ -33,14 +32,15 @@
   a {
     display: flex;
     &:hover {
+      transition: 400ms;
       text-decoration: none;
       color: $green;
     }
   }
 }
 
-a[href*="google"] {
-  border: 1px solid green;
+// this one is a bit wildcardy...
+.upvote-details-controls-container {
   display: flex;
   flex: 1;
   padding: 10px 20px;
@@ -51,48 +51,32 @@ object {
   flex: 1;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
-}
-.test-middle {
-  display: flex;
-  align-items: flex-start;
-  flex: 0 1 70%;
 }
 
-object .card-upvote:hover > * {
+// maybe a way to make this one perfect...
+object .card-upvote:hover {
   color: $green;
-  // background-color: red;
 }
-// WIP !!
-
-
-
-
-
 
 /* Upvote design */
 .upvote-block {
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  justify-content: center;
+  flex: 0 1 7%;
   text-align: center;
   margin: 0 10px;
-  // & > * {
-  //   color: $green;
-  // }
-}
-.card-upvote {
-  transition: all 0.15s ease;
-  font-size: $p-size;
-  line-height: 10px;
-  &:focus {
-    text-decoration: none;
+  .card-upvote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    transition: all 0.15s ease;
+    font-size: $mid-size;
+    line-height: 10px;
+    padding: $mid-size 0;
+    &:focus {
+      text-decoration: none;
+    }
   }
-}
-.card-arrow {
-  font-size: 30px;
-  margin-bottom: 15px;
 }
 
 // middle of the card, with the title & the description
@@ -109,31 +93,24 @@ object .card-upvote:hover > * {
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  @include flex-direction(column);
-}
-.card-controls a {
-  color: $medium-gray;
-  padding: 20px;
-  border-radius: $border-radius-large;
+  flex-direction: column;
   a {
-    text-decoration: none;
+    color: $medium-gray;
+    padding: 20px;
+    border-radius: $border-radius-large;
   }
-  &:hover {
-    color: $yellow;
-  }
-  i {
-    font-size: 20px;
+  .btn-share-block {
+    border: 1px solid $medium-gray;
+    border-radius: $border-radius-xxl;
   }
 }
 
-// horizontal rules separators "latest" & "most popular"
-// display: flex; kicks the beautiful hr...
+// --------- kick the part below ? ---------
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;
   width: 80%;
 }
-// need to refacto this better...
 hr.popular {
   margin-left: 33%;
   margin-right: 11%;
