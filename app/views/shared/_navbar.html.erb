@@ -24,28 +24,26 @@
     <div id="navbar-wagon-right">
 
       <!-- Links when logged in -->
-      <div class="call-to-action">
+      <div>
         <%= send_reporting(current_user) %>
         <%= button_new_invitation(current_user) %>
       </div>
 
+    <div class="profile-dropdown">
+      <p class="img-circle avatar"><%= current_user.name.first.upcase %></p>
       <div class="dropdown">
-        <%= link_to "\u25bc", '#', class: "dropdown-toggle",
+        <%= link_to "\u2026", '#', class: "dropdown-toggle",
           id:"navbar-wagon-menu", "data-toggle" => "dropdown" %>
-
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to onboarding_path do %>
-              <%= t(".profile", default: "Onboarding") %>
-            <% end %>
+            <%= link_onboarding(current_user) %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <%= t(".sign_out", default: "Log out") %>
-            <% end %>
+            <%= link_sign_out(current_user) %>
           </li>
         </ul>
       </div>
+    </div>
 
     <% end %>
   </div>

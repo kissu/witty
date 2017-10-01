@@ -6,7 +6,9 @@ p {
   font-size: $p-size;
   // word-break: break-all;
 }
-
+a:hover {
+  text-decoration: none;
+}
 li, p, a, h1, h2, label, .form-control {
   color: $black;
 }
