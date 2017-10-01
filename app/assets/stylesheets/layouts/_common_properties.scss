@@ -10,4 +10,6 @@ p {
 li, p, a, h1, h2, label, .form-control {
   color: $black;
 }
-
+textarea {
+  resize: vertical;
+}
