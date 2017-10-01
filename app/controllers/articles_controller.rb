@@ -53,6 +53,14 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def share
+    @article = Article.new
+    authorize @article
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def set_article
