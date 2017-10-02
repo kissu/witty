@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   resources :upvotes, only: [:create, :destroy]
   resources :knowledge, controller: 'articles', as: 'articles' do
-    get 'share', to: 'articles#share'
     member do
+      get 'share', to: 'articles#share'
       get 'featured', to: "articles#featured"
     end
   end

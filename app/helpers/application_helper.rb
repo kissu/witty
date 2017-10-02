@@ -27,7 +27,7 @@ module ApplicationHelper
   def button_external_link(article)
     if policy(article).share?
       html = link_to '<i class="fa fa-share"></i>'.html_safe,
-      article_share_path(article), remote: true, class: "btn-share"
+      share_article_path(article), remote: true, class: "btn-share"
       html += content_tag(:p, article.url, class: 'clipboard-hidden')
     end
   end
