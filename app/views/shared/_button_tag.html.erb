@@ -9,7 +9,7 @@
   <section class="checkbox">
     <input type="checkbox" id="building" value=".building" name="building">
     <label for="building" data-toggle="tooltip" data-placement="bottom"
-      title="pour contruire plus de valeur ajoutée autour de ses innovations et de ses technologies">Building</label>
+      title="pour construire plus de valeur ajoutée autour de ses innovations et de ses technologies">Building</label>
   </section>
   <section class="checkbox">
     <input type="checkbox" id="hiring" value=".hiring" name="hiring">
@@ -26,9 +26,5 @@
     <label for="growing" data-toggle="tooltip" data-placement="bottom"
       title="pour accélérer son développement commercial">Growing</label>
   </section>
-  <p class="made-love">
-    Made w/ <i class="fa fa-heart red-heart" aria-hidden="true">
-      </i> in Bordeaux by our team from <%= link_to "LeWagon",
-      'https://www.lewagon.com/', class:'green-credits' %>
-  </p>
+  <%= render 'shared/credits' %>
 </div>

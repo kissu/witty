@@ -20,6 +20,10 @@
     }
   }
 }
+.article-latest-cards-container .filtered-item:hover .card-details * {
+  color: $green;
+  transition: 400ms;
+}
 
 .card {
   display: flex;
@@ -39,7 +43,7 @@
   }
 }
 
-// this one is a bit wildcardy...
+// !! be careful if you want to change the 2 selectors below !!
 .upvote-details-controls-container {
   display: flex;
   flex: 1;
