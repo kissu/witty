@@ -32,7 +32,6 @@ class UserMailer < ApplicationMailer
       reply_to: @user.email,
       subject: 'Demande de mise en relation',
       content_type: "text/html",
-
     )
   end
 end

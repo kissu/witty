@@ -29,6 +29,4 @@ Rails.application.routes.draw do
 
   get 'reporting', to: 'pages#send_report'
   post 'reporting', to: 'emails#send_reporting'
-
-
 end
