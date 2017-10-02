@@ -1,4 +1,4 @@
-<section class="card filtered-item <% article.tags.each do |tag| %><%= tag.name.downcase %><% end %>">
+<section class="card filtered-item <% article.tags.each do |tag| %><%= tag.name.downcase %> <% end %>">
   <%= link_to article.url, class: "upvote-details-controls-container",
     target: "_blank" do %>
     <object class="upvote-block upvote-<%= article.id %>">
