@@ -20,4 +20,8 @@ class UserPolicy < ApplicationPolicy
   def link_sign_out?
     user.entrepreneur? or user.super_admin?
   end
+
+  def link_admin?
+    user.super_admin?
+  end
 end

@@ -6,11 +6,15 @@ p {
   font-size: $p-size;
   // word-break: break-all;
 }
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
 }
 li, p, a, h1, h2, label, .form-control {
   color: $black;
+}
+.contact-cards-container p,
+  .article-upvoted-cards-container p, .article-latest-cards-container p{
+  color: $gray;
 }
 textarea {
   resize: vertical;

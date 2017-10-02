@@ -80,6 +80,12 @@ module ApplicationHelper
     end
   end
 
+  def link_admin(user)
+    if policy(user).link_admin?
+      link_to "Admin interface", admin_root_path
+    end
+  end
+
 #------------------------ MAILING ------------------------
   def send_reporting(user)
     if policy(user).send_reporting?
