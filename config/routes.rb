@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   resources :upvotes, only: [:create, :destroy]
   resources :knowledge, controller: 'articles', as: 'articles' do
     member do
+      get 'share', to: 'articles#share'
       get 'featured', to: "articles#featured"
     end
   end
   resources :network, controller: 'contacts', as: 'contacts'
 
   get 'onboarding', to: 'pages#onboarding'
-
   post 'reporting', to: 'emails#send_reporting'
   post 'ask_intro', to: 'emails#ask_intro'
 

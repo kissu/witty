@@ -136,3 +136,7 @@ hr.latest::after, hr.popular::after {
 hr.popular::after {
   content: 'MOST POPULAR';
 }
+
+.clipboard-hidden {
+  display: none;
+}
