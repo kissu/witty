@@ -8,20 +8,23 @@
   <% end %>
   <section class="checkbox">
     <input type="checkbox" id="building" value=".building" name="building">
-    <label for="building">Building</label>
+    <label for="building" data-toggle="tooltip" data-placement="bottom"
+      title="pour construire plus de valeur ajoutée autour de ses innovations et de ses technologies">Building</label>
   </section>
   <section class="checkbox">
     <input type="checkbox" id="hiring" value=".hiring" name="hiring">
-    <label for="hiring">Hiring</label>
+    <label for="hiring" data-toggle="tooltip" data-placement="bottom"
+      title="pour recruter et créer une culture d'entreprise">Hiring</label>
   </section>
   <section class="checkbox">
     <input type="checkbox" id="funding" value=".funding" name="funding">
-    <label for="funding">Funding</label>
+    <label for="funding" data-toggle="tooltip" data-placement="bottom"
+      title="pour se financer et gérer sa trésorerie">Funding</label>
   </section>
   <section class="checkbox">
     <input type="checkbox" id="growing" value=".growing" name="growing">
-    <label for="growing">Growing</label>
+    <label for="growing" data-toggle="tooltip" data-placement="bottom"
+      title="pour accélérer son développement commercial">Growing</label>
   </section>
-  <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
-  <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
+  <%= render 'shared/credits' %>
 </div>

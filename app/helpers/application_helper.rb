@@ -57,21 +57,41 @@ module ApplicationHelper
   def button_new_invitation(user)
     if policy(user).send_invitation?
       link_to 'Nouvel utilisateur', new_user_invitation_path,
-        class: "btn btn-success"
+        class: "call-to-action"
     end
   end
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
       link_to "Send your report", '#',
-        class: "dropdown-toggle navbar-wagon-link",
+        class: "dropdown-toggle call-to-action",
         id:"navbar-wagon-menu", "data-toggle" => "dropdown"
     end
   end
+
+  def link_onboarding(user)
+    if policy(user).link_onboarding?
+      link_to "Onboarding", onboarding_path
+    end
+  end
+
+  def link_sign_out(user)
+    if policy(user).link_onboarding?
+      link_to "Log out", destroy_user_session_path, method: :delete
+    end
+  end
+
+  def link_admin(user)
+    if policy(user).link_admin?
+      link_to "Admin interface", admin_root_path
+    end
+  end
+
 #------------------------ MAILING ------------------------
   def send_reporting(user)
     if policy(user).send_reporting?
-      mail_to "florent.merian@aquiti.fr", subject: "Reporting", class: "navbar-wagon-link",
+      mail_to "florent.merian@aquiti.fr", subject: "Reporting",
+      class: "navbar-wagon-link call-to-action",
       body: "Bonjour,\n
         Nos derniers indicateurs :
             Chiffre d’affaires mensuel : ....€
@@ -97,7 +117,8 @@ module ApplicationHelper
 
   def ask_intro(contact)
     if policy(contact).ask_intro?
-      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "btn btn-success btn-sm",
+      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation",
+      class: "btn btn-success btn-sm",
       body: "Bonjour,\n
       Je souhaite rencontrer cette personne:\n
         #{contact.title}.

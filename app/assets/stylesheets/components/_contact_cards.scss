@@ -19,8 +19,12 @@
     flex-direction: column;
     width: calc(50% - #{$gutter});
     justify-content: center;
+    padding: 20px;
     h2 {
       font-size: $h2-size;
+      align-self: flex-start;
+    }
+    p {
       align-self: flex-start;
     }
   }
@@ -31,22 +35,6 @@
     border: 1px solid red;
   }
 }
-
-// surely need to be erased
-// .sliced {
-//   @extend .card;
-//   margin: 0 0 20px $gutter;
-//   a {
-//     color: $gray;
-//     font-size: $p-size;
-//     font-weight: bold;
-//     padding: 10px;
-//     border-radius: $border-radius-large;
-//     &:hover {
-//       color: $yellow;
-//     }
-//   }
-// }
 
 .horizontal-wrapper {
   @extend .wrapper;
