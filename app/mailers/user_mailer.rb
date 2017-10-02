@@ -21,24 +21,16 @@ class UserMailer < ApplicationMailer
   def contact(user, contact, params)
     @user = user
     @contact = contact
-    @ca = params[:ca]
-    @depenses = params[:depenses]
-    @treso = params[:treso]
-    @nb_client = params[:nb_client]
-    @conversion = params[:conversion]
-    @satisfaction = params[:satisfaction]
-    @needs = params[:needs]
-    @infos = params[:infos]
+    @intro = params[:intro]
 
-    headers['X-MJ-TemplateID'] = 222429
-    headers['test'] = "yahoo!"
+    #decomment the line below to send mail with a mailjet template
+    #headers['X-MJ-TemplateID'] = 222429
 
     mail(
       from: 'florent.merian@aquiti.fr',
       to: 'mathieu.lague@previsionweb.com',
       reply_to: @user.email,
       subject: 'Demande de mise en relation',
-      body: params[:intro],
       content_type: "text/html",
 
     )
