@@ -5,24 +5,23 @@ class EmailsController < ApplicationController
     authorize user
 
     UserMailer.reporting(user, email_params).deliver_now
-    flash[:notice] = "Votre reporting a bien été envoyé"
+    flash[:notice] = "Your report has been sent"
     redirect_to root_path
 
   end
 
   def ask_intro
     user = current_user
-    contact = Contact.find(params[:contact_id])
+    contact = Contact.find(params[:id])
     authorize contact
     UserMailer.contact(user, contact, email_params).deliver_now
-    flash[:notice] = "Votre demande d'introduction a bien été envoyée"
+    flash[:notice] = "Your request for an introduction has been sent"
     redirect_to contacts_path
   end
 
   private
 
   def email_params
-    params.permit(:ca, :depenses, :treso, :nb_client, :conversion, :satisfaction,
-                  :needs, :infos, :contact, :solution, :market)
+    params.permit(:report, :id, :intro)
   end
 end

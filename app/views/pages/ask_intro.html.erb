@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-model">
+        <h1 class="text-center report-title">Ask an intro to <%= @contact.title %></h1>
+        <p class="text-center" id="italic-under-title">
+        This will send an email with the message below</p>
+
+        <%= form_tag("/network/#{@contact.id}/ask_intro", method: :post) do %>
+            <p>To: florent.merian@aquiti.fr</p>
+            <p>From: <%= current_user.email %></p>
+            <%= label_tag(:intro, "Message") %>
+            <%= text_area_tag(:intro, (render 'text_intro', contact: @contact), size: "10x21", escape: false, class: "form-control") %>
+
+            <%= submit_tag "Send your ask", class: "btn btn-success" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

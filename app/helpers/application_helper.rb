@@ -47,24 +47,22 @@ module ApplicationHelper
 
   def button_ask_intro(contact)
     if policy(contact).ask_intro?
-      link_to "Demander une intro", "#", class: "dropdown-toggle ask-intro",
-       "data-toggle" => "dropdown"
+      link_to "Ask an intro", ask_intro_contact_path(contact),
+        class: "btn btn-success btn-sm ask-intro"
     end
   end
 
 # ----------------------- OTHER STUFF -----------------------
   def button_new_invitation(user)
     if policy(user).send_invitation?
-      link_to 'Nouvel utilisateur', new_user_invitation_path,
+      link_to 'New user', new_user_invitation_path,
         class: "call-to-action"
     end
   end
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
-      link_to "Send your report", '#',
-        class: "dropdown-toggle call-to-action",
-        id:"navbar-wagon-menu", "data-toggle" => "dropdown"
+      link_to "Send your report", reporting_path, class: "call-to-action"
     end
   end
 
@@ -87,52 +85,48 @@ module ApplicationHelper
   end
 
 #------------------------ MAILING ------------------------
-  def send_reporting(user)
-    if policy(user).send_reporting?
-      mail_to "florent.merian@aquiti.fr", subject: "Reporting",
-      class: "navbar-wagon-link call-to-action",
-      body: "Bonjour,\n
-        Nos derniers indicateurs :
-            Chiffre d’affaires mensuel : ....€
-            Dépenses mensuelles : ....€
-            Trésorerie disponible à date : ....€
-            Nombre de clients : ....#
-            Taux de conversion lead -- client : .....%
-            Taux de satisfaction client : ....%\n
-        Mes besoins :
-            Une nouvelle offre d’emploi?
-            Une mise en relation avec un de nos experts?
-            Un conseil particulier ?\n
-        Quelques informations diverses :
-            Un nouveau cas client ? une récente publication ? Une interview ?
-            Bonne nouvelle ou mauvaise nouvelle ;
-            Peu importe, nous sommes à votre écoute\n
-        Merci,\n
-        Bonne journée," do
-            "Send your report"
-            end
-    end
-  end
+  # def send_reporting(user)
+  #   if policy(user).send_reporting?
+  #     "Bonjour,\n
+  #       Nos derniers indicateurs :
+  #           Chiffre d’affaires mensuel : ....€
+  #           Dépenses mensuelles : ....€
+  #           Trésorerie disponible à date : ....€
+  #           Nombre de clients : ....#
+  #           Taux de conversion lead -- client : .....%
+  #           Taux de satisfaction client : ....%\n
+  #       Mes besoins :
+  #           Une nouvelle offre d’emploi?
+  #           Une mise en relation avec un de nos experts?
+  #           Un conseil particulier ?\n
+  #       Quelques informations diverses :
+  #           Un nouveau cas client ? une récente publication ? Une interview ?
+  #           Bonne nouvelle ou mauvaise nouvelle ;
+  #           Peu importe, nous sommes à votre écoute\n
+  #       Merci,\n
+  #       Bonne journée,"
+  #   end
+  # end
 
-  def ask_intro(contact)
-    if policy(contact).ask_intro?
-      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation",
-      class: "btn btn-success btn-sm",
-      body: "Bonjour,\n
-      Je souhaite rencontrer cette personne:\n
-        #{contact.title}.
-        #{contact.description}\n
-      Pour rappel, notre activité :
-        Solution :......
-        Marché visé :.......\n
-      Nos derniers indicateurs :
-        Chiffre d’affaires mensuel : .....€
-        Nombre de clients : ....#
-        Taux de satisfaction : .....%\n
-      Merci
-      Bonne journée," do
-            "Demander une intro"
-            end
-    end
-  end
+  # def ask_intro(contact)
+  #   if policy(contact).ask_intro?
+  #     mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation",
+  #     class: "btn btn-success btn-sm",
+  #     body: "Bonjour,\n
+  #     Je souhaite rencontrer cette personne:\n
+  #       #{contact.title}.
+  #       #{contact.description}\n
+  #     Pour rappel, notre activité :
+  #       Solution :......
+  #       Marché visé :.......\n
+  #     Nos derniers indicateurs :
+  #       Chiffre d’affaires mensuel : .....€
+  #       Nombre de clients : ....#
+  #       Taux de satisfaction : .....%\n
+  #     Merci
+  #     Bonne journée," do
+  #           "Demander une intro"
+  #           end
+  #   end
+  # end
 end

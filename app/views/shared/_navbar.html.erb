@@ -24,10 +24,10 @@
     <div id="navbar-wagon-right">
 
       <!-- Links when logged in -->
-      <div>
-        <%= send_reporting(current_user) %>
-        <%= button_new_invitation(current_user) %>
-      </div>
+        <div>
+          <%= button_send_reporting(current_user) %>
+          <%= button_new_invitation(current_user) %>
+        </div>
 
     <div class="profile-dropdown">
       <p class="img-circle avatar"><%= current_user.name.first.upcase %></p>

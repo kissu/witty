@@ -8,18 +8,12 @@ class UserMailer < ApplicationMailer
 
   def reporting(user, params)
     @user = user
-    @ca = params[:ca]
-    @depenses = params[:depenses]
-    @treso = params[:treso]
-    @nb_client = params[:nb_client]
-    @conversion = params[:conversion]
-    @satisfaction = params[:satisfaction]
-    @needs = params[:needs]
-    @infos = params[:infos]
+    @report = params[:report]
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'florent.merian@aquiti.fr',
+      to: 'konstantin.bifert@hotmail.fr',
+      reply_to: @user.email,
       subject: 'Reporting'
     )
   end
@@ -27,19 +21,17 @@ class UserMailer < ApplicationMailer
   def contact(user, contact, params)
     @user = user
     @contact = contact
-    @ca = params[:ca]
-    @depenses = params[:depenses]
-    @treso = params[:treso]
-    @nb_client = params[:nb_client]
-    @conversion = params[:conversion]
-    @satisfaction = params[:satisfaction]
-    @needs = params[:needs]
-    @infos = params[:infos]
+    @intro = params[:intro]
+
+    #decomment the line below to send mail with a mailjet template
+    #headers['X-MJ-TemplateID'] = 222429
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'florent.merian@aquiti.fr',
-      subject: 'Demande de mise en relation'
+      to: 'konstantin.bifert@hotmail.fr',
+      reply_to: @user.email,
+      subject: 'Demande de mise en relation',
+      content_type: "text/html",
     )
   end
 end
