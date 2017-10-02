@@ -27,7 +27,7 @@ module ApplicationHelper
   def button_external_link(article)
     if policy(article).share?
       link_to '<i class="fa fa-share"></i>'.html_safe, article.url,
-        target: "_blank", id: "btn-share"
+        target: "_blank", class: "btn-share"
     end
   end
 
@@ -56,13 +56,31 @@ module ApplicationHelper
   def button_new_invitation(user)
     if policy(user).send_invitation?
       link_to 'New user', new_user_invitation_path,
-        class: "btn btn-success"
+        class: "call-to-action"
     end
   end
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
-      link_to "Send your report", reporting_path, class: "btn btn-success"
+      link_to "Send your report", reporting_path, class: "call-to-action"
+    end
+  end
+
+  def link_onboarding(user)
+    if policy(user).link_onboarding?
+      link_to "Onboarding", onboarding_path
+    end
+  end
+
+  def link_sign_out(user)
+    if policy(user).link_onboarding?
+      link_to "Log out", destroy_user_session_path, method: :delete
+    end
+  end
+
+  def link_admin(user)
+    if policy(user).link_admin?
+      link_to "Admin interface", admin_root_path
     end
   end
 
@@ -90,24 +108,25 @@ module ApplicationHelper
   #   end
   # end
 
-  def ask_intro(contact)
-    if policy(contact).ask_intro?
-      mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation", class: "btn btn-success btn-sm",
-      body: "Bonjour,\n
-      Je souhaite rencontrer cette personne:\n
-        #{contact.title}.
-        #{contact.description}\n
-      Pour rappel, notre activité :
-        Solution :......
-        Marché visé :.......\n
-      Nos derniers indicateurs :
-        Chiffre d’affaires mensuel : .....€
-        Nombre de clients : ....#
-        Taux de satisfaction : .....%\n
-      Merci
-      Bonne journée," do
-            "Demander une intro"
-            end
-    end
-  end
+  # def ask_intro(contact)
+  #   if policy(contact).ask_intro?
+  #     mail_to "florent.merian@aquiti.fr", subject: "Demande de mise en relation",
+  #     class: "btn btn-success btn-sm",
+  #     body: "Bonjour,\n
+  #     Je souhaite rencontrer cette personne:\n
+  #       #{contact.title}.
+  #       #{contact.description}\n
+  #     Pour rappel, notre activité :
+  #       Solution :......
+  #       Marché visé :.......\n
+  #     Nos derniers indicateurs :
+  #       Chiffre d’affaires mensuel : .....€
+  #       Nombre de clients : ....#
+  #       Taux de satisfaction : .....%\n
+  #     Merci
+  #     Bonne journée," do
+  #           "Demander une intro"
+  #           end
+  #   end
+  # end
 end

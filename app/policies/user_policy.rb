@@ -12,4 +12,16 @@ class UserPolicy < ApplicationPolicy
   def send_invitation?
     user.super_admin?
   end
+
+  def link_onboarding?
+    user.entrepreneur? or user.super_admin?
+  end
+
+  def link_sign_out?
+    user.entrepreneur? or user.super_admin?
+  end
+
+  def link_admin?
+    user.super_admin?
+  end
 end

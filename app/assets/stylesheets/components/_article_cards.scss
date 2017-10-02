@@ -14,81 +14,76 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    &:hover .card-details * {
+      color: $green;
+      transition: 400ms;
+    }
   }
+}
+.article-latest-cards-container .filtered-item:hover .card-details * {
+  color: $green;
+  transition: 400ms;
 }
 
 .card {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 15px 30px;
   margin: 0 0 35px 30px;
   border-radius: $border-radius-large;
   align-items: center;
   background-color: #fff;
   a {
-    color: $green;
+    display: flex;
     &:hover {
+      transition: 400ms;
       text-decoration: none;
       color: $green;
     }
   }
 }
 
-/* Upvote design */
-.upvote-block, .card-upvote {
+// !! be careful if you want to change the 2 selectors below !!
+.upvote-details-controls-container {
   display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
+  flex: 1;
+  padding: 10px 20px;
+}
+
+object {
+  display: flex;
+  flex: 1;
+  align-items: center;
   justify-content: center;
+}
+
+// maybe a way to make this one perfect...
+object .card-upvote:hover {
+  color: $green;
+}
+
+/* Upvote design */
+.upvote-block {
+  flex: 0 1 7%;
   text-align: center;
   margin: 0 10px;
-}
-.card-upvote {
-  transition: all 0.15s ease;
-  font-size: $p-size;
-  line-height: 10px;
-  &:focus {
-    text-decoration: none;
+  .card-upvote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.15s ease;
+    font-size: $mid-size;
+    line-height: 10px;
+    padding: $mid-size 0;
+    &:focus {
+      text-decoration: none;
+    }
+    span {
+      padding: 10px 0;
+    }
   }
-}
-.card-arrow {
-  font-size: 30px;
-  margin-bottom: 15px;
-}
-.card-count {
-  margin: 10px 0 0;
-  font-size: 15px;
-  color: $black;
-  text-align: center;
-}
-.card-count-green {
-  margin: 10px 0 0;
-  font-size: 15px;
-  color: $green;
-  text-align: center;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: 2px;
-  margin: auto;
-}
-.product-arrow-green {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid $green;
-  border-radius: 2px;
-  margin: auto;
 }
 
 // middle of the card, with the title & the description
@@ -96,50 +91,33 @@
   display: flex;
   flex: 6 1 70%;
   flex-direction: column;
-  p {
-    color: $gray;
-    font-size: $p-size;
-    word-break: break-all;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: $h2-size;
-    color: $gray;
-  }
 }
 
 /* Controls design */
 .card-controls {
   flex: 0 0 20%;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
-  @include flex-direction(column);
-}
-.card-controls a {
-  color: $medium-gray;
-  padding: 20px;
-  border-radius: $border-radius-large;
+  flex-direction: column;
   a {
-    text-decoration: none;
+    color: $medium-gray;
+    padding: 20px;
+    border-radius: $border-radius-large;
   }
-  &:hover {
-    color: $yellow;
-  }
-  i {
-    font-size: 20px;
+  .btn-share-block {
+    border: 1px solid $medium-gray;
+    border-radius: $border-radius-xxl;
   }
 }
 
-// horizontal rules separators "latest" & "most popular"
-// display: flex; kicks the beautiful hr...
+// --------- kick the part below ? ---------
 hr.latest, hr.popular {
   border-top: 1px solid #8c8b8b;
   text-align: center;
   width: 80%;
 }
-// need to refacto this better...
 hr.popular {
   margin-left: 33%;
   margin-right: 11%;

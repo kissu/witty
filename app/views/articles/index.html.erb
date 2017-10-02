@@ -4,13 +4,13 @@
 
 <!-- products-container is here to make a group of the latest articles -->
 <div class="article-latest-cards-container">
-  <hr class="latest">
+  <!-- <hr class="latest"> -->
   <% @featured_articles.each do |article| %>
     <%= render "articles/card", article: article %>
   <% end %>
 </div>
 
-<hr class="popular">
+<!-- <hr class="popular"> -->
 <!-- same as above but add js stuff on this container :D -->
 <div class="article-upvoted-cards-container">
   <% @sorted_articles.each do |article| %>
