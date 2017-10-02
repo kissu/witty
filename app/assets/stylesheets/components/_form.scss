@@ -20,8 +20,8 @@
     margin-bottom: 25px;
   }
   #italic-under-title {
-  margin-bottom: 40px;
-  font-style: italic;
+    margin-bottom: 40px;
+    font-style: italic;
   }
 }
 
@@ -41,9 +41,9 @@
     cursor: pointer;
   }
   &.active {
-  background: $blue;
-  color: white;
-  opacity: 1;
+    background: $blue;
+    color: white;
+    opacity: 1;
   }
 }
 
