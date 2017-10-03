@@ -1,27 +1,31 @@
 <% content_for :title, "- How does this work?" %>
 
 <ul class="button-tags-container smaller-tags-container text-center
-  nav nav-tabs", role="tablist" data-target="#onboarding-scrollspied">
-  <li role="tablist" class="active"><%= link_to '#onboarding_text_1', 'aria-controls':
--    "onboarding_text_1", 'arial-label': "onboarding_text_1" , class: "green-credits",
-     role: "tab", data: { toggle: "tab" } do %>
-    Bienvenue
-  <% end %></li>
-  <li role="tablist"><%= link_to '#onboarding_text_2', 'aria-controls':
--    "onboarding_text_2", 'arial-label': "onboarding_text_2" , class: "green-credits", role: "tab", data: { toggle: "tab" } do %>
-    Nos attentes
-  <% end %></li>
-  <li role="tablist"><%= link_to '#onboarding_text_3', 'aria-controls': "onboarding_text_3", 'arial-label':
-    "onboarding_text_3" , class: "green-credits", role: "tab",
-    data: { toggle: "tab" } do %>
-    Nos actions
-  <% end %></li>
+  nav nav-tabs" role="tablist" data-target="#onboarding-scrollspied">
+  <li role="tablist" class="active">
+    <%= link_to '#onboarding_text_1', 'aria-controls': "onboarding_text_1",
+    'arial-label': "onboarding_text_1", class: "green-credits nav-link" do %>
+      Bienvenue
+    <% end %>
+  </li>
+  <li role="tablist">
+    <%= link_to '#onboarding_text_2', 'aria-controls': "onboarding_text_2",
+    'arial-label': "onboarding_text_2", class: "green-credits nav-link" do %>
+      Nos attentes
+    <% end %>
+  </li>
+  <li role="tablist">
+    <%= link_to '#onboarding_text_3', 'aria-controls': "onboarding_text_3",
+    'arial-label': "onboarding_text_3" , class: "green-credits nav-link" do %>
+      Nos actions
+    <% end %>
+  </li>
   <%= render 'shared/credits' %>
 </ul>
 
 <div class="tab-content cards-container onboarding-container"
-  id="onboarding-scrollspied" data-spy="scroll" >
-  <div id="onboarding_text_1">
+  id="onboarding-scrollspied" data-spy="scroll" data-offset="50">
+  <div id="onboarding_text_1" class="active">
     <%= render partial: "onboarding_text_1" %>
   </div>
   <div id="onboarding_text_2">

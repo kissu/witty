@@ -42,11 +42,11 @@ a {
 #onboarding-scrollspied {
   position: relative;
   height: 80vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 [id*=onboarding_text_]{
-  padding: $padding-onboarding 0;
+  margin: $padding-onboarding 0;
 }
 [id*=onboarding_text_]:first-of-type {
-  padding: 5px 0 $padding-onboarding 0;
+  margin: 0 0 $padding-onboarding 0;
 }
