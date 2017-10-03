@@ -5,17 +5,7 @@
         <h1 class="text-center report-title">Ask an intro to <%= @contact.title %></h1>
         <p class="text-center" id="italic-under-title">
         This will send an email with the message below</p>
-
-        <%= form_tag("/network/#{@contact.id}/ask_intro", method: :post, action: :upload, multipart: true) do %>
-            <p>To: florent.merian@aquiti.fr</p>
-            <p>From: <%= current_user.email %></p>
-            <%= file_field_tag 'file' %>
-            <%= label_tag(:intro, "Message") %>
-            <%= text_area_tag(:intro, (render 'text_intro', contact: @contact), size: "10x21", escape: false, class: "form-control") %>
-
-            <%= submit_tag "Send your ask", class: "btn btn-success" %>
-        <% end %>
-
+        <%= render 'shared/mail_form', text: 'text_intro'%>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
 
   def reporting(user, params)
     @user = user
-    @report = params[:report]
+    @message = params[:message]
     set_attachment_file(params)
 
     mail(
@@ -22,7 +22,7 @@ class UserMailer < ApplicationMailer
   def contact(user, contact, params)
     @user = user
     @contact = contact
-    @intro = params[:intro]
+    @message = params[:message]
     set_attachment_file(params)
 
     #decomment the line below to send mail with a mailjet template
