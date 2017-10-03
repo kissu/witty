@@ -9,12 +9,16 @@ class UserMailer < ApplicationMailer
   def reporting(user, params)
     @user = user
     @report = params[:report]
+    @file = params[:file]
+    attachments[@file.original_filename] =
+    File.read(@file.tempfile)
+
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'konstantin.bifert@hotmail.fr',
+      to: 'mathieu.lague@previsionweb.com',
       reply_to: @user.email,
-      subject: 'Reporting'
+      subject: 'Reporting',
     )
   end
 
