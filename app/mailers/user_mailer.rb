@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'mathieu.lague@previsionweb.com',
+      to: 'florent.merian@aquiti.fr',
       reply_to: @user.email,
       subject: 'Reporting',
     )
@@ -30,7 +30,7 @@ class UserMailer < ApplicationMailer
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'konstantin.bifert@hotmail.fr',
+      to: 'florent.merian@aquiti.fr',
       reply_to: @user.email,
       subject: 'Demande de mise en relation',
       content_type: "text/html",
