@@ -8,30 +8,39 @@ class UserMailer < ApplicationMailer
 
   def reporting(user, params)
     @user = user
-    @report = params[:report]
+    @message = params[:message]
+    set_attachment_file(params)
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'konstantin.bifert@hotmail.fr',
+      to: 'florent.merian@aquiti.fr',
       reply_to: @user.email,
-      subject: 'Reporting'
+      subject: 'Reporting',
     )
   end
 
   def contact(user, contact, params)
     @user = user
     @contact = contact
-    @intro = params[:intro]
+    @message = params[:message]
+    set_attachment_file(params)
 
     #decomment the line below to send mail with a mailjet template
     #headers['X-MJ-TemplateID'] = 222429
 
     mail(
       from: 'florent.merian@aquiti.fr',
-      to: 'konstantin.bifert@hotmail.fr',
+      to: 'florent.merian@aquiti.fr',
       reply_to: @user.email,
       subject: 'Demande de mise en relation',
       content_type: "text/html",
     )
+  end
+
+  private
+
+  def set_attachment_file(params)
+    @file = params[:file]
+    attachments[@file.original_filename] = File.read(@file.tempfile)
   end
 end
