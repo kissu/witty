@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 h1, h2 {
   font-weight: bold;
   font-size: $h2-size;
@@ -6,7 +9,7 @@ p {
   font-size: $p-size;
   // word-break: break-all;
 }
-a:hover, a:focus {
+a:hover, a:focus, a:active {
   text-decoration: none;
 }
 li, p, a, h1, h2, label, .form-control {
