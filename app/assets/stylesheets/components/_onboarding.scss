@@ -22,10 +22,9 @@ p a {
   height: 300px;
 }
 
-.button-tags-container .active {
-  color: $blue;
-  &:hover {
-    color: $blue;
+a {
+  &:hover, &:active, &:focus {
+    color: $green;
   }
 }
 .welcome {
@@ -37,5 +36,17 @@ p a {
   display: flex;
   flex: 1 1 100%;
   justify-content: flex-end;
-  margin: 20px 0;
+  margin: 100px 0 50px 0;
+}
+
+#onboarding-scrollspied {
+  position: relative;
+  height: 80vh;
+  overflow-y: scroll;
+}
+[id*=onboarding_text_]{
+  padding: $padding-onboarding 0;
+}
+[id*=onboarding_text_]:first-of-type {
+  padding: 5px 0 $padding-onboarding 0;
 }
