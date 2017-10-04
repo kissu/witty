@@ -12,4 +12,6 @@ $(document).ready(function(){
     }
     window.location.hash = sentence;
   });
+
+  $('.alert').delay(3000).slideUp(500, function() {});
 });
