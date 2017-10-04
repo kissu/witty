@@ -34,7 +34,7 @@
       margin: 10px;
       justify-content: center;
       align-items: center;
-      border-radius: 5px;
+      border-radius: $border-radius-supo;
       cursor: default;
       border: 1px solid $green;
     }
@@ -44,6 +44,9 @@
         background-color: $green;
         color: #fff;
         transition: 400ms;
+      }
+      &:hover + label {
+        background-color: $medium-gray;
       }
     }
   }
