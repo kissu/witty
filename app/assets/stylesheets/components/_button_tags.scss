@@ -40,13 +40,14 @@
     }
     input[type=radio] {
       display: none;
+      &:hover + label {
+        background-color: $medium-gray;
+        color: $black;
+      }
       &:checked + label {
         background-color: $green;
         color: #fff;
         transition: 400ms;
-      }
-      &:hover + label {
-        background-color: $medium-gray;
       }
     }
   }
