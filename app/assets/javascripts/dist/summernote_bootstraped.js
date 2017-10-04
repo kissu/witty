@@ -4,9 +4,11 @@ $(document).ready(function() {
     $('.summernote').summernote({focus: true});
   });
 
-  $('#save').click(function(event) {
+  $('#ok').click(function(event) {
     event.preventDefault();
     var markup = $('.summernote').summernote('code');
+    $('#onboarding_page').val(markup);
     $('.summernote').summernote('destroy');
+    $('#save').click();
   });
 });

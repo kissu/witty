@@ -22,25 +22,18 @@
   </li>
   <%= render 'shared/credits' %>
 </ul>
+<%= form_tag onboarding_path, method: :post, class: "onboarding-container" do %>
+  <div class="tab-content cards-container onboarding-container summernote"
+    id="onboarding-scrollspied" data-spy="scroll" data-offset="0">
 
-<div class="tab-content cards-container onboarding-container summernote"
-  id="onboarding-scrollspied" data-spy="scroll" data-offset="0">
-  <div id="onboarding_text_1" class="active">
-    <%= render partial: "onboarding_text_1" %>
+      <%= render partial: "onboarding_text" %>
   </div>
-  <div id="onboarding_text_2">
-    <%= render partial: "onboarding_text_2" %>
-  </div>
-  <div id="onboarding_text_3">
-    <%= render partial: "onboarding_text_3" %>
-  </div>
-  <div class="understood-button-block">
-    <%= link_to 'I understand !', root_path, class:'btn btn-success' %>
-  </div>
-</div>
 
+    <div id="edit" href="#" class="btn btn-primary" >Edit</div>
+    <div id="ok" href="#" class="btn btn-success" >Save</div>
 
-<div id="edit" href="#" class="btn btn-primary" >Edit</div>
-<div id="save" class="btn btn-primary" >Save</div>
+  <%= hidden_field_tag(:onboarding_page) %>
+  <%= submit_tag 'Save', class: 'btn btn-primary hidden', id: "save" %>
+<% end %>
 
 
