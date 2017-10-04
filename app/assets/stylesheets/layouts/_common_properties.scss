@@ -6,18 +6,18 @@ h1, h2 {
   font-size: $h2-size;
 }
 p {
-  font-size: $p-size;
+  font-size: $mid-size;
   // word-break: break-all;
 }
 a:hover, a:focus, a:active {
   text-decoration: none;
 }
-li, p, a, h1, h2, label, .form-control {
-  color: $black;
-}
 .contact-cards-container p,
   .article-upvoted-cards-container p, .article-latest-cards-container p{
   color: $gray;
+}
+li, p, a, h1, h2, label, .form-control, .add-link-block p {
+  color: $black;
 }
 textarea {
   resize: vertical;

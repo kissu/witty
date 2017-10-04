@@ -1,12 +1,12 @@
 p a {
   color: $green;
   &:hover {
-    color: $turquoise;
+    color: $green;
   }
 }
 .onboarding-container {
   background-color: #fff;
-  padding: 20px 40px;
+  padding: 20px 40px 300px 40px;
   margin-left: 0; // removes the one from cards-container
   flex: 1 1 70%;
   h1 {
