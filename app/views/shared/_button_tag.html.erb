@@ -7,27 +7,20 @@
     <%= button_new_article %>
   <% end %>
 
+  <p>Choose one category</p>
+
   <form class="filters">
-    <label for="all">
-      <input type="radio" value="" name="filter" checked="checked">
-      Show all
+    <input type="radio" id="all" value="" name="filter" checked='checked'>
+    <label for="all" class="show-all">
+      show all
     </label>
-    <label for="building">
-      <input type="radio" value=".building" name="filter">
-      Building
-    </label>
-    <label for="hiring">
-      <input type="radio" value=".hiring" name="filter">
-      Hiring
-    </label>
-    <label for="funding">
-      <input type="radio" value=".funding" name="filter">
-      Funding
-    </label>
-    <label for="growing">
-      <input type="radio" value=".growing" name="filter">
-      Growing
-    </label>
+    <% Tag.all.each do |tag| %>
+      <input type="radio" id="<%= tag.name.downcase %>"
+        value=".<%= tag.name.downcase %>" name="filter">
+      <label for="<%= tag.name.downcase %>">
+        #<%= tag.name.downcase %>
+      </label>
+    <% end %>
   </form>
   <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
   <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
