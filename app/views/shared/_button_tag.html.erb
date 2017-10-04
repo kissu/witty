@@ -1,13 +1,6 @@
 <div class="sticky-button-tags-container">
   <div class="add-link-block text-center">
-    <p class="text-left">Seen an awesome article recently ? <b>Submit it.</b></p>
-    <% if current_user.super_admin? && current_page?('/network') %>
-      <%= button_new_contact %>
-    <% elsif button == 'shuffle' %>
-      <a href="#shuffled" class="green-button" id='shuffle'><%= button %></a>
-    <% else %>
-      <%= button_new_article %>
-    <% end %>
+    <%= choose_action_of_button %>
   </div>
 
   <div class="button-tags-container text-center">
