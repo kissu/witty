@@ -7,9 +7,11 @@
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "summernote";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "normalize-rails";
+
 
 // Your CSS partials
 @import "components/index";

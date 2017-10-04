@@ -23,6 +23,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'normalize-rails'
+gem 'summernote-rails', '0.8.3'
 
 group :development, :test do
   gem 'pry-byebug'
