@@ -29,8 +29,7 @@
       <%= render partial: "onboarding_text" %>
   </div>
 
-    <div id="edit" href="#" class="btn btn-primary" >Edit</div>
-    <div id="ok" href="#" class="btn btn-success" >Save</div>
+  <%= buttons_edit_onboarding(current_user) %>
 
   <%= hidden_field_tag(:onboarding_page) %>
   <%= submit_tag 'Save', class: 'btn btn-primary hidden', id: "save" %>

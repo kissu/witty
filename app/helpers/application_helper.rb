@@ -84,6 +84,13 @@ module ApplicationHelper
     end
   end
 
+  def buttons_edit_onboarding(user)
+    if policy(user).edit_onboarding?
+      "<div id='edit' class='btn btn-primary' >Edit</div>
+      <div id='ok' class='btn btn-success' >Save</div>".html_safe
+    end
+  end
+
 #------------------------ MAILING ------------------------
   # def send_reporting(user)
   #   if policy(user).send_reporting?
