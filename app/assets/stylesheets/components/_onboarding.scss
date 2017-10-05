@@ -6,7 +6,7 @@ p a {
 }
 .onboarding-container {
   background-color: #fff;
-  padding: 20px 40px 300px 40px;
+  padding: 20px 20px 200px 20px;
   margin-left: 30px;
   flex: 1 1 70%;
   h1 {
@@ -62,4 +62,28 @@ a {
 // of a particular type, of its parent, counting from the last child.
 [id*=onboarding_text_]:nth-last-of-type(2) {
   margin: $padding-onboarding 0 0 0;
+}
+.edit-wysiwyg {
+  position: relative;
+  right: -100%;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: $black;
+  font-weight: bold;
+  background-color: #fff;
+  border: none;
+  transition: 1s;
+  &:before {
+    content: "\27a2";
+    margin-left: -1em;
+  }
+}
+.nav-tabs > li > a {
+  font-weight: bold;
+  &:hover, &:focus {
+    border: transparent;
+    color: $black;
+  }
 }

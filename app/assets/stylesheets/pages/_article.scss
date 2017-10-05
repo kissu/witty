@@ -4,3 +4,6 @@
 .most-popular-wording {
   margin-left: calc(26% + 30px)
 }
+.featured-wording, .most-popular-wording {
+  color: $medium-gray;
+}

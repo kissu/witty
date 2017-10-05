@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.action_mailer.delivery_method = :mailjet
-  config.action_mailer.default_url_options = { host: "https://www.witty.vc" }
+  config.action_mailer.default_url_options = { host: "htts://aquiti.herokuapp.com" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "witty_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "aquiti_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
