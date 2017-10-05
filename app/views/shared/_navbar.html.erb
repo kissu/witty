@@ -10,11 +10,11 @@
     <!-- Middle Part -->
     <nav id="navbar-wagon-middle">
       <%= link_to_if(current_page?(root_path ) || current_page?(articles_path),
-          "KNOWLEDGE", articles_path, html_option = {class:"section active"}) do
-        link_to "KNOWLEDGE", articles_path, class:"section" # << else
+          "RESSOURCES", articles_path, html_option = {class:"section active"}) do
+        link_to "RESSOURCES", articles_path, class:"section" # << else
       end %>
-      <%= link_to_if(current_page?(contacts_path), "NETWORK", contacts_path,
-        html_option = {class:"section active"}) { link_to "NETWORK", contacts_path,
+      <%= link_to_if(current_page?(contacts_path), "EXPERTS", contacts_path,
+        html_option = {class:"section active"}) { link_to "EXPERTS", contacts_path,
         class:"section" } %>
     </nav>
   <% end %>
