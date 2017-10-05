@@ -28,4 +28,8 @@ class UserPolicy < ApplicationPolicy
   def edit_onboarding?
     user.super_admin?
   end
+
+  def choose_action_of_button?
+    user.super_admin?
+  end
 end

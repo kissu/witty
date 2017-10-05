@@ -20,4 +20,8 @@ class ContactPolicy < ApplicationPolicy
   def ask_intro?
     user.entrepreneur?
   end
+
+  def shuffle?
+    user.entrepreneur?
+  end
 end

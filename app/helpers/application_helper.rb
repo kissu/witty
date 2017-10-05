@@ -52,6 +52,11 @@ module ApplicationHelper
     end
   end
 
+  def button_shuffle
+    if policy(Contact).shuffle?
+      link_to "Shuffle", "#shuffled", id: "shuffle", class: "green-button"
+    end
+  end
 # ----------------------- OTHER STUFF -----------------------
   def button_new_invitation(user)
     if policy(user).send_invitation?
@@ -84,10 +89,24 @@ module ApplicationHelper
     end
   end
 
+
   def buttons_edit_onboarding(user)
     if policy(user).edit_onboarding?
       "<div id='edit' class='btn btn-primary' >Edit</div>
       <div id='ok' class='btn btn-success' >Save</div>".html_safe
+    end
+  end
+
+  def choose_action_of_button(button)
+    if policy(User).choose_action_of_button? && current_page?(contacts_path)
+        html = "<p class='text-left'>New user to add to Witty ? <b>Invite him/her.</b></p>".html_safe
+        html += button_new_contact
+    elsif button == 'shuffle'
+      html = "<p class='text-left'>In some shaky mood ? <b>Click me !</b></p>".html_safe
+      html += button_shuffle
+    else
+      html = "<p class='text-left'>Seen an awesome article recently ? <b>Submit it.</b></p>".html_safe
+      html += button_new_article
     end
   end
 
