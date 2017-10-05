@@ -18,11 +18,13 @@
     width: 85%;
   }
   .button-tags-container {
+    &:first-child {
+      border: 1px solid red;
+    }
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 10px 0;
-    height: 200px;
     background-color: #fff;
     border-radius: $border-radius-large;
     p {
@@ -36,17 +38,20 @@
       flex-direction: row;
       align-items: center;
       align-content: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       .show-all {
-        flex: 0 1 55%;
+        flex: 0 0 50%;
+        flex-wrap: nowrap;
+        margin: 0px 25%;
       }
       label {
         display: flex;
-        flex: 1 1 calc(50% - 60px);
+        flex: 0 1 calc(50% - 80px);
         margin: 10px;
+        padding: 2px;
         justify-content: center;
-        border: 1px solid $medium-gray;
+        border: 2px solid $medium-gray;
         align-items: center;
         border-radius: $border-radius-supo;
         cursor: default;

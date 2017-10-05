@@ -3,13 +3,13 @@
 <%= render "shared/button_tag", button: 'Add a link' %>
 
 <div class="article-latest-cards-container">
-  <h1 class="featured-wording">Our featured articles</h1>
+  <h1 class="featured-wording">Monthly featured articles</h1>
   <% @featured_articles.each do |article| %>
     <%= render "articles/card", article: article %>
   <% end %>
 </div>
 
-<h1 class="most-popular-wording">Our most popular articles</h1>
+<h1 class="most-popular-wording">Most popular articles</h1>
 <div class="article-upvoted-cards-container">
   <% @sorted_articles.each do |article| %>
     <%= render "articles/card", article: article %>

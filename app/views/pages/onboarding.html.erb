@@ -22,17 +22,15 @@
   </li>
   <%= render 'shared/credits' %>
 </ul>
-<%= form_tag onboarding_path, method: :post, class: "onboarding-container" do %>
-  <div class="tab-content cards-container onboarding-container summernote"
-    id="onboarding-scrollspied" data-spy="scroll" data-offset="0">
 
-      <%= render partial: "onboarding_text" %>
-  </div>
+<div class="tab-content cards-container onboarding-container summernote"
+  id="onboarding-scrollspied" data-spy="scroll" data-offset="20">
 
+  <%= render partial: "onboarding_text" %>
+</div>
+
+<%= form_tag onboarding_path, method: :post, class: "edit-wysiwyg" do %>
   <%= buttons_edit_onboarding(current_user) %>
-
   <%= hidden_field_tag(:onboarding_page) %>
   <%= submit_tag 'Save', class: 'btn btn-primary hidden', id: "save" %>
 <% end %>
-
-
