@@ -1,14 +1,18 @@
-<%= "Bonjour,\n
-      Je souhaite rencontrer cette personne:\n
-        #{@contact.title}.
-        #{@contact.description}\n
-      Pour la raison : .... \n
-      Pour rappel, notre activité :
-        Solution :......
-        Marché visé :.......\n
-      Nos derniers indicateurs :
-        Chiffre d’affaires mensuel : .....€
-        Nombre de clients : ....#
-        Taux de satisfaction : .....%\n
-      Merci
-      Bonne journée," %>
+<p>Bonjour,</p>
+<p>Je souhaite rencontrer cette personne:</p>
+  <p><strong><%= @contact.title %>.</strong></p>
+  <p><em><%= @contact.description %></em></p>
+<p>Pour la raison : ........ </p>
+<p>Pour rappel, notre activité :</p>
+<ul>
+  <li>Solution : ..........</li>
+  <li>Marché visé : .....</li>
+</ul>
+<p><strong>Nos derniers indicateurs :</strong></p>
+<ul>
+  <li>Chiffre d’affaires mensuel : ......€</li>
+  <li>Nombre de clients : ......#</li>
+  <li>Taux de satisfaction : .....%</li>
+</ul>
+<p>Merci</p>
+<p>Bonne journée</p>
