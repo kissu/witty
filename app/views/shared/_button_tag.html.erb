@@ -1,27 +1,25 @@
-<div class="button-tags-container text-center sticky">
-  <% if current_user.super_admin? && current_page?('/network') %>
-    <%= button_new_contact %>
-  <% elsif button == 'shuffle' %>
-    <a href="#shuffled" class="green-button" id='shuffle'><%= button %></a>
-  <% else %>
-    <%= button_new_article %>
-  <% end %>
+<div class="sticky-button-tags-container">
+  <div class="add-link-block text-center">
+    <%= choose_action_of_button(button) %>
+  </div>
 
-  <p>Choose one category</p>
+  <div class="button-tags-container text-center">
+    <p>Choose a category you'd like to read</p>
 
-  <form class="filters">
-    <input type="radio" id="all" value="" name="filter" checked='checked'>
-    <label for="all" class="show-all">
-      show all
-    </label>
-    <% Tag.all.each do |tag| %>
-      <input type="radio" id="<%= tag.name.downcase %>"
-        value=".<%= tag.name.downcase %>" name="filter">
-      <label for="<%= tag.name.downcase %>">
-        #<%= tag.name.downcase %>
+    <form class="filters">
+      <input type="radio" id="all" value="" name="filter" checked='checked'>
+      <label for="all" class="show-all">
+        show all
       </label>
-    <% end %>
-  </form>
-  <p class="made-love">Made w/ <i class="fa fa-heart red-heart" aria-hidden="true"></i> in Bordeaux</p>
-  <%= link_to "Credits", 'https://www.lewagon.com/', class:'green-credits' %>
+      <% Tag.all.each do |tag| %>
+        <input type="radio" id="<%= tag.name.downcase %>"
+          value=".<%= tag.name.downcase %>" name="filter">
+        <label for="<%= tag.name.downcase %>">
+          #<%= tag.name.downcase %>
+        </label>
+      <% end %>
+    </form>
+  </div>
+
+  <%= render 'shared/credits' %>
 </div>

@@ -1,60 +1,69 @@
-.button-tags-container {
-  width: 26%;
+.sticky-button-tags-container {
   display: flex;
+  position: sticky;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 10px 0;
-  margin-right: 30px;
-  height: 300px;
-  background-color: #fff;
-  border-radius: $border-radius-large;
-
+  justify-content: space-between;
+  top: 40px;
+  width: 26%;
+  height: 400px;
   .green-button {
+    padding: 10px;
     background-color: $green;
     text-transform: uppercase;
     color:#fff;
     border-radius: $border-radius-large;
-    margin: 0 40px;
-    padding: 10px;
   }
-  .filters {
-    width: 100%;
+  .add-link-block {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .button-tags-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
-    .show-all {
-      flex: 0 1 55%;
+    padding: 10px 0;
+    height: 200px;
+    background-color: #fff;
+    border-radius: $border-radius-large;
+    p {
+      width: 80%;
+      margin: 0 auto;
     }
-    label {
+    .filters {
       display: flex;
-      flex: 1 1 calc(50% - 20px);
-      margin: 10px;
-      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      flex-direction: row;
       align-items: center;
-      border-radius: $border-radius-supo;
-      cursor: default;
-      border: 1px solid $green;
-    }
-    input[type=radio] {
-      display: none;
-      &:hover + label {
-        background-color: $medium-gray;
-        color: $black;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      .show-all {
+        flex: 0 1 55%;
       }
-      &:checked + label {
-        background-color: $green;
-        color: #fff;
-        transition: 400ms;
+      label {
+        display: flex;
+        flex: 1 1 calc(50% - 60px);
+        margin: 10px;
+        justify-content: center;
+        border: 1px solid $medium-gray;
+        align-items: center;
+        border-radius: $border-radius-supo;
+        cursor: default;
+      }
+      input[type=radio] {
+        display: none;
+        &:hover + label {
+          background-color: $medium-gray;
+          color: $black;
+          transition: 400ms;
+        }
+        &:checked + label {
+          background-color: $green;
+          color: #fff;
+          transition: 400ms;
+        }
       }
     }
   }
-}
-
-// some sticky maybe ?
-.sticky {
-  position: sticky;
-  top: 40px;
 }

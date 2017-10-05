@@ -1,13 +1,13 @@
 p a {
   color: $green;
   &:hover {
-    color: $turquoise;
+    color: $green;
   }
 }
 .onboarding-container {
   background-color: #fff;
-  padding: 20px 40px;
-  margin-left: 0; // removes the one from cards-container
+  padding: 20px 40px 300px 40px;
+  margin-left: 30px;
   flex: 1 1 70%;
   h1 {
     margin-bottom: 30px;
@@ -19,9 +19,8 @@ p a {
   }
 }
 .smaller-tags-container {
-  height: 300px;
+  height: 400px;
 }
-
 a {
   &:hover, &:active, &:focus {
     color: $green;
@@ -38,7 +37,16 @@ a {
   justify-content: flex-end;
   margin: 0;
 }
-
+.button-tags-onboarding-container {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px 0;
+  height: 300px;
+  background-color: #fff;
+  border-radius: $border-radius-large;
+}
 #onboarding-scrollspied {
   position: relative;
   height: 80vh;

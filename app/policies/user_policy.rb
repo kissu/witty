@@ -24,4 +24,8 @@ class UserPolicy < ApplicationPolicy
   def link_admin?
     user.super_admin?
   end
+
+  def choose_action_of_button?
+    user.super_admin?
+  end
 end
