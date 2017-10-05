@@ -26,6 +26,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def choose_action_of_button?
-    true
+    user.super_admin?
   end
 end
