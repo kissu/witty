@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+  config.sort_order = 'current_sign_in_at_desc'
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -17,28 +19,17 @@ ActiveAdmin.register User do
   index do
     selectable_column
     column :id
-    column :first_name
-    column :last_name
-    column :company
     column :email
+    column "Last connection", :current_sign_in_at
+    column :sign_in_count
     column :role
-    column :current_sign_in_at
     column :created_at
-    column :updated_at
     actions
   end
 
   form do |f|
-    f.inputs "Mettre à jour ses informations" do
-      f.input :first_name
-      f.input :last_name
-      f.input :company
-    end
-    f.inputs "Mettre à jour sa carte" do
-      f.input :title
-      f.input :description
-    end
-    f.inputs "Changer ses droits" do
+    f.inputs "Edit user" do
+      f.input :email
       f.input :role
     end
     f.actions
