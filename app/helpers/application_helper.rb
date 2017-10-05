@@ -89,18 +89,18 @@ module ApplicationHelper
     end
   end
 
-  def choose_action_of_button
-    if policy(user).choose_action_of_button?
-      <% if current_user.super_admin? && current_page?(contacts_path) %>
-        <p class="text-left">New user to add to Witty ? <b>Invite him/her.</b></p>
-        <%= button_new_contact %>
-      <% elsif button == 'shuffle' %>
-        <p class="text-left">In some shaky mood ? <b>Click me !</b></p>
-        <%= button_shuffle %>
-      <% else %>
-        <p class="text-left">Seen an awesome article recently ? <b>Submit it.</b></p>
-        <%= button_new_article %>
-      <% end %>
+  def choose_action_of_button(button)
+    if policy(User).choose_action_of_button?
+      if current_user.super_admin? && current_page?(contacts_path)
+        html = "<p class='text-left'>New user to add to Witty ? <b>Invite him/her.</b></p>".html_safe
+        html += button_new_contact
+      elsif button == 'shuffle'
+        html = "<p class='text-left'>In some shaky mood ? <b>Click me !</b></p>".html_safe
+        html += button_shuffle
+      else
+        html = "<p class='text-left'>Seen an awesome article recently ? <b>Submit it.</b></p>".html_safe
+        html += button_new_article
+      end
     end
   end
 
