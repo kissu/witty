@@ -51,6 +51,6 @@
   width: 65%;
   margin: 0 auto;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   @include flex-direction(row);
 }
