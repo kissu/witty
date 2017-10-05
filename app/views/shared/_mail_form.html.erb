@@ -4,6 +4,6 @@
   <%= file_field_tag 'file' %>
   <%= label_tag(:message, "Message") %>
   <%= text_area_tag(:message, (render text), size: "10x25",
-    escape: true, class: "form-control summernote", data: {provider: "summernote"}) %>
+    escape: true, class: "form-control") %>
   <%= submit_tag "Send your report", class: "btn btn-success" %>
 <% end %>
