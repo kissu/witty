@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   end
 
   get 'onboarding', to: 'pages#onboarding'
+  post 'onboarding', to: 'pages#onboarding_change'
 
   get 'reporting', to: 'pages#send_report'
   post 'reporting', to: 'emails#send_reporting'

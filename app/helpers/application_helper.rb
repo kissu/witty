@@ -89,6 +89,14 @@ module ApplicationHelper
     end
   end
 
+
+  def buttons_edit_onboarding(user)
+    if policy(user).edit_onboarding?
+      "<div id='edit' class='btn btn-primary' >Edit</div>
+      <div id='ok' class='btn btn-success' >Save</div>".html_safe
+    end
+  end
+
   def choose_action_of_button(button)
     if policy(User).choose_action_of_button? && current_page?(contacts_path)
         html = "<p class='text-left'>New user to add to Witty ? <b>Invite him/her.</b></p>".html_safe
