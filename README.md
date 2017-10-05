@@ -1,4 +1,4 @@
-# :star: [Witty.vc](witty.vc) :star:
+# :star: [Witty.vc](http://witty.vc) :star:
 ![Witty's logo](https://i.imgur.com/axcJbpW.png)
 Witty is a portfolio managment tool for VCs to empower entrepreneurs with best practices, tools and network. :snail:  :arrow_right:  :rocket:
 
@@ -15,6 +15,10 @@ How it goes, is he in a need of something ? Any trouble ? :umbrella:
 Need an advice ? Don't wait anymore, we're here for you ! :ok_hand: :metal:
 
 Let's build something awesome together, right now ! :100: :+1:
+
+# Want to try the platform ?
+
+Go [here](http://test.witty.vc/) and login as `entrepreneur@test.fr` with the password `test`. :smile:
 
 # Licence
 This platform was developed by a group of 3 devs (from Bordeaux :wine_glass:) for a personal client need.
