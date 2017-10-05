@@ -67,7 +67,7 @@ module ApplicationHelper
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
-      link_to "Send your report", reporting_path, class: "call-to-action"
+      link_to "Send your report", reporting_path, class: "btn btn-success"
     end
   end
 
