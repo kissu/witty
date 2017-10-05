@@ -40,6 +40,7 @@ class UserMailer < ApplicationMailer
   private
 
   def set_attachment_file(params)
+    return if params[:file].nil?
     @file = params[:file]
     attachments[@file.original_filename] = File.read(@file.tempfile)
   end
