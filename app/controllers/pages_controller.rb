@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   def onboarding_change
     File.open("app/views/pages/_onboarding_text.html.erb", "w+") { |file|
       file.write(params[:onboarding_page])
+      file.close
     }
     flash[:notice] = "Successfully modified..."
     redirect_to onboarding_path
