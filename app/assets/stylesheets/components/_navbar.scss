@@ -67,7 +67,9 @@
     font-size: $mid-size;
     border: 2px solid $green;
     &:hover {
-      color: $green;
+      background-color: $green;
+      color: #fff;
+      transition: 400ms;
       text-decoration: none;
     }
   }

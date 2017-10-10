@@ -75,10 +75,6 @@ a {
   background-color: #fff;
   border: none;
   transition: 1s;
-  &:before {
-    content: "\27a2";
-    margin-left: -1em;
-  }
 }
 .nav-tabs > li > a {
   font-weight: bold;

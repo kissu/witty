@@ -51,7 +51,7 @@
         margin: 10px;
         padding: 2px;
         justify-content: center;
-        border: 2px solid $medium-gray;
+        border: 2px solid $green;
         align-items: center;
         border-radius: $border-radius-supo;
         cursor: default;
@@ -59,8 +59,8 @@
       input[type=radio] {
         display: none;
         &:hover + label {
-          background-color: $medium-gray;
-          color: $black;
+          background-color: $green;
+          color: #fff;
           transition: 400ms;
         }
         &:checked + label {

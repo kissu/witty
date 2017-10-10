@@ -20,7 +20,7 @@ module ApplicationHelper
   # ----------------------- ARTICLE SIDE -----------------------
   def button_new_article
     if policy(Article).new?
-      link_to 'Add a link'.html_safe, new_article_path, class: "green-button"
+      link_to 'Add a link'.html_safe, new_article_path, class: "btn btn-success"
     end
   end
 
@@ -61,7 +61,7 @@ module ApplicationHelper
   def button_new_invitation(user)
     if policy(user).send_invitation?
       link_to 'New user', new_user_invitation_path,
-        class: "call-to-action"
+        class: "btn btn-success"
     end
   end
 
