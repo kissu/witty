@@ -36,12 +36,8 @@
   }
 }
 
-.horizontal-wrapper {
-  @extend .wrapper;
-  @include flex-direction(row);
-}
 .contact-cards-container .card-controls {
-  @include flex-direction(row);
+  flex-direction: row;
   a {
     padding: 0 20px;
   }
@@ -52,5 +48,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  @include flex-direction(row);
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.vertical-wrapper {
+  border: 1px solid red;
+  flex-direction: column;
+  flex-wrap: wrap;
 }

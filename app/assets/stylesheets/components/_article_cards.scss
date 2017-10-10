@@ -1,8 +1,4 @@
 // ----------- this style is for "Knowledge" path -----------
-@mixin flex-direction($direction) {
-  flex-flow: $direction wrap;
-}
-
 .article-latest-cards-container {
   width: 70%;
 }
