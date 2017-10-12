@@ -7,17 +7,13 @@
     <link rel="shortcut icon" href="<%= image_url "logo.png" %>" type="image/x-icon">
     <title>Keep it simple.</title>
     <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= render 'shared/google_analytics' %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="wrapper">
+    <div class="devise-wrapper">
       <%= yield %>
     </div>
-    <%= javascript_include_tag 'application' %>
-    <%= yield(:after_js) %>
   </body>
 </html>
