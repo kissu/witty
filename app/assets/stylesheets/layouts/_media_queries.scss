@@ -6,17 +6,18 @@
 @media (max-width: 992px) { // triggers when width < 992px
   .wrapper {
     width: 90%;
-    padding: 0;
+    padding-top: 25px;
     flex-direction: column;
     overflow: hidden; // hack to remove sticky property of buttons tag container
   }
   .sticky-button-tags-container {
-    border: 1px solid yellow;
     height: 100%;
-    padding-bottom: 25px;
+    top: 0;
   }
-  .contact-cards-container .card {
-    width: 100%;
+  .contact-cards-container {
+    .card {
+      width: 100%;
+    }
   }
   .filtered-item {
     flex-wrap: nowrap;
@@ -46,7 +47,7 @@
   h1 {
     font-size: 30px;
   }
-  label, p {
+  label, p, li, .btn {
     font-size: 24px;
   }
 }
@@ -60,5 +61,8 @@
   }
   .aside-container {
     flex: 0 1 68%;
+  }
+  .contact-cards-container {
+    left: 0;
   }
 }
