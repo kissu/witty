@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :upvotes, dependent: :nullify
   has_many :articles, dependent: :nullify
+  validate :password_complexity
 
   enum role: { entrepreneur: 0, super_admin: 30 }
 
@@ -15,5 +16,11 @@ class User < ApplicationRecord
 
   def name
     email
+  end
+
+  def password_complexity
+    if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)./)
+      errors.add :password, "Must include at least one lowercase letter, one uppercase letter, and one digit"
+    end
   end
 end
