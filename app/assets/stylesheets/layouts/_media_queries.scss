@@ -1,0 +1,68 @@
+// BS breakpoints values
+// 576px xs
+// 768px sm
+// 992px md
+// 1200px lg
+@media (max-width: 992px) { // triggers when width < 992px
+  .wrapper {
+    width: 90%;
+    padding-top: 25px;
+    flex-direction: column;
+    overflow: hidden; // hack to remove sticky property of buttons tag container
+  }
+  .sticky-button-tags-container {
+    height: 100%;
+    top: 0;
+  }
+  .contact-cards-container {
+    .card {
+      width: 100%;
+    }
+  }
+  .filtered-item {
+    flex-wrap: nowrap;
+  }
+  .made-love,
+  .sticky-button-tags-container .add-link-block,
+  object.card-controls,
+  #navbar-wagon-middle,
+  #navbar-wagon-right,
+  #navbar-scrollspy {
+    display: none;
+  }
+  .dropdown {
+    position: absolute;
+    right: 50px;
+    top: 25px
+  }
+
+  // onboarding
+  #onboarding-scrollspied {
+    position: relative;
+    height: 100%;
+    overflow-y: hidden;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+  label, p, li, .btn {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width:1200px) { // intermediate viewport
+  .wrapper {
+    width: 72%;
+  }
+  .sticky-button-tags-container {
+    flex: 0 1 30%;
+  }
+  .aside-container {
+    flex: 0 1 68%;
+  }
+  .contact-cards-container {
+    left: 0;
+  }
+}

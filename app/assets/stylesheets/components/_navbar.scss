@@ -31,7 +31,6 @@
   font-weight: bold;
   .section {
     color: $medium-gray;
-    cursor: pointer;
     padding: 35px 60px;
     font-size: $p-size;
     height: 90%;
@@ -128,4 +127,16 @@
     border-left: 1px solid #E6E6E6;
     border-top: 1px solid #E6E6E6;
   }
+}
+
+// little border to make a separation with the "logout" link
+// .dropdown ul li:last-of-type {
+//   border-top: 4px solid $black;
+//   padding: 5px 0 0 0;
+//   margin-top: 5px;
+// }
+// on mobile versions
+.dropdown-menu > li > a {
+  color: $black;
+  padding: 10px 20px;
 }

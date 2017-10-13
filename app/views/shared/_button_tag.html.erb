@@ -1,11 +1,16 @@
 <div class="sticky-button-tags-container">
-  <div class="add-link-block text-center">
+  <div class="add-link-block">
     <%= choose_action_of_button(button) %>
   </div>
 
   <div class="button-tags-container text-center">
-    <p class="text-left"><strong>Choose</strong> a category you'd like to read</p>
-
+    <p class="text-left"><strong>Choose</strong>
+    <% if current_page?(articles_path) %>
+      <%= "a category you'd like to read" %>
+    <% else %>
+      <%= "an expert's category" %>
+    <% end %>
+    </p>
     <form class="filters">
       <input type="radio" id="all" value="" name="filter" checked='checked'>
       <label for="all" class="show-all">

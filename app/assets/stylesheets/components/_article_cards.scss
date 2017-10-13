@@ -1,10 +1,9 @@
 // ----------- this style is for "Knowledge" path -----------
 .article-latest-cards-container {
-  width: 70%;
+  width: 100%;
 }
 .article-upvoted-cards-container {
-  margin-left: 26%;
-  width: 70%;
+  width: 100%;
   .filtered-item {
     display: flex;
     flex-direction: row;
@@ -24,7 +23,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin: 0 0 35px 30px;
+  margin: 0 0 35px 0;
   border-radius: $border-radius-large;
   align-items: center;
   background-color: #fff;
@@ -50,12 +49,12 @@ object {
   flex: 1;
   align-items: center;
   justify-content: center;
+  .card-upvote:hover {
+    color: $green;
+  }
 }
 
 // maybe a way to make this one perfect...
-object .card-upvote:hover {
-  color: $green;
-}
 
 /* Upvote design */
 .upvote-block {
@@ -107,27 +106,8 @@ object .card-upvote:hover {
   }
 }
 
-// --------- kick the part below ? ---------
-hr.latest, hr.popular {
-  border-top: 1px solid #8c8b8b;
-  text-align: center;
-  width: 80%;
-}
-hr.popular {
-  margin-left: 33%;
-  margin-right: 11%;
-  width: 80%;
-}
-hr.latest::after, hr.popular::after {
-  content: 'FEATURED';
-  display: inline-block;
-  position: relative;
-  top: -14px;
-  padding: 0 40px;
-  background: $light-gray;
-  color: #8c8b8b;
-  font-size: 18px;
-}
-hr.popular::after {
-  content: 'MOST POPULAR';
+.aside-container {
+  display: flex;
+  flex: $aside-container-size;
+  flex-direction: column;
 }
