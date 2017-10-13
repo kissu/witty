@@ -108,6 +108,6 @@ object {
 
 .aside-container {
   display: flex;
-  flex: 0 1 72%;
+  flex: $aside-container-size;
   flex-direction: column;
 }
