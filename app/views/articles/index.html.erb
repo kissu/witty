@@ -1,19 +1,20 @@
 <% content_for :title, "- Great Infos !!" %>
 
 <%= render "shared/button_tag", button: 'Add a link' %>
+<div class="aside-container">
+  <div class="article-latest-cards-container">
+    <h1 class="featured-wording">Monthly featured articles</h1>
+    <% @featured_articles.each do |article| %>
+      <%= render "articles/card", article: article %>
+    <% end %>
+  </div>
 
-<div class="article-latest-cards-container">
-  <h1 class="featured-wording">Monthly featured articles</h1>
-  <% @featured_articles.each do |article| %>
-    <%= render "articles/card", article: article %>
-  <% end %>
-</div>
-
-<h1 class="most-popular-wording">Most popular articles</h1>
-<div class="article-upvoted-cards-container">
-  <% @sorted_articles.each do |article| %>
-    <%= render "articles/card", article: article %>
-  <% end %>
+  <h1 class="most-popular-wording">Most popular articles</h1>
+  <div class="article-upvoted-cards-container">
+    <% @sorted_articles.each do |article| %>
+      <%= render "articles/card", article: article %>
+    <% end %>
+  </div>
 </div>
 
 <%= render partial: "shared/drift" %>
