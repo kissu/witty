@@ -101,7 +101,7 @@ module ApplicationHelper
         html = "<p class='text-left'>New user to add to Witty ? <strong>Invite him/her.</strong></p>".html_safe
         html += button_new_contact
     elsif button == 'shuffle'
-      html = "<p class='text-left'>In some shaky mood ? <strong>Click me !</strong></p>".html_safe
+      html = "<p class='text-left'>Want some random suggestions ? <strong>Click me !</strong></p>".html_safe
       html += button_shuffle
     else
       html = "<p class='text-left'>Seen an awesome article recently ? <strong>Submit it.</strong></p>".html_safe
