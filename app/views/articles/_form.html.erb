@@ -24,7 +24,9 @@
               <%= f.input :url %>
             </div>
           </div>
-          <%= f.input :description, as: :text, :maxlength => 140 %>
+          <%= f.input :description, as: :text, input_html: { id: 'areaDescription'} %>
+          <div class='text-right' id='charsCounted'></div>
+
 
           <div class="form-group">
             <input type="hidden" name="article[tag_ids][]" value="">
@@ -33,7 +35,8 @@
               <% Tag.all.each do |tag| %>
                 <input class="hidden" type="checkbox" value="<%= tag.id %>"
                   name="article[tag_ids][]" id="article_tag_ids_<%= tag.id %>">
-                <label class="tag-choice col-xs-12 col-sm-6 col-lg-3" for="article_tag_ids_<%= tag.id %>">
+                <label class="tag-choice col-xs-12 col-sm-6 col-lg-3"
+                  for="article_tag_ids_<%= tag.id %>">
                   <%= tag.name %>
                 </label>
               <% end %>
@@ -46,9 +49,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-

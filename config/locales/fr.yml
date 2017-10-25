@@ -35,3 +35,7 @@ fr:
         title: 'Titre :'
         url: 'Lien :'
         description: 'Description :'
+      contact:
+        title: 'Titre :'
+        url: 'Lien :'
+        description: 'Description :'
