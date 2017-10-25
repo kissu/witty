@@ -41,7 +41,7 @@ module ApplicationHelper
 # ----------------------- CONTACT SIDE -----------------------
   def button_new_contact
     if policy(Contact).new?
-      link_to 'ADD A CONTACT', new_contact_path, class: "green-button"
+      link_to 'Nouveau user', new_contact_path, class: "green-button"
     end
   end
 
@@ -60,7 +60,7 @@ module ApplicationHelper
 # ----------------------- OTHER STUFF -----------------------
   def button_new_invitation(user)
     if policy(user).send_invitation?
-      link_to 'New user', new_user_invitation_path,
+      link_to 'Nouveau user', new_user_invitation_path,
         class: "btn btn-success"
     end
   end
@@ -98,7 +98,7 @@ module ApplicationHelper
 
   def choose_action_of_button(button)
     if policy(User).choose_action_of_button? && current_page?(contacts_path)
-        html = "<p class='text-left'>New user to add to Witty ? <strong>Invite him/her.</strong></p>".html_safe
+        html = "<p class='text-left'>Nouveau utilisateur à ajouter ? <strong>Invite le !</strong></p>".html_safe
         html += button_new_contact
     elsif button == 'shuffle'
       html = "<p class='text-left'>D'autres suggestions en <strong>mélangeant</strong> la liste:</p>".html_safe
