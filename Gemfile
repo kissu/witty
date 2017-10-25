@@ -14,6 +14,7 @@ gem 'faker'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'mailjet'
+gem 'devise-i18n'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
