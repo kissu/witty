@@ -35,5 +35,7 @@ module Aquiti
 
     config.time_zone = 'Paris'
     config.active_record.default_timezone = :local
+
+    config.i18n.default_locale = :fr
   end
 end

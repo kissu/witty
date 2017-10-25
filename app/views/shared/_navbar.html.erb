@@ -10,11 +10,11 @@
     <!-- Middle Part -->
     <nav id="navbar-wagon-middle">
       <%= link_to_if(current_page?(root_path ) || current_page?(articles_path),
-          "RESOURCES", articles_path, html_option = {class:"section active"}) do
-        link_to "RESOURCES", articles_path, class:"section" # << else
+          t('.ressources'), articles_path, html_option = {class:"section active"}) do
+        link_to t('.ressources'), articles_path, class:"section" # << else
       end %>
-      <%= link_to_if(current_page?(contacts_path), "EXPERTS", contacts_path,
-        html_option = {class:"section active"}) { link_to "EXPERTS", contacts_path,
+      <%= link_to_if(current_page?(contacts_path), t('.experts'), contacts_path,
+        html_option = {class:"section active"}) { link_to t('.experts'), contacts_path,
         class:"section" } %>
     </nav>
   <% end %>
@@ -59,10 +59,10 @@
       <i class="fa fa-ellipsis-h fa-2x dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
-          <%= link_to 'Resources', articles_path %>
+          <%= link_to t('.ressources'), articles_path %>
         </li>
         <li>
-          <%= link_to 'Experts', contacts_path %>
+          <%= link_to t('.experts'), contacts_path %>
         </li>
         <li>
           <%= link_sign_out(current_user) %>
