@@ -15,8 +15,8 @@ fr:
         last_sign_in_at: Date de la dernière connexion
         last_sign_in_ip: IP de la dernière connexion
         locked_at: Verrouillé à
-        password: Mot de passe
-        password_confirmation: Confirmation du mot de passe
+        password: Le mot de passe
+        password_confirmation: La confirmation du mot de passe
         remember_created_at: Mémorisé à
         remember_me: Se souvenir de moi?
         reset_password_sent_at: Clé de réinitialisation créée à
@@ -57,7 +57,7 @@ fr:
       reset_password_instructions:
         action: Changer mon mot de passe
         greeting: Bonjour %{recipient}!
-        instruction: 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
+        instruction: "Quelqu'un a demandé un lien pour changer votre mot de passe, le voici :"
         instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer ce email.
         instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
         subject: Instructions pour changer le mot de passe
@@ -112,8 +112,8 @@ fr:
     shared:
       links:
         back: Retour
-        didn_t_receive_confirmation_instructions: Vous n'avez pas reçu le email de confirmation ?
-        didn_t_receive_unlock_instructions: Vous n'avez pas reçu le email de déblocage ?
+        didn_t_receive_confirmation_instructions: Vous n'avez pas reçu l'email de confirmation ?
+        didn_t_receive_unlock_instructions: Vous n'avez pas reçu l'email de déblocage ?
         forgot_your_password: Mot de passe oublié ?
         sign_in: Connexion
         sign_in_with_provider: Connexion avec %{provider}
@@ -132,5 +132,5 @@ fr:
       not_found: n’a pas été trouvé(e)
       not_locked: n’était pas verrouillé(e)
       not_saved:
-        one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
-        other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
+        one: 'une erreur a empêché cet %{resource} d’être enregistré(e) :'
+        other: "%{count} erreurs ont empêché cet %{resource} d’être enregistré :"

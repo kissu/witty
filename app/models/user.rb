@@ -20,7 +20,8 @@ class User < ApplicationRecord
 
   def password_complexity
     if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)./)
-      errors.add :password, "Must include at least one lowercase letter, one uppercase letter, and one digit"
+      french_password = 'Le mot de passe'.to_s
+      errors.add french_password, "doit avoir au moins: une minuscule, une majuscule et un chiffre"
     end
   end
 end
