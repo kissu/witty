@@ -1,33 +1,37 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+fr:
+  articles:
+    index:
+      monthly-articles: Notre sélection mensuelle
+      featured-articles: Les articles recommandés
+    new:
+      title: Nouvel article
+    form:
+      article: Je propose cet article
 
-en:
-  hello: "Hello world"
+  shared:
+    navbar:
+      ressources: RESSOURCES
+      experts: EXPERTS
+    button_tag:
+      choose: Sélectionnez
+      subject: 'votre sujet :'
+    mail_form:
+      your-report: J'envoie mon rapport
+      ask-intro: Je demande une intro
+      from: 'De: '
+      to: 'A: '
+
+  pages:
+    send_report:
+      your-report: Votre rapport d'activités mensuel
+      send-email: Cela vous permet d'envoyer l'email ci-dessous.
+    ask_intro:
+      intro: Demander une intro pour
+      email: Cela vous permet d'envoyer l'email ci-dessous.
+
+  simple_form:
+    labels:
+      article:
+        title: 'Titre :'
+        url: 'Lien :'
+        description: 'Description :'

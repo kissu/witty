@@ -20,7 +20,7 @@ module ApplicationHelper
   # ----------------------- ARTICLE SIDE -----------------------
   def button_new_article
     if policy(Article).new?
-      link_to 'Add a link'.html_safe, new_article_path, class: "btn btn-success"
+      link_to 'Ajouter un article'.html_safe, new_article_path, class: "btn btn-success"
     end
   end
 
@@ -47,14 +47,14 @@ module ApplicationHelper
 
   def button_ask_intro(contact)
     if policy(contact).ask_intro?
-      link_to "Ask an intro", ask_intro_contact_path(contact),
+      link_to "Demander une intro", ask_intro_contact_path(contact),
         class: "btn btn-success btn-sm ask-intro"
     end
   end
 
   def button_shuffle
     if policy(Contact).shuffle?
-      link_to "Shuffle", "#shuffled", id: "shuffle", class: "green-button"
+      link_to "Mélanger", "#shuffled", id: "shuffle", class: "green-button"
     end
   end
 # ----------------------- OTHER STUFF -----------------------
@@ -67,25 +67,25 @@ module ApplicationHelper
 
   def button_send_reporting(user)
     if policy(user).send_reporting?
-      link_to "Send your report", reporting_path, class: "btn btn-success"
+      link_to "Envoyer un rapport", reporting_path, class: "btn btn-success"
     end
   end
 
   def link_onboarding(user)
     if policy(user).link_onboarding?
-      link_to "Onboarding", onboarding_path
+      link_to "Redémarrer", onboarding_path
     end
   end
 
   def link_sign_out(user)
     if policy(user).link_onboarding?
-      link_to "Log out", destroy_user_session_path, method: :delete
+      link_to "Déconnecter", destroy_user_session_path, method: :delete
     end
   end
 
   def link_admin(user)
     if policy(user).link_admin?
-      link_to "Admin interface", admin_root_path
+      link_to "Interface Admin", admin_root_path
     end
   end
 
@@ -101,10 +101,10 @@ module ApplicationHelper
         html = "<p class='text-left'>New user to add to Witty ? <strong>Invite him/her.</strong></p>".html_safe
         html += button_new_contact
     elsif button == 'shuffle'
-      html = "<p class='text-left'>Want some random introduction suggestions ? <strong>Click me !</strong></p>".html_safe
+      html = "<p class='text-left'>D'autres suggestions en <strong>mélangeant</strong> la liste:</p>".html_safe
       html += button_shuffle
     else
-      html = "<p class='text-left'>Seen an awesome article recently ? <strong>Submit it.</strong></p>".html_safe
+      html = "<p class='text-left'><strong>Partagez</strong> vos meilleurs articles :</p>".html_safe
       html += button_new_article
     end
   end

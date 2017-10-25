@@ -4,17 +4,17 @@
   </div>
 
   <div class="button-tags-container text-center">
-    <p class="text-left"><strong>Choose</strong>
+    <p class="text-left"><strong><%= t('.choose') %></strong>
     <% if current_page?(articles_path) %>
-      <%= "a category you'd like to read" %>
+      <%= t('.subject') %>
     <% else %>
-      <%= "an expert's category" %>
+      <%= t('.subject') %>
     <% end %>
     </p>
     <form class="filters">
       <input type="radio" id="all" value="" name="filter" checked='checked'>
       <label for="all" class="show-all">
-        show all
+        Voir tout
       </label>
       <% Tag.all.each do |tag| %>
         <input type="radio" id="<%= tag.name.downcase %>"

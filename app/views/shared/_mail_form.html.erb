@@ -1,6 +1,6 @@
   <%= form_tag(request.env['PATH_INFO'], method: :post, action: :upload, multipart: true) do %>
-    <p>To: florent.merian@aquiti.fr</p>
-    <p>From: <%= current_user.email %></p>
+    <p><%= t('.from') %> <%= current_user.email %></p>
+    <p><%= t('.to') %> florent.merian@aquiti.fr</p>
     <%= file_field_tag 'file', class: "upload-field" %>
     <%= label_tag(:message, "Message:") %>
 </div>
@@ -8,6 +8,10 @@
       class: "form-control summernote-mail") %>
 
   <div class="form-model">
-  <%= submit_tag "Send your report", class: "btn btn-success" %>
+  <% if current_page?(reporting_path) %>
+    <%= submit_tag t('.your-report'), class: "btn btn-success" %>
+  <% else %>
+    <%= submit_tag t('.ask-intro'), class: "btn btn-success" %>
+  <% end %>
 <% end %>
 </div>
