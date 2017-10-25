@@ -16,10 +16,10 @@ fr:
       invitation_instructions:
         subject: 'Votre accès à la plateforme witty.vc'
         hello: 'Bonjour,'
-        someone_invited_you: "Quelqu'un vous a invité à rejoindre %{url}, vous pouvez accepter cette invitation via le lien ci-dessous."
-        someone_invited_you_next: "et découvrir nos ressources, nos outils et nos experts :"
+        someone_invited_you: "Comme convenu, voici votre lien personnalisé pour accéder à notre plateforme"
         url_app: "witty.vc"
-        accept: "Accepter l'invitation"
+        someone_invited_you_next: "et découvrir nos ressources, nos outils et nos experts :"
+        accept: "Cliquez ici pour accéder à la platforme"
         ignore: "Si vous ne souhaitez pas accepter cette invitation, veuillez ignorer cet e-mail.<br />Votre compte ne sera pas créé tant que vous n'accéderez pas au lien ci-dessous et que vous ayez défini votre mot de passe."
         goodbye: "Bonne journée,"
         super_admin: "Florent"
