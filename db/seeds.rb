@@ -10,6 +10,10 @@ users_array = []
 users_array << User.create!(email: "florent.merian@aquiti.fr",password: "aquiti", role: "super_admin", invitation_accepted_at: DateTime.now)
 users_array << User.create!(email: "entrepreneur@test.fr", password: "aquiti", role: "entrepreneur", invitation_accepted_at: DateTime.now)
 
+# we now have devise required secure passwords, either change it locally in this
+# file and ignore it with `git update-index --assume-unchanged Gemfile`
+# OR replace with a secure one, like 'SuperSecurePassword1234)=+}' (Trello)
+
 puts "Users created"
 
 # Tags for the articles
