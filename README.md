@@ -1,5 +1,5 @@
-# :star: [Witty.vc](http://witty.vc) :star:
-![Witty's logo](https://i.imgur.com/axcJbpW.png)
+# :star: [Witty.vc](http://www.witty.vc) :star:
+![Witty's screenshot demo](https://i.imgur.com/bNO2Isk.png)
 Witty is a portfolio managment tool for VCs to empower entrepreneurs with best practices, tools and network. :snail:  :arrow_right:  :rocket:
 
 It helps both sides, the VC :
